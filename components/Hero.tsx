@@ -12,7 +12,7 @@ export default function Hero({}: Props) {
       <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" 
       className="relative rounded-full h-32 w-32 mx-auto object-cover" alt="profile picture"/>
       <div className='z-20'>
-          <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[3px]'>Software Engineer</h2>
+          <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[3px]'>Software Developer</h2>
           <h1 className='text-xl lg:text-2xl font-semibold px-10 pt-8'>
             <span className='mr-3'>{<Typewriter
             options={{
