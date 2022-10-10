@@ -9,7 +9,7 @@ type Props = {}
 
 export default function Hero({}: Props) {
   return (
-    <div className='pt-8 md:pt-32 lg:pt-52 xl:pt-64 my-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
+    <div className='pt-14 md:pt-32 lg:pt-52 xl:pt-64 my-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
       <BackgroundCircles />
       <div className="relative rounded-full h-32 w-32 md:h-40 md:w-40 lg:h-48 lg:w-48 mx-auto object-cover">
       <Image src={profilePicture1} 
@@ -35,15 +35,14 @@ export default function Hero({}: Props) {
               <Link href='#experience'>
               <div className='heroButton'>Experience</div>
               </Link>
-            </div>
-            <div className='pt-5 sm:pt-12 md:pt-24 flex flex-row w-20 justify-center'>
-               <Link href='#skills'>
+              <Link href='#skills'>
               <div className='heroButton'>Skills</div>
               </Link>
               <Link href='#projects'>
               <div className='heroButton'>Projects</div>
               </Link>
             </div>
+           
         
       </div>
   )
