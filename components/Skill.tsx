@@ -21,7 +21,7 @@ export default function Skill({}: Props) {
   return (
   <>
    
-            skillsLogos.map((ele,i)=>{
+            {skillsLogos.map((ele,i)=>{
                 return <div key={i} className='group relative flex cursor-pointer'>  
                 <div
                     className='rounded-full bg-white object-cover border border-gray-500 w-16 h-16 sm:w-24 sm:h-24 xl:w-28 xl:h-28 filter group-hover:grayscale transition duration-300 ease-in-out'
@@ -31,7 +31,7 @@ export default function Skill({}: Props) {
                 </div>
                 </div>
      
-                        })
+                        })}
     
    </>
   )
