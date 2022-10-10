@@ -1,8 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import ExperienceEY from "../components/ExperienceEY"
-import ExperienceStudentfy from "../components/ExperienceStudentfy"
-import ExperienceSupercellcomp from "../components/ExperienceSupercellcomp"
+import ExperienceEY from "./experience/ExperienceEY"
+import ExperienceStudentfy from "./experience/ExperienceStudentfy"
+import ExperienceSupercellcomp from "./experience/ExperienceSupercellcomp"
 
 type Props = {}
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import EYLogo from "../public/experiencesImages/EYLogo.jpg"
+import EYLogo from "../../public/experiencesImages/EYLogo.jpg"
 
 type Props = {}
 

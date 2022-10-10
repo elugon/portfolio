@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import SupercellcompLogo from "../public/experiencesImages/SupercellcompLogo.png"
+import SupercellcompLogo from "../../public/experiencesImages/SupercellcompLogo.png"
 
 type Props = {}
 
