@@ -2,15 +2,19 @@ import React from 'react'
 import Typewriter from 'typewriter-effect';
 import BackgroundCircles from "../components/BackgroundCircles"
 import Link from 'next/link'
+import Image from 'next/image'
+import profilePicture1 from "../public/profileImages/profilePicture3.png"
 
 type Props = {}
 
 export default function Hero({}: Props) {
   return (
-    <div className='pt-20 h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
+    <div className='pt-20 md:pt-32 lg:pt-52 xl:pt-56 h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
       <BackgroundCircles />
-      <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" 
-      className="relative rounded-full h-32 w-32 mx-auto object-cover" alt="profile picture"/>
+      <div className="relative rounded-full h-32 w-32 md:h-40 md:w-40 lg:h-48 lg:w-48 mx-auto object-cover">
+      <Image src={profilePicture1} 
+       alt="profile picture"/>
+      </div>
       <div className='z-20'>
           <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[3px]'>Software Developer</h2>
           <h1 className='text-xl lg:text-2xl font-semibold px-10 pt-8'>

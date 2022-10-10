@@ -1,6 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import ExperienceCards from "../components/ExperienceCards"
+import ExperienceEY from "../components/ExperienceEY"
+import ExperienceStudentfy from "../components/ExperienceStudentfy"
+import ExperienceSupercellcomp from "../components/ExperienceSupercellcomp"
 
 type Props = {}
 
@@ -15,11 +17,11 @@ export default function Experience({}: Props) {
             Experience
         </h3>
 
-        <div className='w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]'>
-            <ExperienceCards />
-            <ExperienceCards />
-            <ExperienceCards />
-            <ExperienceCards />
+        <div className='xl:justify-evenly w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]'>
+            <ExperienceEY />
+            <ExperienceStudentfy />
+            <ExperienceSupercellcomp />
+            
         </div>
     </motion.div>
   )

@@ -1,28 +1,38 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import Image from 'next/image'
+import js from "../public/skillsImages/js.svg"
+import css from "../public/skillsImages/css.webp"
+import html from "../public/skillsImages/html.webp"
+import mongodb from "../public/skillsImages/mongodb.svg"
+import nextjs from "../public/skillsImages/nextjs.png"
+import node from "../public/skillsImages/node.png"
+import react from "../public/skillsImages/react.png"
+import tailwind from "../public/skillsImages/tailwind.png"
+import ts from "../public/skillsImages/ts.png"
+import visualcode from "../public/skillsImages/visualcode.png"
+import git from "../public/skillsImages/git.png"
+import github from "../public/skillsImages/github.png"
 
-type Props = {
-    directionLeft?:boolean
-}
+type Props = {}
 
-export default function Skill({ directionLeft }: Props) {
+const skillsLogos: string[] =[js,ts,react,css,tailwind,nextjs,html,mongodb,node,visualcode,git,github]
+
+export default function Skill({}: Props) {
   return (
-    <div className='group relative flex cursor-pointer'>
-        <motion.img
-        initial={{
-            x: directionLeft ? -200 : 200,
-            opacity:0
-        }}
-        whileInView={{opacity:1, x:0}}
-        transition={{duration:1.8}} 
-        src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png'
-        className='rounded-full border border-gray-500 object-cover w-16 h-16 sm:w-24 sm:h-24 xl:w-28 xl:h-28 filter group-hover:grayscale transition duration-300 ease-in-out'
-        />
-        <div className='absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-white w-16 h-16 sm:w-24 sm:h-24 xl:w-28 xl:h-28 rounded-full z-0'>
-            <div className='flex items-center justify-center h-full'>
-                <p className='text-3xl font-bold text-black opacity-100'>100%</p>
-            </div>
-        </div>
-    </div>
+  
+   
+            skillsLogos.map((ele,i)=>{
+                return <div key={i} className='group relative flex cursor-pointer'>  
+                <div
+                    className='rounded-full bg-white object-cover border border-gray-500 w-16 h-16 sm:w-24 sm:h-24 xl:w-28 xl:h-28 filter group-hover:grayscale transition duration-300 ease-in-out'
+                    >
+                    <Image src={ele} 
+                        alt=""/>
+                </div>
+                </div>
+     
+                        })
+    
+   
   )
 }
