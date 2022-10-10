@@ -19,7 +19,7 @@ const skillsLogos: string[] =[js,ts,react,css,tailwind,nextjs,html,mongodb,node,
 
 export default function Skill({}: Props) {
   return (
-  
+  <>
    
             skillsLogos.map((ele,i)=>{
                 return <div key={i} className='group relative flex cursor-pointer'>  
@@ -33,6 +33,6 @@ export default function Skill({}: Props) {
      
                         })
     
-   
+   </>
   )
 }
