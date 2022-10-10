@@ -23,15 +23,15 @@ export default function About({}: Props) {
             opacity:1,
             x:0
         }}
-        className='mt-20 flex-shrink-0 w-44 h-44 sm:w-56 sm:h-56 rounded-full object-cover md:rounded-lg md:w-[400px] md:h-[500px]'
+        className='mt-36 flex-shrink-0 h-32 w-32 sm:w-56 sm:h-56 rounded-full object-cover md:rounded-lg md:w-[400px] md:h-[500px]'
         >
         <Image src={profilePicture4} 
        alt="profile picture"/>
         </motion.div>
-        <div className='space-y-10 px-0 md:px-10'>
+        <div className='mt-10 space-y-10 px-0 md:px-10'>
             <h4 className='text-base font-semibold sm:text-lg md:text-xl lg:text-2xl'>Here is a little background</h4>
             <p className='text-xs sm:text-base md:text-lg lg:text-xl'>
-            <span className='decoration-[#F7AB0A]/50 underline'>Systems Engineer.</span> I have extensive experience in the design, programming, implementation and maintenance of IT applications. I have logistical knowledge for the development of the different phases of a IT project and to develop plans that allow the integration of several projects in an overall development program. I have a global perspective of the main branches of computer science which gives me a multidisciplinary vision in many fields of engineering. This allows me to have a good ability to analyze and solve problems of many types. I have work experience as an IT consultant since mid 2013.
+            <span className='decoration-[#F7AB0A]/50 underline'>Systems Engineer.</span> I have extensive experience in the design, programming, implementation and maintenance of IT applications and a global perspective of the main branches of computer science which gives me a multidisciplinary vision in many fields of engineering. This allows me to have a good ability to analyze and solve problems of many types.
          </p>
         </div>
     </motion.div>
