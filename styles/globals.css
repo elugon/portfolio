@@ -13,8 +13,7 @@
     }
     .my-screen {
         height: -webkit-fill-available;
-        height: -moz-available;
-        height: 90vh;
+        height: 100vh;
               }
              
 }
