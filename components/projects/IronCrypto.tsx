@@ -30,9 +30,9 @@ export default function IronCrypto({}: Props) {
             IronCrypto
             </span>
         </h4>
-        <p className='text-md md:text-lg text-center md:text-left'>
+        <p className='text-xs sm:text-md md:text-lg text-center md:text-left'>
         A web application (Mobile First) developed during the bootcamp at IronHack, designed to visualize the data of the main cryptocurrencies in the market, it has been made with MongoDB - Express - Mongoose - Handlebars and the data is consulted to the CoinGecko API.        </p>
-        <p className='space-x-2 text-md md:text-lg text-center underline decoration-[#F7AB0A]/50'>
+        <p className='space-x-2 text-xs sm:text-md md:text-lg text-center underline decoration-[#F7AB0A]/50'>
         <a href="https://github.com/elugon/IronCrypto" target="_blank" rel="noopener noreferrer">
         Github
         </a>

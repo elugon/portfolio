@@ -30,9 +30,9 @@ export default function UltimateTodo({}: Props) {
             Ultimate To-Do
             </span>
         </h4>
-        <p className='text-md md:text-lg text-center md:text-left'>
+        <p className='text-xs sm:text-md md:text-lg text-center md:text-left'>
         A desktop web application which allows you to make a to-do list, has developed multiple functions such as adding, modifying, deleting and completing tasks.</p>
-        <p className='space-x-2 text-md md:text-lg text-center underline decoration-[#F7AB0A]/50'>
+        <p className='space-x-2 text-xs sm:text-md md:text-lg text-center underline decoration-[#F7AB0A]/50'>
         <a href="https://github.com/elugon/ultimate-todo-app" target="_blank" rel="noopener noreferrer">
         Github
         </a>

@@ -30,10 +30,10 @@ export default function ShoesHouse({}: Props) {
             Shoes House
             </span>
         </h4>
-        <p className='text-md md:text-lg text-center md:text-left'>
+        <p className='text-xs sm:text-md md:text-lg text-center md:text-left'>
         A e-Commerce (Mobile First) developed during the bootcamp at IronHack, it has been made with MongoDB - Express - Mongoose - NodeJS for the Backend and with React for the Frontend.
         </p>
-        <p className='space-x-2 text-md md:text-lg text-center underline decoration-[#F7AB0A]/50'>
+        <p className='space-x-2 text-xs sm:text-md md:text-lg text-center underline decoration-[#F7AB0A]/50'>
         <a href="https://github.com/elugon/ShoesHouse-Frontend" target="_blank" rel="noopener noreferrer">
         Github
         </a>
