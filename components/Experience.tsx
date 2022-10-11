@@ -12,8 +12,8 @@ export default function Experience({}: Props) {
     initial={{opacity:0}}
     whileInView={{opacity:1}}
     transition={{duration:1.8}}
-    className='my-screen flex relative overflow-hidden flex-col text-left md:flex-row max-w-full px-10 justify-evenly mx-auto items-center'>
-        <h3 className='absolute top-20 uppercase tracking-[15px] text-gray-500 text-2xl'>
+    className='my-screen flex relative overflow-hidden text-left flex-row max-w-full px-10 justify-evenly mx-auto items-center'>
+        <h3 className='absolute top-16 uppercase tracking-[15px] text-gray-500 text-2xl'>
             Experience
         </h3>
 

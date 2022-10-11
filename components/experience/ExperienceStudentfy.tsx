@@ -26,11 +26,11 @@ export default function ExperienceCards({}: Props) {
     </motion.div>
 
     <div className='px-0 md:px-10'>
-        <h4 className='text-4xl font-light'>IT Support</h4>
-        <p className='font-bold text-2xl mt-1 decoration-[#F7AB0A]/50 underline'>Studentfy</p>
-        <p className='py-5 text-gray-300'>September.2015 - April.2019</p>
+        <h4 className='text-sm md:text-4xl font-light'>IT Support</h4>
+        <p className='text-sm font-bold md:text-2xl mt-1 decoration-[#F7AB0A]/50 underline'>Studentfy</p>
+        <p className='text-sm md:text-4xl py-5 text-gray-300'>September.2015 - April.2019</p>
 
-        <ul className='list-disc space-y-4 ml-5 text-lg'>
+        <ul className='text-sm list-disc space-y-4 ml-5 md:text-lg'>
             <li>Provide IT assistance</li>
             <li>Keep track of new IT trends</li>
         </ul>
