@@ -28,7 +28,7 @@ export default function ExperienceCards({}: Props) {
         <div className='px-0 md:px-10'>
             <h4 className='text-sm md:text-4xl font-light'>IT Consulting</h4>
             <p className='font-bold text-sm md:text-2xl mt-1 decoration-[#F7AB0A]/50 underline'>EY</p>
-            <p className='text-sm md:text-4xl py-5 text-gray-300'>April.2019 - Currently</p>
+            <p className='text-sm md:text-xl py-5 text-gray-300'>April.2019 - Currently</p>
 
             <ul className='text-sm list-disc space-y-4 ml-5 md:text-lg'>
                 <li>Tech and business consultant</li>

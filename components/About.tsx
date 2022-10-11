@@ -28,7 +28,7 @@ export default function About({}: Props) {
         <Image src={profilePicture4} 
        alt="profile picture"/>
         </motion.div>
-        <div className='mt-2 md:mt-10 space-y-10 px-0 md:px-10'>
+        <div className='mt-6 md:mt-10 space-y-10 px-0 md:px-10'>
             <h4 className='text-base font-semibold sm:text-lg md:text-xl lg:text-2xl'>Here is a little background</h4>
             <p className='text-xs sm:text-base md:text-lg lg:text-xl'>
             <span className='decoration-[#F7AB0A]/50 underline'>Systems Engineer.</span> I have extensive experience in the design, programming, implementation and maintenance of IT applications and a global perspective of the main branches of computer science which gives me a multidisciplinary vision in many fields of engineering. This allows me to have a good ability to analyze and solve problems of many types.
