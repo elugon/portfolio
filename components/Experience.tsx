@@ -17,7 +17,7 @@ export default function Experience({}: Props) {
             Experience
         </h3>
 
-        <div className='h-max w-max pt-36 xl:justify-evenly flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]'>
+        <div className='h-max w-max pt-2 scroll-smooth md:pt-36 xl:justify-evenly flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]'>
             <ExperienceEY />
             <ExperienceStudentfy />
             <ExperienceSupercellcomp />
