@@ -13,5 +13,9 @@
     }
     .my-screen {
         height: -webkit-fill-available;
-      }
+              }
+              .bodyView {
+                min-height: 100vh;
+                min-height: -webkit-fill-available;
+              }
 }
