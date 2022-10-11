@@ -27,11 +27,11 @@ export default function ContactMe({}: Props) {
         <div className='flex flex-col space-y-10 pt-28'>
             <h4 className='text-xs sm:text-lg md:text-xl font-semibold text-center'>
             At this point, why not reach out to someone who loves coding?.{" "}
-            <span className='decoration-[#F7AB0A]/50 underline'>Lets Talk</span>
+            <span className='decoration-[#F7AB0A]/50 underline'>{`Let's Talk`}</span>
             </h4>
         </div>
 
-        <div className='space-y-2 h-10 mb-6 mt-4'>
+        <div className='space-y-2 h-10 mb-6 mt-4 md:mt-12'>
             <div className='flex items-center space-x-5'>
             <PhoneIcon className='text-[#F7AB0A] h-5 w-5 sm:h-12 sm:w-12 animate-pulse' />
             <p className='text-xs sm:text-lg'>+34 634 91 86 59</p>
