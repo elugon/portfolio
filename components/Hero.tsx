@@ -20,7 +20,7 @@ export default function Hero({}: Props) {
           <h1 className='text-xs sm:text-sm md:text-base lg:text-2xl font-semibold px-10 pt-8'>
             <span className='mr-3'>{<Typewriter
             options={{
-              strings: [`Hi, The Name's Elu Gonzalez`,`Props: Let's play soccer`, 'this.cinema = Interstellar', 'const loveCoding = True'],
+              strings: [`Hi, I'm Elu Gonzalez`,`Props: Let's play soccer`, 'this.cinema = Interstellar', 'const loveCoding = True'],
               autoStart: true,
               loop: true,
               delay:100
