@@ -5,7 +5,7 @@ type Props = {}
 
 export default function ShoesHouse({}: Props) {
   return (
-    <div className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-4 mt-2 md:p-44 h-screen'>
+    <div className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-2 mt-2 md:p-44 h-screen'>
     <motion.img
         initial={{
             y:-300
