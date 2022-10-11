@@ -5,7 +5,7 @@ type Props = {}
 
 export default function UltimateTodo({}: Props) {
   return (
-    <div className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-10 mt-2 md:p-44 h-screen'>
+    <div className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-2 mt-2 md:p-44 h-screen'>
     <motion.img
         initial={{
             y:-300
@@ -22,7 +22,7 @@ export default function UltimateTodo({}: Props) {
         }}
         src='https://github.com/elugon/ultimate-todo-app/raw/master/public/wireframe.png'
         alt=''
-        className='max-h-26 sm:max-h-38 md:max-h-80 rounded'
+        className='max-h-22 sm:max-h-38 md:max-h-80 rounded'
     />
     <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
         <h4 className='text-sm sm:text-xl md:text-4xl font-semibold text-center'>
