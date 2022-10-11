@@ -13,9 +13,10 @@
     }
     .my-screen {
         height: -webkit-fill-available;
+        height: 100%;
+        height: -moz-available;          /* WebKit-based browsers will ignore this. */
+        height: stretch;
+
               }
-              .bodyView {
-                min-height: 100vh;
-                min-height: -webkit-fill-available;
-              }
+             
 }
