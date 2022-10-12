@@ -1,12 +1,14 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
+import shoesHouseLogo from "../../public/projectsImages/shoesHouse.png"
 
 type Props = {}
 
 export default function ShoesHouse({}: Props) {
   return (
     <div className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-2 mt-2 md:p-44 h-screen'>
-    <motion.img
+    <motion.div
         initial={{
             y:-300
         }}
@@ -20,10 +22,11 @@ export default function ShoesHouse({}: Props) {
         viewport={{
             once:true
         }}
-        src='https://github.com/elugon/ShoesHouse-Frontend/raw/master/src/img/shoesHouseLayout.png'
-        alt=''
-        className='max-h-22 sm:max-h-38 md:max-h-80 rounded'
-    />
+        className='h-auto w-auto lg:h-[750px] lg:w-[600px] rounded'
+    >
+        <Image src={shoesHouseLogo} 
+            alt="shoes house Logo"/>
+    </motion.div>
     <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
         <h4 className='text-sm sm:text-xl md:text-4xl font-semibold text-center'>
             <span className='underline decoration-[#F7AB0A]/50'>
