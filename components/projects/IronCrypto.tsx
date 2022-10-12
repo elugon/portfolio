@@ -1,12 +1,14 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
+import ironCryptoLogo from "../../public/projectsImages/ironCrypto.png"
 
 type Props = {}
 
 export default function IronCrypto({}: Props) {
   return (
     <div className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-2 mt-2 md:p-44 h-screen'>
-    <motion.img
+    <motion.div
         initial={{
             y:-300
         }}
@@ -20,17 +22,18 @@ export default function IronCrypto({}: Props) {
         viewport={{
             once:true
         }}
-        src='https://github.com/elugon/IronCrypto/raw/master/public/img/IronCryptoLayout1.png'
-        alt=''
-        className='max-h-22 sm:max-h-38 md:max-h-80 rounded'
-    />
+        className='h-auto w-auto mx-1 lg:h-[750px] lg:w-[600px] rounded'
+    >
+        <Image src={ironCryptoLogo} 
+            alt="iron crypto Logo"/>
+    </motion.div>
     <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
         <h4 className='text-sm sm:text-xl md:text-4xl font-semibold text-center'>
             <span className='underline decoration-[#F7AB0A]/50'>
             IronCrypto
             </span>
         </h4>
-        <p className='text-xs sm:text-md md:text-lg text-center md:text-left'>
+        <p className='text-xs mx-2 sm:text-md md:text-lg text-center md:text-left'>
         A web application (Mobile First) developed during the bootcamp at IronHack, designed to visualize the data of the main cryptocurrencies in the market, it has been made with MongoDB and Handlebars.        </p>
         <p className='space-x-2 text-xs sm:text-md md:text-lg text-center underline decoration-[#F7AB0A]/50'>
         <a href="https://github.com/elugon/IronCrypto" target="_blank" rel="noopener noreferrer">

@@ -22,7 +22,7 @@ export default function ShoesHouse({}: Props) {
         viewport={{
             once:true
         }}
-        className='h-auto w-auto lg:h-[750px] lg:w-[600px] rounded'
+        className='h-auto w-auto mx-1 lg:h-[750px] lg:w-[600px] rounded'
     >
         <Image src={shoesHouseLogo} 
             alt="shoes house Logo"/>
@@ -33,8 +33,8 @@ export default function ShoesHouse({}: Props) {
             Shoes House
             </span>
         </h4>
-        <p className='text-xs sm:text-md md:text-lg text-center md:text-left'>
-        An e-Commerce (Mobile First) developed during the Bootcamp at IronHack, has been made with MongoDB - Express - Mongoose - NodeJS for the Backend and with React for the Frontend.
+        <p className='text-xs mx-2 sm:text-md md:text-lg text-center md:text-left'>
+        An e-Commerce (Mobile First) developed during the Bootcamp at IronHack, has been made with MongoDB/NodeJS for the Backend and with Reactjs for the Frontend.
         </p>
         <p className='space-x-2 text-xs sm:text-md md:text-lg text-center underline decoration-[#F7AB0A]/50'>
         <a href="https://github.com/elugon/ShoesHouse-Frontend" target="_blank" rel="noopener noreferrer">
