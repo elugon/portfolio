@@ -8,6 +8,7 @@ import Skills from '../components/Skills'
 import Projects from '../components/Projects'
 import ContactMe from '../components/ContactMe'
 
+
 const Home: NextPage = () => {
 
   
