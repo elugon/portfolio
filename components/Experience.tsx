@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import ExperienceEY from "./experience/ExperienceEY"
 import ExperienceStudentfy from "./experience/ExperienceStudentfy"
 import ExperienceSupercellcomp from "./experience/ExperienceSupercellcomp"
+import ExperienceProgressus from "./experience/ExperienceProgressus"
 
 type Props = {}
 
@@ -18,6 +19,7 @@ export default function Experience({}: Props) {
         </h3>
 
         <div className='h-max w-max pt-6 scroll-smooth md:pt-36 xl:justify-evenly flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]'>
+            <ExperienceProgressus />
             <ExperienceEY />
             <ExperienceStudentfy />
             <ExperienceSupercellcomp />
