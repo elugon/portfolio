@@ -2,18 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .heroButton {
+    @apply rounded-full border border-[#242424] px-1 py-1 text-xs uppercase tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40 sm:text-base lg:px-6 lg:py-2;
+  }
+  .contactInput {
+    @apply rounded-sm border-b border-[#242424] bg-slate-400/10 px-6 py-4 text-gray-500 placeholder-gray-500 outline-none transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40;
+  }
+  .my-screen {
+    height: -webkit-fill-available;
+    height: 100vh;
+  }
 
-
-@layer components{
-    .heroButton{
-        @apply text-xs sm:text-base px-1 py-1 lg:px-6 lg:py-2 border border-[#242424] rounded-full uppercase tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40
-    }
-    .contactInput{
-        @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40
-    }
-    .my-screen {
-        height: -webkit-fill-available;
-        height: 100vh;
-              }
-             
 }
