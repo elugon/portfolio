@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .heroButton {
+    @apply rounded-full border border-dark px-1 py-1 text-xs uppercase tracking-widest text-gray-500 transition-all hover:border-primary/40 hover:text-primary/40 sm:text-base lg:px-6 lg:py-2;
+  }
+  .contactInput {
+    @apply rounded-sm border-b border-dark bg-slate-400/10 px-6 py-4 text-gray-500 placeholder-gray-500 outline-none transition-all focus:border-primary/40 focus:text-primary/40 hover:border-primary/40;
+  }
+  .my-screen {
+    height: -webkit-fill-available;
+    height: 100vh;
+  }
+  
+  /* Scrollbar styles for modern browsers */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #F7AB0A rgba(156, 163, 175, 0.2);
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: rgba(156, 163, 175, 0.2);
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #F7AB0A;
+    border-radius: 4px;
+  }
+}

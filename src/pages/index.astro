@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionLayout from "../layouts/SectionLayout.astro";
+import Header from "../components/sections/Header";
+import Hero from "../components/sections/Hero";
+import About from "../components/sections/About";
+import Experience from "../components/sections/Experience";
+import Skills from "../components/sections/Skills";
+import Projects from "../components/sections/Projects";
+import ContactMe from "../components/ContactMe";
+import "../styles/globals.css";
+
+const siteTitle = "Elu Gonzalez - Software Developer Portfolio";
+const siteDescription = "Portfolio of Elu Gonzalez, Systems Engineer and Software Developer with expertise in React, TypeScript, and modern web technologies.";
+---
+
+<BaseLayout title={siteTitle} description={siteDescription}>
+  <div class="my-screen z-0 snap-y snap-mandatory overflow-x-hidden overflow-y-scroll bg-surface p-2 text-white scrollbar-thin">
+    <Header client:load />
+
+    <SectionLayout id="hero" snapBehavior="start">
+      <Hero />
+    </SectionLayout>
+
+    <SectionLayout id="about" snapBehavior="center">
+      <About client:visible />
+    </SectionLayout>
+
+    <SectionLayout id="experience" snapBehavior="center">
+      <Experience client:visible />
+    </SectionLayout>
+
+    <SectionLayout id="skills" snapBehavior="start">
+      <Skills client:idle />
+    </SectionLayout>
+
+    <SectionLayout id="projects" snapBehavior="start">
+      <Projects client:visible featuredOnly />
+    </SectionLayout>
+
+    <SectionLayout id="contact" snapBehavior="start">
+      <ContactMe client:visible />
+    </SectionLayout>
+  </div>
+</BaseLayout>
