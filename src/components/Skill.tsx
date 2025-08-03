@@ -12,28 +12,30 @@ import vscode from "../../public/skillsImages/visualcode.png";
 import gt from "../../public/skillsImages/git.png";
 import gthub from "../../public/skillsImages/github.png";
 
-type Props = {};
+type Props = Record<string, never>;
 
-const javascript: any[] = [
+type SkillData = [any, string];
+
+const javascript: SkillData = [
   js,
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
 ];
-const typescript: any[] = [ts, "https://www.typescriptlang.org/"];
-const reactjs: any[] = [react, "https://en.reactjs.org/"];
-const css: any[] = [cs, "https://developer.mozilla.org/en-US/docs/Web/CSS"];
-const tailwind: any[] = [tw, "https://tailwindcss.com/"];
-const nextjs: any[] = [ntjs, "https://nextjs.org/"];
-const html5: any[] = [
+const typescript: SkillData = [ts, "https://www.typescriptlang.org/"];
+const reactjs: SkillData = [react, "https://en.reactjs.org/"];
+const css: SkillData = [cs, "https://developer.mozilla.org/en-US/docs/Web/CSS"];
+const tailwind: SkillData = [tw, "https://tailwindcss.com/"];
+const nextjs: SkillData = [ntjs, "https://nextjs.org/"];
+const html5: SkillData = [
   html,
   "https://developer.mozilla.org/en-US/docs/Glossary/HTML5",
 ];
-const mongodb: any[] = [godb, "https://www.mongodb.com"];
-const nodejs: any[] = [node, "https://nodejs.org"];
-const visualCode: any[] = [vscode, "https://code.visualstudio.com"];
-const git: any[] = [gt, "https://git-scm.com"];
-const gitHub: any[] = [gthub, "https://github.com"];
+const mongodb: SkillData = [godb, "https://www.mongodb.com"];
+const nodejs: SkillData = [node, "https://nodejs.org"];
+const visualCode: SkillData = [vscode, "https://code.visualstudio.com"];
+const git: SkillData = [gt, "https://git-scm.com"];
+const gitHub: SkillData = [gthub, "https://github.com"];
 
-const skillsLogos: any[] = [
+const skillsLogos: SkillData[] = [
   javascript,
   typescript,
   reactjs,
@@ -48,7 +50,7 @@ const skillsLogos: any[] = [
   gitHub,
 ];
 
-export default function Skill({}: Props) {
+export default function Skill(_props: Props) {
   return (
     <>
       {skillsLogos.map((ele, i) => {

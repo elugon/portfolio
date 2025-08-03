@@ -2,13 +2,12 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import todoLogo from "../../../public/projectsImages/toDo.png"
 
-type Props = {}
+type Props = Record<string, never>
 
-export default function UltimateTodo({}: Props) {
+export default function UltimateTodo(_props: Props) {
   return (
-    <div className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-2 mt-2 md:p-44 h-screen'>
+    <div className='w-screen flex-shrink-0 flex flex-col space-y-5 items-center justify-center p-2 mt-2 md:p-44 h-screen'>
     <motion.div
-        client:load
         initial={{
             y:-300
         }}

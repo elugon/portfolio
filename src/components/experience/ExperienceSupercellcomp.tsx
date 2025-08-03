@@ -2,13 +2,12 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import SupercellcompLogo from "../../../public/experiencesImages/SupercellcompLogo.png"
 
-type Props = {}
+type Props = Record<string, never>
 
-export default function ExperienceCards({}: Props) {
+export default function ExperienceCards(_props: Props) {
   return (
-    <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 h-5/6 snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden'>
+    <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 h-5/6 bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden'>
     <motion.div
-    client:load
     initial={{
         y:-100,
         opacity:0

@@ -4,13 +4,17 @@ interface Props {
   description: string;
   keywords?: string;
   ogImage?: string;
+  sectionId?: string;
+  sectionClass?: string;
 }
 
 const { 
   title, 
   description, 
   keywords = "software developer, web development, react, typescript, portfolio",
-  ogImage = "/profileImages/profilePicture3.png"
+  ogImage = "/profileImages/profilePicture3.png",
+  sectionId,
+  sectionClass = ""
 } = Astro.props;
 
 const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astro.url;
@@ -20,9 +24,17 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
+    
+    <!-- 2025 Performance & UX Meta Tags -->
+    <meta name="theme-color" content="#f59e0b" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     
     <!-- Primary Meta Tags -->
     <title>{title}</title>
@@ -30,6 +42,9 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="author" content="Elu Gonzalez" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -37,42 +52,126 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Elu Gonzalez Portfolio" />
+    <meta property="og:locale" content="en_US" />
     
-    <!-- Twitter -->
+    <!-- Twitter / X -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImage} />
+    <meta property="twitter:creator" content="@elugon" />
     
     <!-- Performance optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//github.com" />
+    <link rel="dns-prefetch" href="//linkedin.com" />
     
-    <!-- Styles -->
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/profileImages/profilePicture3.png" as="image" type="image/png" />
+    <link rel="modulepreload" href="/src/components/sections/Hero.tsx" />
+    
+    <!-- Resource hints for better Core Web Vitals -->
+    <link rel="prefetch" href="/profileImages/profilePicture4.jpg" />
+    <link rel="prefetch" href="/projectsImages/ironCrypto.png" />
+    
+    <!-- Security headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    
+    <!-- Critical CSS optimized for 2025 -->
     <style>
-      /* Critical CSS for above-the-fold content */
+      /* Critical performance CSS - inline for fastest loading */
+      :root {
+        --primary-400: #fbbf24;
+        --primary-500: #f59e0b;
+        --neutral-100: #f1f5f9;
+        --neutral-300: #cbd5e1;
+        --neutral-800: #1e293b;
+        --neutral-900: #0f172a;
+      }
+      
       html {
         scroll-behavior: smooth;
+        /* Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+          scroll-behavior: auto;
+        }
       }
       
       body {
         margin: 0;
-        font-family: system-ui, -apple-system, sans-serif;
+        padding: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background-color: var(--neutral-900);
+        color: var(--neutral-100);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        /* Prevent layout shift */
       }
       
-      /* Prevent flash of unstyled content */
+      /* Enhanced screen utility with modern viewport units */
       .my-screen {
         min-height: 100vh;
+        min-height: 100dvh; /* Dynamic viewport height for mobile */
         height: 100vh;
+        height: 100dvh;
+        /* Performance optimization */
+        contain: layout style paint;
+      }
+      
+      /* Prevent FOUC (Flash of Unstyled Content) */
+      .hero-container {
+        opacity: 0;
+        animation: fadeInHero 0.6s ease-out 0.1s forwards;
+      }
+      
+      @keyframes fadeInHero {
+        to {
+          opacity: 1;
+        }
+      }
+      
+      /* Critical loading states */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      /* Focus outline for accessibility */
+      *:focus-visible {
+        outline: 2px solid var(--primary-400);
+        outline-offset: 2px;
+      }
+      
+      /* Reduce motion preferences */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
       }
     </style>
   </head>
   <body>
-    <slot />
+    {sectionId ? (
+      <section id={sectionId} class={sectionClass}>
+        <slot />
+      </section>
+    ) : (
+      <slot />
+    )}
     
     <!-- JSON-LD structured data -->
-    <script type="application/ld+json">
+    <script type="application/ld+json" is:inline>
       {
         "@context": "https://schema.org",
         "@type": "Person",

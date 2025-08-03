@@ -1,30 +1,33 @@
 import { motion } from "framer-motion";
 import React from "react";
+import { motionPresets } from "../utils/animations";
 
-type Props = {};
+type Props = Record<string, never>;
 
-export default function BackgroundCircles({}: Props) {
+export default function BackgroundCircles(_props: Props) {
   return (
     <motion.div
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        scale: [1, 2, 2, 3, 1],
-        opacity: [0.1, 0.2, 0.4, 0.8, 0.1, 1.0],
-        borderRadius: ["20%", "20%", "50%", "80%", "20%"],
-      }}
-      transition={{
-        duration: 2.5,
-      }}
-      className="relative mb-2 flex items-center justify-center"
-      client:load
+      {...motionPresets.backgroundCircles}
+      className="absolute inset-0 flex items-center justify-center"
+      aria-hidden="true"
     >
-      <div className="absolute mt-52 h-[50px] w-[50px] animate-ping rounded-full border border-[#333333] sm:h-[150px] sm:w-[150px] md:h-[250px] md:w-[250px]" />
-      <div className="absolute mt-52 h-[150px] w-[150px] rounded-full border border-[#333333] sm:h-[250px] sm:w-[250px] md:h-[350px] md:w-[350px]" />
-      <div className="absolute mt-52 h-[250px] w-[250px] rounded-full border border-[#333333] sm:h-[350px] sm:w-[350px] md:h-[450px] md:w-[450px]" />
-      <div className="absolute mt-52 h-[300px] w-[300px] animate-pulse rounded-full border border-primary sm:h-[450px] sm:w-[450px] md:h-[550px] md:w-[550px]" />
-      <div className="absolute mt-52 h-[450px] w-[450px] rounded-full border border-[#333333] sm:h-[550px] sm:w-[550px] md:h-[650px] md:w-[650px]" />
+      {/* Innermost circle - subtle ping animation */}
+      <div className="absolute h-[80px] w-[80px] rounded-full border border-neutral-700/30 animate-pulse sm:h-[120px] sm:w-[120px] md:h-[160px] md:w-[160px]" />
+      
+      {/* Second circle */}
+      <div className="absolute h-[140px] w-[140px] rounded-full border border-neutral-700/20 sm:h-[200px] sm:w-[200px] md:h-[280px] md:w-[280px]" />
+      
+      {/* Third circle */}
+      <div className="absolute h-[200px] w-[200px] rounded-full border border-neutral-700/15 sm:h-[280px] sm:w-[280px] md:h-[400px] md:w-[400px]" />
+      
+      {/* Fourth circle - primary accent */}
+      <div className="absolute h-[260px] w-[260px] rounded-full border border-primary-500/20 shadow-glow sm:h-[360px] sm:w-[360px] md:h-[520px] md:w-[520px]" />
+      
+      {/* Outermost circle */}
+      <div className="absolute h-[320px] w-[320px] rounded-full border border-neutral-700/10 sm:h-[440px] sm:w-[440px] md:h-[640px] md:w-[640px]" />
+      
+      {/* Subtle gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-neutral-900/20 rounded-full" />
     </motion.div>
   );
 }

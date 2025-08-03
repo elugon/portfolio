@@ -1,3 +1,5 @@
+import React from 'react';
+
 // Core interfaces following Single Responsibility Principle
 export interface PersonalInfo {
   name: string;
@@ -52,6 +54,20 @@ export interface MotionConfig {
   viewport?: Record<string, any>;
 }
 
+// Motion component props to fix TypeScript issues
+export interface MotionDivProps extends MotionConfig {
+  className?: string;
+  children?: React.ReactNode;
+  whileInView?: Record<string, string | number | boolean>;
+  whileHover?: Record<string, string | number | boolean>;
+}
+
+export interface MotionNavProps extends MotionConfig {
+  className?: string;
+  children?: React.ReactNode;
+  'aria-label'?: string;
+}
+
 // Component prop interfaces
 export interface BaseComponentProps {
   className?: string;
@@ -59,6 +75,6 @@ export interface BaseComponentProps {
 }
 
 export interface SectionProps extends BaseComponentProps {
-  title: string;
+  title?: string;
   subtitle?: string;
 }

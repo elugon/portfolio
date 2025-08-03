@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SectionLayout from "../layouts/SectionLayout.astro";
 import Header from "../components/sections/Header";
 import Hero from "../components/sections/Hero";
 import About from "../components/sections/About";
@@ -15,31 +14,31 @@ const siteDescription = "Portfolio of Elu Gonzalez, Systems Engineer and Softwar
 ---
 
 <BaseLayout title={siteTitle} description={siteDescription}>
-  <div class="my-screen z-0 snap-y snap-mandatory overflow-x-hidden overflow-y-scroll bg-surface p-2 text-white scrollbar-thin">
+  <div class="my-screen z-0 bg-surface p-2 text-white">
     <Header client:load />
 
-    <SectionLayout id="hero" snapBehavior="start">
+    <section id="hero">
       <Hero />
-    </SectionLayout>
+    </section>
 
-    <SectionLayout id="about" snapBehavior="center">
+    <section id="about">
       <About client:visible />
-    </SectionLayout>
+    </section>
 
-    <SectionLayout id="experience" snapBehavior="center">
+    <section id="experience">
       <Experience client:visible />
-    </SectionLayout>
+    </section>
 
-    <SectionLayout id="skills" snapBehavior="start">
+    <section id="skills">
       <Skills client:idle />
-    </SectionLayout>
+    </section>
 
-    <SectionLayout id="projects" snapBehavior="start">
+    <section id="projects">
       <Projects client:visible featuredOnly />
-    </SectionLayout>
+    </section>
 
-    <SectionLayout id="contact" snapBehavior="start">
+    <section id="contact">
       <ContactMe client:visible />
-    </SectionLayout>
+    </section>
   </div>
 </BaseLayout>
