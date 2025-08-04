@@ -5,7 +5,7 @@
   "framework": "astro",
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/*",
       "headers": [
         {
           "key": "X-Content-Type-Options",
@@ -26,7 +26,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot))",
+      "source": "/*.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)",
       "headers": [
         {
           "key": "Cache-Control",
