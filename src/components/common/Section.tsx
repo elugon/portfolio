@@ -18,26 +18,28 @@ export default function Section({
 }: ExtendedSectionProps) {
   return (
     <section
-      className={`my-screen relative mx-auto flex max-w-full flex-col items-center justify-evenly overflow-hidden ${containerClassName} ${animationClasses.fadeInUp}`}
+      className={`section-container-xl ${containerClassName} ${animationClasses.fadeInUp}`}
       id={title?.toLowerCase().replace(/\s+/g, '-')}
     >
       {title && (
         <div
-          className={`absolute top-16 text-center ${headerClassName} ${animationClasses.slideInFromTop}`}
+          className={`section-header-fixed ${headerClassName} ${animationClasses.slideInFromTop}`}
         >
-          <h2 className="text-2xl uppercase tracking-[15px] text-gray-500 mb-2">
+          <h2 className="section-title text-3d">
             {title}
           </h2>
           {subtitle && (
-            <p className="text-gray-400 text-sm tracking-wider">
+            <p className="section-subtitle mt-2">
               {subtitle}
             </p>
           )}
         </div>
       )}
       
-      <div className={`relative z-20 ${className}`}>
-        {children}
+      <div className={`section-content-fixed ${className}`}>
+        <div className="container-xl">
+          {children}
+        </div>
       </div>
     </section>
   );

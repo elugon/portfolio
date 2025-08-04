@@ -7,43 +7,72 @@ type Props = Record<string, never>;
 export default function About(_props: Props) {
   return (
     <section
-      className={`my-screen relative mx-auto flex max-w-7xl flex-col items-center justify-evenly px-2 text-center sm:px-10 md:flex-row md:text-left ${animationClasses.fadeInUp}`}
+      className={`section-container-xl layout-two-col ${animationClasses.fadeInUp}`}
       id="about"
     >
-      <h2 
-        className={`absolute top-16 text-2xl uppercase tracking-[20px] text-gray-500 ${animationClasses.slideInFromTop}`}
-      >
-        About
-      </h2>
-      
-      <div
-        className={`mt-2 h-32 w-32 flex-shrink-0 rounded-full object-cover sm:h-56 sm:w-56 md:mt-36 md:h-[500px] md:w-[400px] md:rounded-lg overflow-hidden ${animationClasses.slideInFromLeft}`}
-      >
-        <img 
-          src="/profileImages/profilePicture4.jpg" 
-          alt={`${personalInfo.name} profile picture`}
-          className="w-full h-full object-cover rounded-full md:rounded-lg transition-transform duration-500 hover:scale-105"
-          loading="lazy"
-        />
+      <div className="section-header-fixed">
+        <h2 
+          className={`section-title ${animationClasses.slideInFromTop}`}
+        >
+          About
+        </h2>
       </div>
       
-      <div 
-        className={`mt-6 space-y-2 px-0 md:mt-10 md:space-y-10 md:px-10 ${animationClasses.slideInFromRight}`}
-      >
-        <h3 className="text-base font-semibold sm:text-lg md:text-xl lg:text-2xl">
-          Here is a little background
-        </h3>
-        <div className="w-full text-xs sm:text-base md:text-lg lg:text-xl space-y-4">
-          <p>
-            <span className="underline decoration-primary/50 font-semibold">
-              {personalInfo.title}.
-            </span>{" "}
-            {personalInfo.description}
-          </p>
-          <p className="text-gray-400 text-sm">
-            This allows me to have a good ability to analyze and solve problems of many types, 
-            always focusing on clean code, performance optimization, and user experience.
-          </p>
+      <div className="section-content-fixed">
+        <div className="container-xl grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div
+            className={`relative mx-auto lg:mx-0 ${animationClasses.slideInFromLeft}`}
+          >
+            <div className="img-responsive overflow-hidden rounded-2xl lg:h-[500px] lg:w-[400px] glass-card-hover">
+              <img 
+                src="/profileImages/profilePicture4.jpg" 
+                alt={`${personalInfo.name} profile picture`}
+                className="img-hover-zoom w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            {/* Decorative elements */}
+            <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary-400 rounded-full animate-pulse" />
+            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-secondary-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }} />
+          </div>
+          
+          <div 
+            className={`spacing-lg text-center lg:text-left ${animationClasses.slideInFromRight}`}
+          >
+            <h3 className="text-subtitle text-gradient mb-6">
+              Here is a little background
+            </h3>
+            <div className="spacing-md">
+              <p className="text-body leading-relaxed">
+                <span className="text-primary-400 font-semibold border-b-2 border-primary-400/30">
+                  {personalInfo.title}.
+                </span>{" "}
+                {personalInfo.description}
+              </p>
+              <p className="text-muted text-sm leading-relaxed">
+                This allows me to have a good ability to analyze and solve problems of many types, 
+                always focusing on <span className="text-secondary-400 font-medium">clean code</span>, 
+                <span className="text-primary-400 font-medium"> performance optimization</span>, and 
+                <span className="text-amber-400 font-medium">user experience</span>.
+              </p>
+              
+              {/* Key highlights */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+                <div className="glass-card padding-sm text-center">
+                  <div className="text-2xl font-bold text-gradient">5+</div>
+                  <div className="text-xs text-muted">Years Experience</div>
+                </div>
+                <div className="glass-card padding-sm text-center">
+                  <div className="text-2xl font-bold text-gradient">20+</div>
+                  <div className="text-xs text-muted">Projects</div>
+                </div>
+                <div className="glass-card padding-sm text-center">
+                  <div className="text-2xl font-bold text-gradient">15+</div>
+                  <div className="text-xs text-muted">Technologies</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
