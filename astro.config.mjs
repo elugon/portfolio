@@ -4,7 +4,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://elugonzalez.dev',
+  site: 'https://www.elugonzalez.com',
   integrations: [react()],
   output: 'static',
   adapter: undefined,
