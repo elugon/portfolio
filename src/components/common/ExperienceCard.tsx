@@ -1,7 +1,6 @@
-import { motion } from "framer-motion";
 import React from "react";
 import type { Experience } from "../../types";
-import { motionPresets } from "../../utils/animations";
+import { animationClasses, hoverClasses } from "../../utils/tailwind-animations";
 
 interface ExperienceCardProps extends Experience {
   className?: string;
@@ -22,14 +21,13 @@ export default function ExperienceCard({
   return (
     <article 
       onClick={onClick}
-      className={`card-lg scroll-item min-h-[500px] max-h-[600px] container-sm cursor-pointer hover:scale-[1.02] transition-all duration-500 ${className}`}
+      className={`card-lg scroll-item min-h-[500px] max-h-[600px] container-sm cursor-pointer ${hoverClasses.card} ${className}`}
     >
       <div className="h-full flex flex-col spacing-md">
         {/* Header with logo and company info */}
         <div className="flex items-start gap-md">
-          <motion.div
-            {...motionPresets.scaleIn}
-            className="relative flex-shrink-0"
+          <div
+            className={`relative flex-shrink-0 ${animationClasses.scaleIn}`}
           >
             <div className="w-20 h-20 rounded-2xl overflow-hidden glass-card padding-sm neon-border">
               <img 
@@ -41,7 +39,7 @@ export default function ExperienceCard({
             </div>
             {/* Floating accent */}
             <div className="absolute -top-2 -right-2 w-4 h-4 bg-primary-400 rounded-full animate-pulse" />
-          </motion.div>
+          </div>
           
           <div className="flex-1">
             <h4 className="text-lg sm:text-xl font-bold text-neutral-100 mb-1">{title}</h4>
@@ -86,12 +84,10 @@ export default function ExperienceCard({
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-neutral-900/80 pointer-events-none z-10" />
           <ul className="spacing-sm overflow-y-auto max-h-48 pr-2 responsibilities-list">
             {responsibilities.map((responsibility, index) => (
-              <motion.li 
+              <li 
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="flex items-start gap-3 text-sm text-neutral-300"
+                style={{ animationDelay: `${index * 100}ms` }}
+                className="flex items-start gap-3 text-sm text-neutral-300 animate-slide-right motion-reduce-animation"
               >
                 <span className="flex-shrink-0 mt-1">
                   <svg className="w-4 h-4 text-primary-400" fill="currentColor" viewBox="0 0 20 20">
@@ -99,7 +95,7 @@ export default function ExperienceCard({
                   </svg>
                 </span>
                 <span className="leading-relaxed">{responsibility}</span>
-              </motion.li>
+              </li>
             ))}
           </ul>
         </div>

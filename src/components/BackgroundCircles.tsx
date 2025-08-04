@@ -1,14 +1,12 @@
-import { motion } from "framer-motion";
 import React from "react";
-import { motionPresets } from "../utils/animations";
+import { animationClasses } from "../utils/tailwind-animations";
 
 type Props = Record<string, never>;
 
 export default function BackgroundCircles(_props: Props) {
   return (
-    <motion.div
-      {...motionPresets.backgroundCircles}
-      className="absolute inset-0 flex items-center justify-center"
+    <div
+      className={`absolute inset-0 flex items-center justify-center ${animationClasses.backgroundCircles}`}
       aria-hidden="true"
     >
       {/* Innermost circle - subtle ping animation */}
@@ -28,6 +26,6 @@ export default function BackgroundCircles(_props: Props) {
       
       {/* Subtle gradient overlay for depth */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-neutral-900/20 rounded-full" />
-    </motion.div>
+    </div>
   );
 }

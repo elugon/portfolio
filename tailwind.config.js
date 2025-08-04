@@ -113,8 +113,8 @@ export default {
         'fade-out': 'fadeOut 0.3s ease-in-out',
         'slide-up': 'slideUp 0.3s ease-out',
         'slide-down': 'slideDown 0.3s ease-out',
-        'slide-left': 'slideLeft 0.3s ease-out',
-        'slide-right': 'slideRight 0.3s ease-out',
+        'slide-left': 'slideLeft 0.4s ease-out',
+        'slide-right': 'slideRight 0.4s ease-out',
         'scale-in': 'scaleIn 0.2s ease-out',
         'scale-out': 'scaleOut 0.2s ease-in',
         'bounce-gentle': 'bounceGentle 2s infinite',
@@ -122,6 +122,13 @@ export default {
         'shimmer': 'shimmer 2s infinite',
         'float': 'float 3s ease-in-out infinite',
         'glow-pulse': 'glowPulse 2s ease-in-out infinite',
+        // Additional animations for Framer Motion replacement
+        'slide-in-left': 'slideInLeft 0.5s ease-out',
+        'slide-in-right': 'slideInRight 0.5s ease-out',
+        'slide-in-top': 'slideInTop 0.4s ease-out',
+        'slide-in-bottom': 'slideInBottom 0.5s ease-out',
+        'header-slide': 'headerSlide 0.6s ease-out',
+        'header-slide-right': 'headerSlideRight 0.5s ease-out',
       },
       keyframes: {
         // Enhanced 2025 animation keyframes
@@ -172,6 +179,31 @@ export default {
         glowPulse: {
           '0%, 100%': { boxShadow: '0 0 20px rgba(245, 158, 11, 0.3)' },
           '50%': { boxShadow: '0 0 40px rgba(245, 158, 11, 0.6)' },
+        },
+        // Additional keyframes for Framer Motion replacement
+        slideInLeft: {
+          '0%': { opacity: '0', transform: 'translateX(-60px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        slideInRight: {
+          '0%': { opacity: '0', transform: 'translateX(60px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        slideInTop: {
+          '0%': { opacity: '0', transform: 'translateY(-40px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideInBottom: {
+          '0%': { opacity: '0', transform: 'translateY(40px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        headerSlide: {
+          '0%': { opacity: '0', transform: 'translateX(-100px) scale(0.9)' },
+          '100%': { opacity: '1', transform: 'translateX(0) scale(1)' },
+        },
+        headerSlideRight: {
+          '0%': { opacity: '0', transform: 'translateX(100px) scale(0.9)' },
+          '100%': { opacity: '1', transform: 'translateX(0) scale(1)' },
         },
       },
       boxShadow: {
@@ -240,6 +272,16 @@ export default {
             // Normal animations apply
           },
         },
+        // Animation delay utilities
+        '.animation-delay-0': { 'animation-delay': '0ms' },
+        '.animation-delay-100': { 'animation-delay': '100ms' },
+        '.animation-delay-200': { 'animation-delay': '200ms' },
+        '.animation-delay-300': { 'animation-delay': '300ms' },
+        '.animation-delay-400': { 'animation-delay': '400ms' },
+        '.animation-delay-500': { 'animation-delay': '500ms' },
+        // Scale utilities for precise control
+        '.scale-102': { transform: 'scale(1.02)' },
+        '.hover\\:scale-102:hover': { transform: 'scale(1.02)' },
       })
       
       // 2025: Custom focus-visible ring utilities

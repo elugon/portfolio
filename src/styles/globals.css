@@ -257,18 +257,8 @@
     }
   }
   
-  .animate-fade-in {
-    @apply animate-fade-in;
-  }
-  
-  .animate-slide-up {
-    @apply animate-slide-up;
-  }
-  
+  /* Animation classes are defined in tailwind.config.js */
   /* 2025: Enhanced motion-safe utilities */
-  .motion-safe\:animate-fade-in {
-    @apply animate-fade-in;
-  }
   
   .motion-safe\:hover-lift {
     @apply hover:-translate-y-1 hover:shadow-card-hover;

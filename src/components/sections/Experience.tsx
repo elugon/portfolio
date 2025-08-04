@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
 import React, { useState } from "react";
 import ExperienceCard from "../common/ExperienceCard";
 import { experiences } from "../../data/experience";
 import type { SectionProps } from "../../types";
+import { animationClasses } from "../../utils/tailwind-animations";
 
 interface ExperienceProps extends SectionProps {
   limit?: number;
@@ -17,33 +17,24 @@ export default function Experience({
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
-      className={`section-container-xl overflow-hidden text-left section-gradient-subtle ${className}`}
+    <div
+      className={`section-container-xl overflow-hidden text-left section-gradient-subtle ${animationClasses.fadeInUp} ${className}`}
     >
       {/* Grid pattern background */}
       <div className="absolute inset-0 grid-pattern opacity-5" />
       
       {/* Enhanced section header */}
       <div className="section-header-fixed">
-        <motion.h3 
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="section-title text-3d"
+        <h3 
+          className={`section-title text-3d ${animationClasses.fadeInDown}`}
         >
           {title}
-        </motion.h3>
-        <motion.p 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-2 text-muted text-sm"
+        </h3>
+        <p 
+          className={`mt-2 text-muted text-sm ${animationClasses.fadeInUp} animation-delay-200`}
         >
           My Professional Journey
-        </motion.p>
+        </p>
       </div>
 
       {/* Timeline indicator */}
@@ -54,14 +45,10 @@ export default function Experience({
         {/* Desktop: Vertical timeline layout */}
         <div className="hidden lg:block timeline-container">
           {displayedExperiences.map((experience, index) => (
-            <motion.div
+            <div
               key={experience.id}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`${index % 2 === 0 ? 'timeline-item-left' : 'timeline-item-right'} ${
-                ''
-              }`}
+              className={`${index % 2 === 0 ? 'timeline-item-left' : 'timeline-item-right'} ${index % 2 === 0 ? animationClasses.slideInFromLeft : animationClasses.slideInFromRight}`}
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Timeline dot */}
               <div className="timeline-dot" />
@@ -73,7 +60,7 @@ export default function Experience({
                   className="timeline-card-full"
                 />
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
@@ -112,30 +99,12 @@ export default function Experience({
       </div>
 
       {/* Floating decoration elements */}
-      <motion.div 
-        animate={{ 
-          y: [0, -20, 0],
-          rotate: [0, 180, 360]
-        }}
-        transition={{ 
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-        className="absolute top-40 right-10 w-64 h-64 bg-primary-400/5 rounded-full blur-3xl"
+      <div 
+        className="absolute top-40 right-10 w-64 h-64 bg-primary-400/5 rounded-full blur-3xl animate-float"
       />
-      <motion.div 
-        animate={{ 
-          y: [0, 20, 0],
-          rotate: [360, 180, 0]
-        }}
-        transition={{ 
-          duration: 25,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-        className="absolute bottom-40 left-10 w-96 h-96 bg-secondary-400/5 rounded-full blur-3xl"
+      <div 
+        className="absolute bottom-40 left-10 w-96 h-96 bg-secondary-400/5 rounded-full blur-3xl animate-float animation-delay-500"
       />
-    </motion.div>
+    </div>
   );
 }

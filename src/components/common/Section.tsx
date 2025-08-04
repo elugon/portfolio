@@ -1,6 +1,5 @@
-import { motion } from "framer-motion";
 import React from "react";
-import { motionPresets } from "../../utils/animations";
+import { animationClasses } from "../../utils/tailwind-animations";
 import type { SectionProps } from "../../types";
 
 interface ExtendedSectionProps extends SectionProps {
@@ -18,15 +17,13 @@ export default function Section({
   headerClassName = ""
 }: ExtendedSectionProps) {
   return (
-    <motion.section
-      {...motionPresets.fadeInUp}
-      className={`my-screen relative mx-auto flex max-w-full flex-col items-center justify-evenly overflow-hidden ${containerClassName}`}
+    <section
+      className={`my-screen relative mx-auto flex max-w-full flex-col items-center justify-evenly overflow-hidden ${containerClassName} ${animationClasses.fadeInUp}`}
       id={title?.toLowerCase().replace(/\s+/g, '-')}
     >
       {title && (
-        <motion.div
-          {...motionPresets.slideInFromTop}
-          className={`absolute top-16 text-center ${headerClassName}`}
+        <div
+          className={`absolute top-16 text-center ${headerClassName} ${animationClasses.slideInFromTop}`}
         >
           <h2 className="text-2xl uppercase tracking-[15px] text-gray-500 mb-2">
             {title}
@@ -36,12 +33,12 @@ export default function Section({
               {subtitle}
             </p>
           )}
-        </motion.div>
+        </div>
       )}
       
       <div className={`relative z-20 ${className}`}>
         {children}
       </div>
-    </motion.section>
+    </section>
   );
 }

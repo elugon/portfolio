@@ -1,4 +1,4 @@
-import React from 'react';
+// TypeScript type definitions for the portfolio application
 
 // Core interfaces following Single Responsibility Principle
 export interface PersonalInfo {
@@ -46,27 +46,8 @@ export interface Project {
   status: 'completed' | 'in-progress' | 'archived';
 }
 
-// Animation configuration types
-export interface MotionConfig {
-  initial: Record<string, string | number | boolean>;
-  animate: Record<string, string | number | boolean>;
-  transition: Record<string, string | number | boolean>;
-  viewport?: Record<string, string | number | boolean>;
-}
-
-// Motion component props to fix TypeScript issues
-export interface MotionDivProps extends MotionConfig {
-  className?: string;
-  children?: React.ReactNode;
-  whileInView?: Record<string, string | number | boolean>;
-  whileHover?: Record<string, string | number | boolean>;
-}
-
-export interface MotionNavProps extends MotionConfig {
-  className?: string;
-  children?: React.ReactNode;
-  'aria-label'?: string;
-}
+// Animation configuration is now handled by Tailwind CSS classes
+// No need for complex motion interfaces
 
 // Component prop interfaces
 export interface BaseComponentProps {

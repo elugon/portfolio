@@ -4,7 +4,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.elugonzalez.com',
+  site: 'https://portfolio-elu-gonzalez.vercel.app',
   integrations: [react()],
   output: 'static',
   adapter: undefined,

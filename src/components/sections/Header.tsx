@@ -1,8 +1,7 @@
-import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { SocialIcon } from "react-social-icons";
 import { socialLinks } from "../../data/personal-info";
-import { motionPresets } from "../../utils/animations";
+import { animationClasses } from "../../utils/tailwind-animations";
 import ThemeToggle from "../ui/ThemeToggle";
 
 const smoothScrollTo = (elementId: string) => {
@@ -35,9 +34,8 @@ export default function Header({ className = "" }: HeaderProps) {
     <header className={`glass sticky top-0 z-50 ${className}`}>
       <div className="container-xl flex-between py-3">
         {/* Logo/Brand */}
-        <motion.div
-          {...motionPresets.headerSlideIn}
-          className="flex items-center"
+        <div
+          className={`flex items-center ${animationClasses.headerSlideIn}`}
         >
           <a 
             href="#hero"
@@ -50,12 +48,11 @@ export default function Header({ className = "" }: HeaderProps) {
           >
             EG
           </a>
-        </motion.div>
+        </div>
 
         {/* Navigation Menu */}
-        <motion.nav
-          {...motionPresets.headerSlideIn}
-          className="hidden md:flex items-center space-x-1"
+        <nav
+          className={`hidden md:flex items-center space-x-1 ${animationClasses.headerSlideIn}`}
           aria-label="Main navigation"
         >
           {[
@@ -78,12 +75,11 @@ export default function Header({ className = "" }: HeaderProps) {
               {item.label}
             </a>
           ))}
-        </motion.nav>
+        </nav>
 
         {/* Social Links & Contact */}
-        <motion.div
-          {...motionPresets.headerSlideInRight}
-          className="flex items-center space-x-2"
+        <div
+          className={`flex items-center space-x-2 ${animationClasses.headerSlideInRight}`}
         >
           {/* Social Icons */}
           <div className="hidden sm:flex items-center space-x-1 md:space-x-2">
@@ -157,17 +153,14 @@ export default function Header({ className = "" }: HeaderProps) {
               )}
             </svg>
           </button>
-        </motion.div>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <motion.div
+        <div
           id="mobile-menu"
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          className="block md:hidden border-t border-neutral-700 bg-neutral-900/95 backdrop-blur-sm"
+          className={`block md:hidden border-t border-neutral-700 bg-neutral-900/95 backdrop-blur-sm ${animationClasses.fadeInDown}`}
         >
           <div className="px-4 py-3 space-y-2">
             {[
@@ -217,7 +210,7 @@ export default function Header({ className = "" }: HeaderProps) {
               )}
             </div>
           </div>
-        </motion.div>
+        </div>
       )}
     </header>
   );
