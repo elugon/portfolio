@@ -48,10 +48,10 @@ export interface Project {
 
 // Animation configuration types
 export interface MotionConfig {
-  initial: Record<string, any>;
-  animate: Record<string, any>;
-  transition: Record<string, any>;
-  viewport?: Record<string, any>;
+  initial: Record<string, string | number | boolean>;
+  animate: Record<string, string | number | boolean>;
+  transition: Record<string, string | number | boolean>;
+  viewport?: Record<string, string | number | boolean>;
 }
 
 // Motion component props to fix TypeScript issues

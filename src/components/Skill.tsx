@@ -14,7 +14,7 @@ import gthub from "../../public/skillsImages/github.png";
 
 type Props = Record<string, never>;
 
-type SkillData = [any, string];
+type SkillData = [{ src: string }, string];
 
 const javascript: SkillData = [
   js,

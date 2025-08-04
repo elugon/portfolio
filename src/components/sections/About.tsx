@@ -153,7 +153,7 @@ export default function About({
                 className="flex flex-wrap gap-sm"
               >
                 <a href="#contact" className="btn-modern">
-                  Let's Work Together
+                  Let&apos;s Work Together
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
