@@ -3,7 +3,6 @@
   "outputDirectory": "dist",
   "devCommand": "npm run dev",
   "framework": null,
-  "functions": {},
   "headers": [
     {
       "source": "/(.*)",
