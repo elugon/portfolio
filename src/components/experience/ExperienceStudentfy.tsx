@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import { animationClasses } from "../../utils/tailwind-animations"
 import StudentfyLogo from "../../../public/experiencesImages/StudentfyLogo.png"
 
 type Props = Record<string, never>
@@ -7,22 +7,12 @@ type Props = Record<string, never>
 export default function ExperienceCards(_props: Props) {
   return (
     <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 h-5/6 bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden'>
-    <motion.div
-    initial={{
-        y:-100,
-        opacity:0
-    }}
-    transition={{duration:1.2}}
-    whileInView={{
-        opacity:1,
-        y:0
-    }}
-    viewport={{once:true}}
-    className='w-32 h-32 rounded-lg xl:w-[200px] xl:h-[200px] object-cover object-center'
+    <div
+    className={`w-32 h-32 rounded-lg xl:w-[200px] xl:h-[200px] object-cover object-center ${animationClasses.slideInFromTop} motion-reduce-animation`}
     >
         <img src={StudentfyLogo.src} 
         alt="Studentfy Logo"/>
-    </motion.div>
+    </div>
 
     <div className='px-0 md:px-10'>
         <h4 className='text-sm md:text-4xl font-light'>IT Support</h4>

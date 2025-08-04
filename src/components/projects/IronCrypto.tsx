@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import { animationClasses } from "../../utils/tailwind-animations"
 import ironCryptoLogo from "../../../public/projectsImages/ironCrypto.png"
 
 type Props = Record<string, never>
@@ -7,25 +7,12 @@ type Props = Record<string, never>
 export default function IronCrypto(_props: Props) {
   return (
     <div className='w-screen flex-shrink-0 flex flex-col space-y-5 items-center justify-center p-2 mt-2 md:p-44 h-screen'>
-    <motion.div
-        initial={{
-            y:-300
-        }}
-        transition={{
-            duration:1.2
-        }}
-        whileInView={{
-            opacity:1,
-            y:0
-        }}
-        viewport={{
-            once:true
-        }}
-        className='h-auto w-auto mx-1 lg:h-[750px] lg:w-[600px] rounded'
+    <div
+        className={`h-auto w-auto mx-1 lg:h-[750px] lg:w-[600px] rounded ${animationClasses.slideInFromTop} motion-reduce-animation`}
     >
         <img src={ironCryptoLogo.src} 
             alt="iron crypto Logo"/>
-    </motion.div>
+    </div>
     <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
         <h4 className='text-sm sm:text-xl md:text-4xl font-semibold text-center'>
             <span className='underline decoration-primary/50'>

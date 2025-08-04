@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../../hooks/useTheme';
+import { hoverClasses } from '../../utils/tailwind-animations';
 
 interface ThemeToggleProps {
   className?: string;
@@ -38,48 +38,39 @@ export default function ThemeToggle({ className = '' }: ThemeToggleProps) {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="btn-ghost p-2 rounded-lg"
+        className={`btn-ghost p-2 rounded-lg ${hoverClasses.button}`}
         aria-label="Toggle theme"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
-        <motion.span
+        <span
           key={currentTheme.value}
-          initial={{ scale: 0, rotate: -180 }}
-          animate={{ scale: 1, rotate: 0 }}
-          exit={{ scale: 0, rotate: 180 }}
-          transition={{ duration: 0.2 }}
-          className="text-lg"
+          className="text-lg animate-scale-in motion-reduce-animation"
           aria-hidden="true"
         >
           {currentTheme.icon}
-        </motion.span>
+        </span>
         <span className="sr-only">
           Current theme: {currentTheme.label}
         </span>
       </button>
 
-      <AnimatePresence>
-        {isOpen && (
-          <>
-            {/* Backdrop */}
-            <div 
-              className="fixed inset-0 z-40"
-              onClick={() => setIsOpen(false)}
-              aria-hidden="true"
-            />
-            
-            {/* Dropdown */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: -10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: -10 }}
-              transition={{ duration: 0.15 }}
-              className="absolute right-0 top-full mt-2 z-50 w-48 rounded-lg bg-neutral-800 border border-neutral-700 shadow-glow-lg backdrop-blur-sm"
-              role="menu"
-              aria-orientation="vertical"
-              aria-labelledby="theme-menu"
-            >
+      {isOpen && (
+        <>
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 z-40"
+            onClick={() => setIsOpen(false)}
+            aria-hidden="true"
+          />
+          
+          {/* Dropdown */}
+          <div
+            className="absolute right-0 top-full mt-2 z-50 w-48 rounded-lg bg-neutral-800 border border-neutral-700 shadow-glow-lg backdrop-blur-sm animate-slide-up motion-reduce-animation"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="theme-menu"
+          >
               <div className="p-1">
                 {themes.map((themeOption) => (
                   <button
@@ -110,20 +101,17 @@ export default function ThemeToggle({ className = '' }: ThemeToggleProps) {
                       )}
                     </div>
                     {theme === themeOption.value && (
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        className="ml-auto w-2 h-2 bg-amber-400 rounded-full"
+                      <div
+                        className="ml-auto w-2 h-2 bg-amber-400 rounded-full animate-scale-in motion-reduce-animation"
                         aria-hidden="true"
                       />
                     )}
                   </button>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </>
         )}
-      </AnimatePresence>
     </div>
   );
 }
