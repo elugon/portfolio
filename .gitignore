@@ -47,3 +47,6 @@ Thumbs.db
 
 # Astro
 .astro/
+
+# Claude Code
+CLAUDE.md
