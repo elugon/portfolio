@@ -5,6 +5,7 @@ import { animationClasses, hoverClasses } from "../../utils/tailwind-animations"
 interface ExperienceCardProps extends Experience {
   className?: string;
   onClick?: () => void;
+  hideCompanyLogo?: boolean;
 }
 
 export default function ExperienceCard({ 
@@ -23,7 +24,8 @@ export default function ExperienceCard({
   companySize,
   industry,
   className = "",
-  onClick
+  onClick,
+  hideCompanyLogo = false
 }: ExperienceCardProps) {
   return (
     <article 
@@ -33,24 +35,26 @@ export default function ExperienceCard({
       {/* Grid Container with consistent spacing and responsive layout */}
       <div className="h-full grid grid-rows-[auto_1fr] gap-6">
         {/* Header Section - Company Logo and Basic Info */}
-        <header className="grid grid-cols-[auto_1fr] gap-4 sm:gap-6 border-b border-neutral-700/50 pb-4">
-          {/* Logo Column - Enhanced prominence */}
-          <div className={`relative ${animationClasses.scaleIn}`}>
-            <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36 rounded-3xl overflow-hidden glass-card padding-md neon-border shadow-2xl">
-              <img 
-                src={logo} 
-                alt={`${company} logo`}
-                className="w-full h-full object-contain hover:scale-110 transition-all duration-500 drop-shadow-lg"
-                loading="lazy"
-              />
+        <header className={`${hideCompanyLogo ? 'block' : 'grid grid-cols-[auto_1fr] gap-4 sm:gap-6'} border-b border-neutral-700/50 pb-4`}>
+          {/* Logo Column - Enhanced prominence (only if not hidden) */}
+          {!hideCompanyLogo && (
+            <div className={`relative ${animationClasses.scaleIn}`}>
+              <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36 rounded-3xl overflow-hidden glass-card padding-md neon-border shadow-2xl">
+                <img 
+                  src={logo} 
+                  alt={`${company} logo`}
+                  className="w-full h-full object-contain hover:scale-110 transition-all duration-500 drop-shadow-lg"
+                  loading="lazy"
+                />
+              </div>
+              {/* Enhanced floating accent with glow */}
+              <div className="absolute -top-3 -right-3 w-6 h-6 bg-primary-400 rounded-full animate-pulse shadow-xl shadow-primary-400/60" />
+              {/* Additional subtle glow effect */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-400/15 to-secondary-400/15 opacity-0 hover:opacity-100 transition-opacity duration-500" />
+              {/* Premium border highlight */}
+              <div className="absolute inset-0 rounded-3xl border-2 border-gradient-to-r from-primary-400/20 via-transparent to-secondary-400/20" />
             </div>
-            {/* Enhanced floating accent with glow */}
-            <div className="absolute -top-3 -right-3 w-6 h-6 bg-primary-400 rounded-full animate-pulse shadow-xl shadow-primary-400/60" />
-            {/* Additional subtle glow effect */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-400/15 to-secondary-400/15 opacity-0 hover:opacity-100 transition-opacity duration-500" />
-            {/* Premium border highlight */}
-            <div className="absolute inset-0 rounded-3xl border-2 border-gradient-to-r from-primary-400/20 via-transparent to-secondary-400/20" />
-          </div>
+          )}
           
           {/* Info Column */}
           <div className="grid grid-rows-[auto_auto_auto] gap-2 min-w-0">

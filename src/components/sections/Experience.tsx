@@ -42,26 +42,85 @@ export default function Experience({
 
       {/* Experience cards container */}
       <div className="section-content-fixed">
-        {/* Desktop: Vertical timeline layout */}
+        {/* Desktop: Enhanced timeline layout with logos on opposite sides */}
         <div className="hidden lg:block timeline-container">
-          {displayedExperiences.map((experience, index) => (
-            <div
-              key={experience.id}
-              className={`${index % 2 === 0 ? 'timeline-item-left' : 'timeline-item-right'} ${index % 2 === 0 ? animationClasses.slideInFromLeft : animationClasses.slideInFromRight}`}
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              {/* Timeline dot */}
-              <div className="timeline-dot" />
-              
-              {/* Experience card */}
-              <div className={`inline-block ${index % 2 === 0 ? 'timeline-content-left' : 'timeline-content-right'}`}>
-                <ExperienceCard 
-                  {...experience}
-                  className="timeline-card-full"
-                />
+          {displayedExperiences.map((experience, index) => {
+            const isLeft = index % 2 === 0;
+            return (
+              <div
+                key={experience.id}
+                className={`timeline-item ${isLeft ? animationClasses.slideInFromLeft : animationClasses.slideInFromRight}`}
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                {/* Timeline dot */}
+                <div className="timeline-dot" />
+                
+                {/* Layout: Logo on one side, Card on the other */}
+                <div className="grid grid-cols-2 gap-8 items-center">
+                  {/* Left side content */}
+                  {isLeft ? (
+                    <>
+                      {/* Card on left */}
+                      <div className="timeline-content-left">
+                        <ExperienceCard 
+                          {...experience}
+                          className="timeline-card-full"
+                          hideCompanyLogo={true}
+                        />
+                      </div>
+                      {/* Large Logo on right */}
+                      <div className="timeline-content-right flex justify-center">
+                        <div className={`relative ${animationClasses.scaleIn}`} style={{ animationDelay: `${index * 100 + 200}ms` }}>
+                          <div className="w-40 h-40 xl:w-48 xl:h-48 rounded-3xl overflow-hidden glass-card padding-lg neon-border shadow-2xl">
+                            <img 
+                              src={experience.logo} 
+                              alt={`${experience.company} logo`}
+                              className="w-full h-full object-contain hover:scale-110 transition-all duration-500 drop-shadow-2xl"
+                              loading="lazy"
+                            />
+                          </div>
+                          {/* Premium floating elements */}
+                          <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary-400 rounded-full animate-pulse shadow-2xl shadow-primary-400/60" />
+                          <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-secondary-400 rounded-full animate-pulse shadow-xl shadow-secondary-400/60" style={{ animationDelay: '0.5s' }} />
+                          {/* Glow effect */}
+                          <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-400/20 to-secondary-400/20 opacity-0 hover:opacity-100 transition-opacity duration-500" />
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      {/* Large Logo on left */}
+                      <div className="timeline-content-left flex justify-center">
+                        <div className={`relative ${animationClasses.scaleIn}`} style={{ animationDelay: `${index * 100 + 200}ms` }}>
+                          <div className="w-40 h-40 xl:w-48 xl:h-48 rounded-3xl overflow-hidden glass-card padding-lg neon-border shadow-2xl">
+                            <img 
+                              src={experience.logo} 
+                              alt={`${experience.company} logo`}
+                              className="w-full h-full object-contain hover:scale-110 transition-all duration-500 drop-shadow-2xl"
+                              loading="lazy"
+                            />
+                          </div>
+                          {/* Premium floating elements */}
+                          <div className="absolute -top-4 -left-4 w-8 h-8 bg-primary-400 rounded-full animate-pulse shadow-2xl shadow-primary-400/60" />
+                          <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-secondary-400 rounded-full animate-pulse shadow-xl shadow-secondary-400/60" style={{ animationDelay: '0.5s' }} />
+                          {/* Glow effect */}
+                          <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-400/20 to-secondary-400/20 opacity-0 hover:opacity-100 transition-opacity duration-500" />
+                        </div>
+                      </div>
+                      {/* Card on right */}
+                      <div className="timeline-content-right">
+                        <ExperienceCard 
+                          {...experience}
+                          className="timeline-card-full"
+                          hideCompanyLogo={true}
+                        />
+                      </div>
+                    </>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Mobile: Horizontal scroll */}
