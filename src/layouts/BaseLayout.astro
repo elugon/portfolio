@@ -148,6 +148,16 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
         outline-offset: 2px;
       }
       
+      /* Fix scrollbar implementation */
+      html {
+        overflow-y: hidden;
+      }
+      
+      body {
+        overflow-y: scroll;
+        height: 100vh;
+      }
+      
       /* Reduce motion preferences */
       @media (prefers-reduced-motion: reduce) {
         *,
@@ -160,7 +170,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
       }
     </style>
   </head>
-  <body>
+  <body class="scrollbar scrollbar-track-slate-800 scrollbar-thumb-amber-500 scrollbar-hover:scrollbar-thumb-amber-400 scrollbar-w-3 min-h-screen overflow-y-auto">
     {sectionId ? (
       <section id={sectionId} class={sectionClass}>
         <slot />
