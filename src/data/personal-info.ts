@@ -17,6 +17,10 @@ export const socialLinks: SocialLink[] = [
     url: "https://www.instagram.com/elugon_10/"
   },
   {
+    platform: "x",
+    url: "https://x.com/elugon10"
+  },
+  {
     platform: "email",
     url: "#contact"
   }

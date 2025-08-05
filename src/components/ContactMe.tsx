@@ -21,6 +21,7 @@ export default function ContactMe(_props: Props) {
   
   const linkedInUrl = socialLinks.find(link => link.platform === 'linkedin')?.url;
   const instagramUrl = socialLinks.find(link => link.platform === 'instagram')?.url;
+  const xUrl = socialLinks.find(link => link.platform === 'x')?.url;
 
   return (
     <div className="section-container-xl section-gradient-subtle">
@@ -191,6 +192,27 @@ export default function ContactMe(_props: Props) {
                     </div>
                     <span className="text-sm font-medium text-neutral-300 group-hover:text-pink-400 transition-colors">
                       Instagram
+                    </span>
+                  </div>
+                </a>
+              )}
+              
+              {xUrl && (
+                <a
+                  href={xUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass-card-hover p-6 rounded-2xl group hover:scale-110 transition-all duration-300"
+                  aria-label="Follow on X (Twitter)"
+                >
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="p-3 rounded-full bg-neutral-500/10 text-neutral-400 group-hover:bg-neutral-500/20 transition-colors">
+                      <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                      </svg>
+                    </div>
+                    <span className="text-sm font-medium text-neutral-300 group-hover:text-neutral-400 transition-colors">
+                      X (Twitter)
                     </span>
                   </div>
                 </a>
