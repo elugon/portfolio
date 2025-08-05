@@ -1,234 +1,211 @@
-import React from "react";
-import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
-import { useForm } from "react-hook-form";
-
-type Inputs = {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-};
+import React, { useState } from "react";
+import { PhoneIcon, MapPinIcon, EnvelopeIcon, ClipboardDocumentIcon, CheckIcon } from "@heroicons/react/24/solid";
+import { socialLinks } from '../data/personal-info';
 
 type Props = {
   "client:visible"?: boolean;
 };
 
 export default function ContactMe(_props: Props) {
-  const { 
-    register, 
-    handleSubmit, 
-    formState: { errors, isSubmitting }
-  } = useForm<Inputs>();
+  const [copiedField, setCopiedField] = useState<string | null>(null);
   
-  const onSubmit = (formData: Inputs) => {
-    // Enhanced mailto with better encoding
-    const subject = encodeURIComponent(formData.subject || 'Portfolio Contact');
-    const body = encodeURIComponent(
-      `Hi Elu,\n\nMy name is ${formData.name}.\n\n${formData.message}\n\nBest regards,\n${formData.name}\nEmail: ${formData.email}`
-    );
-    window.location.href = `mailto:elugon10@gmail.com?subject=${subject}&body=${body}`;
+  const copyToClipboard = async (text: string, field: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedField(field);
+      setTimeout(() => setCopiedField(null), 2000);
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+    }
   };
+  
+  const linkedInUrl = socialLinks.find(link => link.platform === 'linkedin')?.url;
+  const instagramUrl = socialLinks.find(link => link.platform === 'instagram')?.url;
 
   return (
-    <div className="my-screen relative mx-auto flex max-w-7xl flex-col items-center justify-evenly px-6 text-center sm:px-10">
+    <div className="section-container-xl section-gradient-subtle">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 grid-pattern opacity-20 pointer-events-none"></div>
       
-      <header>
-        <h2 className="section-title absolute top-8 sm:top-16">
-          Contact
+      <header className="section-header-inline relative z-10">
+        <h2 className="text-2xl sm:text-3xl font-bold uppercase tracking-[0.2em] text-neutral-400">
+          Get In Touch
         </h2>
+        <div className="spacing-sm">
+          <h3 className="text-lg sm:text-xl font-medium text-neutral-300 max-w-3xl mx-auto text-center">
+            Interested in working together? I&apos;m{" "}
+            <span className="text-gradient font-semibold">
+              open to new opportunities
+            </span>
+            {" "}and always excited to discuss innovative projects.
+          </h3>
+        </div>
       </header>
 
-      <div className="flex flex-col space-y-6 pt-20 sm:pt-28">
-        <h3 className="section-subtitle text-center">
-          Ready to collaborate? I&apos;d love to hear about your next project.{" "}
-          <span className="text-gradient font-semibold">Let&apos;s create something amazing together!</span>
-        </h3>
-      </div>
-
-      {/* Contact Information */}
-      <section 
-        className="mb-6 mt-6 space-y-4 md:mt-12"
-        aria-labelledby="contact-info-heading"
-      >
-        <h4 id="contact-info-heading" className="sr-only">
-          Contact Information
-        </h4>
-        
-        <div className="flex items-center justify-center space-x-4">
-          <PhoneIcon 
-            className="h-6 w-6 text-primary-400 sm:h-8 sm:w-8" 
-            aria-hidden="true"
-          />
-          <a 
-            href="tel:+34634918659"
-            className="text-sm text-neutral-300 transition-colors hover:text-primary-400 sm:text-lg"
-            aria-label="Call phone number +34 634 91 86 59"
-          >
-            +34 634 91 86 59
-          </a>
-        </div>
-
-        <div className="flex items-center justify-center space-x-4">
-          <EnvelopeIcon 
-            className="h-6 w-6 text-primary-400 sm:h-8 sm:w-8" 
-            aria-hidden="true"
-          />
-          <a 
-            href="mailto:elugon10@gmail.com"
-            className="text-sm text-neutral-300 transition-colors hover:text-primary-400 sm:text-lg"
-            aria-label="Send email to elugon10@gmail.com"
-          >
-            elugon10@gmail.com
-          </a>
-        </div>
-
-        <div className="flex items-center justify-center space-x-4">
-          <MapPinIcon 
-            className="h-6 w-6 text-primary-400 sm:h-8 sm:w-8" 
-            aria-hidden="true"
-          />
-          <span 
-            className="text-sm text-neutral-300 sm:text-lg"
-            aria-label="Located in Barcelona, Spain"
-          >
-            Barcelona, Spain
-          </span>
-        </div>
-      </section>
-
-      {/* Contact Form */}
-      <section className="w-full max-w-2xl">
-        <h4 id="contact-form" className="sr-only">
-          Contact Form
-        </h4>
-        
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="space-y-6"
-          noValidate
-          aria-label="Contact form"
-        >
-          {/* Name and Email Row */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div>
-              <label htmlFor="name" className="form-label">
-                Full Name *
-              </label>
-              <input
-                id="name"
-                {...register("name", { 
-                  required: "Name is required",
-                  minLength: { value: 2, message: "Name must be at least 2 characters" }
-                })}
-                placeholder="Your full name"
-                className="form-input"
-                type="text"
-                aria-required="true"
-                aria-invalid={errors.name ? 'true' : 'false'}
-                aria-describedby={errors.name ? 'name-error' : undefined}
-              />
-              {errors.name && (
-                <p id="name-error" className="form-error" role="alert">
-                  {errors.name.message}
-                </p>
-              )}
+      <div className="section-content-inline relative z-10">
+        <div className="container-md">
+          
+          {/* Contact Information Grid */}
+          <div className="grid-1-2-3 gap-lg mb-16">
+            
+            {/* Phone Card */}
+            <div className="card-sm glass-card-hover group cursor-pointer neon-border"
+                 onClick={() => copyToClipboard("+34634918659", "phone")}>
+              <div className="flex flex-col items-center text-center spacing-sm">
+                <div className="p-3 rounded-full bg-primary-400/10 text-primary-400 group-hover:bg-primary-400/20 group-hover:scale-110 transition-all duration-300">
+                  <PhoneIcon className="h-6 w-6" aria-hidden="true" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-neutral-100 mb-2">Phone</h4>
+                  <a href="tel:+34634918659" 
+                     className="text-neutral-300 hover:text-primary-400 transition-colors text-sm sm:text-base"
+                     onClick={(e) => e.stopPropagation()}>
+                    +34 634 91 86 59
+                  </a>
+                </div>
+                <button
+                  className="mt-4 p-2 rounded-lg hover:bg-neutral-800/50 transition-all duration-200 hover:scale-110"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    copyToClipboard("+34634918659", "phone");
+                  }}
+                  aria-label="Copy phone number"
+                >
+                  {copiedField === "phone" ? (
+                    <div className="flex items-center gap-2 text-green-500">
+                      <CheckIcon className="h-4 w-4" />
+                      <span className="text-sm">Copied!</span>
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-2 text-neutral-400 hover:text-primary-400">
+                      <ClipboardDocumentIcon className="h-4 w-4" />
+                      <span className="text-sm">Copy</span>
+                    </div>
+                  )}
+                </button>
+              </div>
             </div>
-
-            <div>
-              <label htmlFor="email" className="form-label">
-                Email Address *
-              </label>
-              <input
-                id="email"
-                {...register("email", { 
-                  required: "Email is required",
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: "Please enter a valid email address"
-                  }
-                })}
-                placeholder="your.email@example.com"
-                className="form-input"
-                type="email"
-                autoComplete="email"
-                aria-required="true"
-                aria-invalid={errors.email ? 'true' : 'false'}
-                aria-describedby={errors.email ? 'email-error' : undefined}
-              />
-              {errors.email && (
-                <p id="email-error" className="form-error" role="alert">
-                  {errors.email.message}
-                </p>
-              )}
+            
+            {/* Email Card */}
+            <div className="card-sm glass-card-hover group cursor-pointer neon-border"
+                 onClick={() => copyToClipboard("elugon10@gmail.com", "email")}>
+              <div className="flex flex-col items-center text-center spacing-sm">
+                <div className="p-3 rounded-full bg-primary-400/10 text-primary-400 group-hover:bg-primary-400/20 group-hover:scale-110 transition-all duration-300">
+                  <EnvelopeIcon className="h-6 w-6" aria-hidden="true" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-neutral-100 mb-2">Email</h4>
+                  <a href="mailto:elugon10@gmail.com" 
+                     className="text-neutral-300 hover:text-primary-400 transition-colors text-sm sm:text-base"
+                     onClick={(e) => e.stopPropagation()}>
+                    elugon10@gmail.com
+                  </a>
+                </div>
+                <button
+                  className="mt-4 p-2 rounded-lg hover:bg-neutral-800/50 transition-all duration-200 hover:scale-110"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    copyToClipboard("elugon10@gmail.com", "email");
+                  }}
+                  aria-label="Copy email address"
+                >
+                  {copiedField === "email" ? (
+                    <div className="flex items-center gap-2 text-green-500">
+                      <CheckIcon className="h-4 w-4" />
+                      <span className="text-sm">Copied!</span>
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-2 text-neutral-400 hover:text-primary-400">
+                      <ClipboardDocumentIcon className="h-4 w-4" />
+                      <span className="text-sm">Copy</span>
+                    </div>
+                  )}
+                </button>
+              </div>
+            </div>
+            
+            {/* Location Card */}
+            <div className="card-sm glass-card">
+              <div className="flex flex-col items-center text-center spacing-sm">
+                <div className="p-3 rounded-full bg-primary-400/10 text-primary-400">
+                  <MapPinIcon className="h-6 w-6" aria-hidden="true" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-neutral-100 mb-2">Location</h4>
+                  <span className="text-neutral-300 text-sm sm:text-base">
+                    Barcelona, Spain
+                  </span>
+                </div>
+                <div className="mt-4 flex items-center gap-2 text-sm text-neutral-400">
+                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                  Available for remote work
+                </div>
+              </div>
             </div>
           </div>
-
-          {/* Subject */}
-          <div>
-            <label htmlFor="subject" className="form-label">
-              Subject
-            </label>
-            <input
-              id="subject"
-              {...register("subject", {
-                maxLength: { value: 100, message: "Subject must be less than 100 characters" }
-              })}
-              placeholder="Project collaboration, job opportunity, etc."
-              className="form-input"
-              type="text"
-              aria-invalid={errors.subject ? 'true' : 'false'}
-              aria-describedby={errors.subject ? 'subject-error' : undefined}
-            />
-            {errors.subject && (
-              <p id="subject-error" className="form-error" role="alert">
-                {errors.subject.message}
-              </p>
-            )}
-          </div>
-
-          {/* Message */}
-          <div>
-            <label htmlFor="message" className="form-label">
-              Message *
-            </label>
-            <textarea
-              id="message"
-              {...register("message", { 
-                required: "Message is required",
-                minLength: { value: 10, message: "Message must be at least 10 characters" },
-                maxLength: { value: 1000, message: "Message must be less than 1000 characters" }
-              })}
-              placeholder="Tell me about your project, ideas, or how we can work together..."
-              className="form-input min-h-[120px] resize-y"
-              rows={5}
-              aria-required="true"
-              aria-invalid={errors.message ? 'true' : 'false'}
-              aria-describedby={errors.message ? 'message-error' : 'message-hint'}
-            />
-            <p id="message-hint" className="mt-1 text-xs text-neutral-400">
-              Share details about your project, timeline, and any specific requirements.
+          
+          {/* Social Links Section */}
+          <div className="text-center">
+            <h4 className="text-xl font-semibold text-neutral-100 mb-6">
+              Follow Me
+            </h4>
+            <p className="text-sm sm:text-base text-neutral-300 mb-8 max-w-lg mx-auto">
+              Stay connected and follow my journey in tech, projects, and daily life.
             </p>
-            {errors.message && (
-              <p id="message-error" className="form-error" role="alert">
-                {errors.message.message}
+            
+            <div className="flex justify-center gap-6">
+              {linkedInUrl && (
+                <a
+                  href={linkedInUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass-card-hover p-6 rounded-2xl group hover:scale-110 transition-all duration-300"
+                  aria-label="Connect on LinkedIn"
+                >
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="p-3 rounded-full bg-blue-500/10 text-blue-400 group-hover:bg-blue-500/20 transition-colors">
+                      <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                    </div>
+                    <span className="text-sm font-medium text-neutral-300 group-hover:text-blue-400 transition-colors">
+                      LinkedIn
+                    </span>
+                  </div>
+                </a>
+              )}
+              
+              {instagramUrl && (
+                <a
+                  href={instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass-card-hover p-6 rounded-2xl group hover:scale-110 transition-all duration-300"
+                  aria-label="Follow on Instagram"
+                >
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="p-3 rounded-full bg-pink-500/10 text-pink-400 group-hover:bg-pink-500/20 transition-colors">
+                      <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12.017 0C8.396 0 7.989.016 6.756.08 5.526.148 4.719.316 4.019.63c-.728.317-1.365.74-1.99 1.365C1.404 2.62.981 3.257.664 3.985.35 4.685.182 5.492.114 6.722.05 7.955.034 8.362.034 11.983c0 3.621.016 4.028.08 5.261.068 1.23.236 2.037.55 2.737.317.728.74 1.365 1.365 1.99.625.625 1.262 1.048 1.99 1.365.7.314 1.507.482 2.737.55 1.233.064 1.64.08 5.261.08 3.621 0 4.028-.016 5.261-.08 1.23-.068 2.037-.236 2.737-.55.728-.317 1.365-.74 1.99-1.365.625-.625 1.048-1.262 1.365-1.99.314-.7.482-1.507.55-2.737.064-1.233.08-1.64.08-5.261 0-3.621-.016-4.028-.08-5.261-.068-1.23-.236-2.037-.55-2.737-.317-.728-.74-1.365-1.365-1.99C20.378 1.404 19.741.981 19.013.664 18.313.35 17.506.182 16.276.114 15.043.05 14.636.034 11.017.034h1zm-.116 5.4c3.892 0 7.067 3.175 7.067 7.067 0 3.892-3.175 7.067-7.067 7.067-3.892 0-7.067-3.175-7.067-7.067 0-3.892 3.175-7.067 7.067-7.067zm0 11.655c2.54 0 4.588-2.048 4.588-4.588 0-2.54-2.048-4.588-4.588-4.588-2.54 0-4.588 2.048-4.588 4.588 0 2.54 2.048 4.588 4.588 4.588zm5.228-15.667a1.65 1.65 0 11-3.3 0 1.65 1.65 0 013.3 0z"/>
+                      </svg>
+                    </div>
+                    <span className="text-sm font-medium text-neutral-300 group-hover:text-pink-400 transition-colors">
+                      Instagram
+                    </span>
+                  </div>
+                </a>
+              )}
+            </div>
+            
+            <div className="mt-12 text-center">
+              <p className="text-sm text-neutral-400">
+                💬 I typically respond within 24 hours
               </p>
-            )}
+            </div>
           </div>
-
-          {/* Submit Button */}
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
-            aria-describedby="submit-description"
-          >
-            {isSubmitting ? 'Preparing Email...' : 'Send Message'}
-          </button>
-          <p id="submit-description" className="text-xs text-neutral-400 text-center">
-            This will open your default email client with the message pre-filled.
-          </p>
-        </form>
-      </section>
+          
+        </div>
+      </div>
     </div>
   );
 }
