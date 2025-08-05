@@ -78,8 +78,8 @@ export default function Hero({ className = "" }: HeroProps) {
                 className={`text-lg sm:text-xl md:text-2xl text-neutral-300 leading-relaxed max-w-4xl mx-auto ${animationClasses.fadeInUp}`}
                 style={{ animationDelay: '0.5s' }}
               >
-                Crafting <span className="text-primary-400 font-semibold">exceptional digital experiences</span> with 
-                modern technologies and a passion for <span className="text-secondary-400 font-semibold">clean, efficient code</span>
+                Creando <span className="text-primary-400 font-semibold">experiencias digitales excepcionales</span> con 
+                tecnologías modernas y una pasión por el <span className="text-secondary-400 font-semibold">código limpio y eficiente</span>
               </p>
             </div>
 
@@ -95,7 +95,7 @@ export default function Hero({ className = "" }: HeroProps) {
                 >
                   5+
                 </p>
-                <p className="text-xs sm:text-sm text-neutral-400 mt-1">Years Experience</p>
+                <p className="text-xs sm:text-sm text-neutral-400 mt-1">Años de Experiencia</p>
               </div>
               <div className="text-center">
                 <p 
@@ -104,7 +104,7 @@ export default function Hero({ className = "" }: HeroProps) {
                 >
                   20+
                 </p>
-                <p className="text-xs sm:text-sm text-neutral-400 mt-1">Projects</p>
+                <p className="text-xs sm:text-sm text-neutral-400 mt-1">Proyectos</p>
               </div>
               <div className="text-center">
                 <p 
@@ -113,7 +113,7 @@ export default function Hero({ className = "" }: HeroProps) {
                 >
                   15+
                 </p>
-                <p className="text-xs sm:text-sm text-neutral-400 mt-1">Technologies</p>
+                <p className="text-xs sm:text-sm text-neutral-400 mt-1">Tecnologías</p>
               </div>
             </div>
           </div>
@@ -131,7 +131,7 @@ export default function Hero({ className = "" }: HeroProps) {
           onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
         >
           <span className="text-xs text-neutral-400 group-hover:text-primary-400 transition-colors">
-            Scroll to explore
+            Desplázate para explorar
           </span>
           <div className="h-8 w-5 rounded-full border-2 border-neutral-600 group-hover:border-primary-400 transition-colors">
             <div className="mx-auto mt-1 h-2 w-1 rounded-full bg-primary-400 animate-bounce" />

@@ -19,7 +19,7 @@ interface ValueSectionProps extends BaseComponentProps {
 }
 
 export default function ValueSection({ 
-  title = "My Core Values",
+  title = "Mis Valores Fundamentales",
   className = "",
   ...rest 
 }: ValueSectionProps) {

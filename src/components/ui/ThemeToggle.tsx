@@ -13,21 +13,21 @@ export default function ThemeToggle({ className = '' }: ThemeToggleProps) {
   const themes = [
     { 
       value: 'light' as const, 
-      label: 'Light', 
+      label: 'Claro', 
       icon: '☀️',
-      description: 'Light theme'
+      description: 'Tema claro'
     },
     { 
       value: 'dark' as const, 
-      label: 'Dark', 
+      label: 'Oscuro', 
       icon: '🌙',
-      description: 'Dark theme'
+      description: 'Tema oscuro'
     },
     { 
       value: 'system' as const, 
-      label: 'System', 
+      label: 'Sistema', 
       icon: '💻',
-      description: 'Follow system preference'
+      description: 'Seguir preferencia del sistema'
     }
   ];
 
@@ -39,7 +39,7 @@ export default function ThemeToggle({ className = '' }: ThemeToggleProps) {
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         className={`btn-ghost p-2 rounded-lg ${hoverClasses.button}`}
-        aria-label="Toggle theme"
+        aria-label="Cambiar tema"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
@@ -51,7 +51,7 @@ export default function ThemeToggle({ className = '' }: ThemeToggleProps) {
           {currentTheme.icon}
         </span>
         <span className="sr-only">
-          Current theme: {currentTheme.label}
+          Tema actual: {currentTheme.label}
         </span>
       </button>
 
@@ -85,7 +85,7 @@ export default function ThemeToggle({ className = '' }: ThemeToggleProps) {
                         : 'text-neutral-300 hover:bg-neutral-700 hover:text-neutral-100'
                     }`}
                     role="menuitem"
-                    aria-label={`Switch to ${themeOption.description}`}
+                    aria-label={`Cambiar a ${themeOption.description}`}
                   >
                     <span className="text-base" aria-hidden="true">
                       {themeOption.icon}
@@ -96,7 +96,7 @@ export default function ThemeToggle({ className = '' }: ThemeToggleProps) {
                       </span>
                       {themeOption.value === 'system' && (
                         <span className="text-xs text-neutral-400">
-                          Currently: {resolvedTheme}
+                          Actual: {resolvedTheme}
                         </span>
                       )}
                     </div>

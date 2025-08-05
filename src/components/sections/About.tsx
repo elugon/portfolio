@@ -10,7 +10,7 @@ interface AboutProps extends SectionProps {
 }
 
 export default function About({ 
-  title = "About", 
+  title = "Acerca", 
   profileImage = "/profileImages/profilePicture4.jpg",
   className = ""
 }: AboutProps) {
@@ -33,7 +33,7 @@ export default function About({
         <p 
           className={`mt-2 text-muted text-sm font-medium ${animationClasses.fadeInUp} animation-delay-200`}
         >
-          Get to Know Me Better
+          Conoce Más Sobre Mí
         </p>
       </div>
       
@@ -76,16 +76,16 @@ export default function About({
             >
               <div>
                 <h4 className="text-subtitle bg-gradient-to-r from-neutral-100 to-neutral-300 bg-clip-text text-transparent mb-4">
-                  Crafting Digital Excellence
+                  Creando Excelencia Digital
                 </h4>
                 <p className="text-body text-neutral-300 leading-relaxed mb-6">
-                  As a <span className="text-primary-400 font-semibold">Systems Engineer</span> with a passion for 
-                  creating exceptional digital experiences, {personalInfo.description}
+                  Como <span className="text-primary-400 font-semibold">Ingeniero de Sistemas</span> con una pasión por 
+                  crear experiencias digitales excepcionales, {personalInfo.description}
                 </p>
                 <p className="text-body text-neutral-400 leading-relaxed">
-                  My engineering background provides me with strong analytical and problem-solving abilities, 
-                  allowing me to tackle complex challenges with innovative solutions. I believe in writing 
-                  clean, maintainable code that not only works but scales.
+                  Mi formación en ingeniería me proporciona sólidas habilidades analíticas y de resolución de problemas, 
+                  permitiéndome abordar desafíos complejos con soluciones innovadoras. Creo en escribir 
+                  código limpio y mantenible que no solo funcione, sino que escale.
                 </p>
               </div>
 
@@ -108,13 +108,13 @@ export default function About({
                 className={`flex flex-wrap gap-3 ${animationClasses.fadeInUp} animation-delay-400`}
               >
                 <a href="#contact" className="btn-secondary text-sm px-4 py-2">
-                  Let&apos;s Work Together
+                  Trabajemos Juntos
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </a>
                 <a href="/resume.pdf" className="btn-ghost text-sm px-4 py-2">
-                  Download Resume
+                  Descargar CV
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
                   </svg>

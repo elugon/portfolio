@@ -5,7 +5,7 @@ import type { SectionProps } from "../../types";
 import { animationClasses } from "../../utils/tailwind-animations";
 
 export default function Skills({ 
-  title = "Skills",
+  title = "Habilidades",
   className = ""
 }: SectionProps) {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -36,12 +36,12 @@ export default function Skills({
       color: 'from-semantic-success-400 to-semantic-success-600' 
     },
     tools: { 
-      name: 'Tools', 
+      name: 'Herramientas', 
       icon: '🛠️',
       color: 'from-primary-400 to-primary-600' 
     },
     languages: { 
-      name: 'Languages', 
+      name: 'Lenguajes', 
       icon: '💻',
       color: 'from-semantic-warning-400 to-semantic-warning-600' 
     },
@@ -97,7 +97,7 @@ export default function Skills({
             className={`text-muted responsive-text font-medium max-w-2xl mx-auto mb-8 sm:mb-10 ${animationClasses.fadeInUp}`}
             style={{ animationDelay: '0.2s' }}
           >
-            Technologies & Tools I Master
+            Tecnologías y Herramientas que Domino
           </p>
         </div>
       </header>
@@ -107,7 +107,7 @@ export default function Skills({
         className={`absolute top-32 sm:top-36 lg:top-40 left-1/2 -translate-x-1/2 z-30 
                    w-full max-w-5xl px-4 sm:px-6 ${animationClasses.slideInFromBottom}`}
         style={{ animationDelay: '0.3s' }}
-        aria-label="Skills category filters"
+        aria-label="Filtros de categorías de habilidades"
       >
         {/* Modern filter container with rounded edges */}
         <div className="glass-card-hover padding-xs mx-auto max-w-3xl hover:border-neutral-600/40 rounded-full">
@@ -124,7 +124,7 @@ export default function Skills({
               }`}
               aria-pressed={!selectedCategory}
             >
-              All Skills
+              Todas
             </button>
             
             {categories.map((category, index) => {

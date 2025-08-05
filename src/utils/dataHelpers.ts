@@ -1,9 +1,10 @@
 import type { Experience, Skill } from '../types';
+import { getLocalizedTerm } from './i18n-mappings';
 
 // Experience utilities following DRY principle
 export class ExperienceService {
   static getCurrentExperience(experiences: Experience[]): Experience | undefined {
-    return experiences.find(exp => exp.period.includes('Present'));
+    return experiences.find(exp => exp.period.includes(getLocalizedTerm('Present')));
   }
 
   static getExperienceById(experiences: Experience[], id: string): Experience | undefined {
@@ -16,8 +17,8 @@ export class ExperienceService {
 
   static sortExperiencesByPeriod(experiences: Experience[]): Experience[] {
     return [...experiences].sort((a, b) => {
-      const aIsCurrent = a.period.includes('Present');
-      const bIsCurrent = b.period.includes('Present');
+      const aIsCurrent = a.period.includes(getLocalizedTerm('Present'));
+      const bIsCurrent = b.period.includes(getLocalizedTerm('Present'));
       
       if (aIsCurrent && !bIsCurrent) return -1;
       if (!aIsCurrent && bIsCurrent) return 1;

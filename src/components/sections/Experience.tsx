@@ -9,7 +9,7 @@ interface ExperienceProps extends SectionProps {
 }
 
 export default function Experience({ 
-  title = "Experience", 
+  title = "Experiencia", 
   limit,
   className = ""
 }: ExperienceProps) {
@@ -33,7 +33,7 @@ export default function Experience({
         <p 
           className={`mt-2 text-muted text-sm ${animationClasses.fadeInUp} animation-delay-200`}
         >
-          My Professional Journey
+          Mi Trayectoria Profesional
         </p>
       </div>
 

@@ -3,106 +3,106 @@ import type { Experience } from '../types';
 export const experiences: Experience[] = [
   {
     id: 'ey',
-    title: 'Software Developer',
+    title: 'Desarrollador de Software',
     company: 'Ernst & Young',
-    period: 'February 2023 - Present',
+    period: 'Febrero 2023 - Presente',
     logo: '/experiencesImages/EYLogo.jpg',
-    location: 'Remote',
+    location: 'Remoto',
     employmentType: 'Full-time',
-    industry: 'Professional Services',
-    companySize: '250,000+ employees',
-    teamSize: '8-12 developers',
-    description: 'Leading software development initiatives for enterprise-level financial and consulting solutions, focusing on modern web technologies and scalable architectures.',
+    industry: 'Servicios Profesionales',
+    companySize: '250,000+ empleados',
+    teamSize: '8-12 desarrolladores',
+    description: 'Liderando iniciativas de desarrollo de software para soluciones financieras y de consultoría a nivel empresarial, enfocándome en tecnologías web modernas y arquitecturas escalables.',
     technologies: ['JavaScript', 'React', 'Node.js', 'MongoDB', 'TypeScript', 'AWS'],
-    keySkills: ['Full-Stack Development', 'Code Review', 'Team Leadership', 'Agile Methodologies'],
+    keySkills: ['Desarrollo Full-Stack', 'Revisión de Código', 'Liderazgo de Equipo', 'Metodologías Ágiles'],
     achievements: [
-      'Improved application performance by 40% through code optimization',
-      'Led migration of legacy systems to modern React architecture',
-      'Mentored 5+ junior developers in best practices and code quality'
+      'Mejoré el rendimiento de aplicaciones en un 40% mediante optimización de código',
+      'Lideré la migración de sistemas legacy a arquitectura moderna de React',
+      'Mentoré a más de 5 desarrolladores junior en buenas prácticas y calidad de código'
     ],
     responsibilities: [
-      'Developed and maintained web applications using modern JavaScript frameworks',
-      'Collaborated with cross-functional teams to deliver high-quality software solutions',
-      'Implemented responsive designs and optimized application performance',
-      'Participated in code reviews and mentored junior developers'
+      'Desarrollé y mantuve aplicaciones web usando frameworks modernos de JavaScript',
+      'Colaboré con equipos multifuncionales para entregar soluciones de software de alta calidad',
+      'Implementé diseños responsivos y optimicé el rendimiento de aplicaciones',
+      'Participé en revisiones de código y mentoré desarrolladores junior'
     ]
   },
   {
     id: 'progressus',
-    title: 'Frontend Developer',
+    title: 'Desarrollador Frontend',
     company: 'Progressus',
-    period: 'June 2022 - January 2023',
+    period: 'Junio 2022 - Enero 2023',
     logo: '/experiencesImages/ProgressusLogo.png',
-    location: 'Remote',
+    location: 'Remoto',
     employmentType: 'Contract',
-    industry: 'Technology',
-    companySize: '50-100 employees',
-    teamSize: '4-6 developers',
-    description: 'Specialized in creating modern, responsive frontend solutions for SaaS platforms with focus on user experience and performance optimization.',
+    industry: 'Tecnología',
+    companySize: '50-100 empleados',
+    teamSize: '4-6 desarrolladores',
+    description: 'Especializado en crear soluciones frontend modernas y responsivas para plataformas SaaS con enfoque en experiencia de usuario y optimización de rendimiento.',
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js', 'Figma'],
-    keySkills: ['UI/UX Implementation', 'Performance Optimization', 'Responsive Design', 'Component Architecture'],
+    keySkills: ['Implementación UI/UX', 'Optimización de Rendimiento', 'Diseño Responsivo', 'Arquitectura de Componentes'],
     achievements: [
-      'Reduced page load times by 35% through optimization techniques',
-      'Implemented design system used across 10+ components',
-      'Achieved 98% cross-browser compatibility score'
+      'Reduje los tiempos de carga de página en un 35% mediante técnicas de optimización',
+      'Implementé un sistema de diseño utilizado en más de 10 componentes',
+      'Logré un 98% de compatibilidad entre navegadores'
     ],
     responsibilities: [
-      'Built responsive user interfaces using React and TypeScript',
-      'Implemented modern CSS frameworks for styling consistency',
-      'Collaborated with UX/UI designers to create intuitive user experiences',
-      'Optimized frontend performance and accessibility'
+      'Construí interfaces de usuario responsivas usando React y TypeScript',
+      'Implementé frameworks CSS modernos para consistencia de estilos',
+      'Colaboré con diseñadores UX/UI para crear experiencias de usuario intuitivas',
+      'Optimicé el rendimiento y accesibilidad del frontend'
     ]
   },
   {
     id: 'studentfy',
-    title: 'Full Stack Developer',
+    title: 'Desarrollador Full Stack',
     company: 'Studentfy',
-    period: 'January 2022 - May 2022',
+    period: 'Enero 2022 - Mayo 2022',
     logo: '/experiencesImages/StudentfyLogo.png',
-    location: 'Remote',
+    location: 'Remoto',
     employmentType: 'Contract',
-    industry: 'EdTech',
-    companySize: '10-20 employees',
-    teamSize: '3-4 developers',
-    description: 'End-to-end development of educational platform features, handling both frontend user experience and backend API development for student management systems.',
+    industry: 'Tecnología Educativa',
+    companySize: '10-20 empleados',
+    teamSize: '3-4 desarrolladores',
+    description: 'Desarrollo integral de funcionalidades de plataforma educativa, manejando tanto la experiencia de usuario frontend como el desarrollo de APIs backend para sistemas de gestión estudiantil.',
     technologies: ['Node.js', 'React', 'MongoDB', 'Express', 'JWT', 'Socket.io'],
-    keySkills: ['Full-Stack Development', 'API Design', 'Database Design', 'Real-time Applications'],
+    keySkills: ['Desarrollo Full-Stack', 'Diseño de APIs', 'Diseño de Base de Datos', 'Aplicaciones en Tiempo Real'],
     achievements: [
-      'Built complete student dashboard with real-time notifications',
-      'Designed and implemented 15+ RESTful API endpoints',
-      'Reduced database query time by 50% through optimization'
+      'Construí un panel estudiantil completo con notificaciones en tiempo real',
+      'Diseñé e implementé más de 15 endpoints de API RESTful',
+      'Reduje el tiempo de consulta de base de datos en un 50% mediante optimización'
     ],
     responsibilities: [
-      'Developed full-stack web applications from concept to deployment',
-      'Designed and implemented RESTful APIs using Node.js and Express',
-      'Created responsive frontend components with React',
-      'Managed database operations and data modeling with MongoDB'
+      'Desarrollé aplicaciones web full-stack desde el concepto hasta el despliegue',
+      'Diseñé e implementé APIs RESTful usando Node.js y Express',
+      'Creé componentes frontend responsivos con React',
+      'Gestioné operaciones de base de datos y modelado de datos con MongoDB'
     ]
   },
   {
     id: 'supercellcomp',
-    title: 'Junior Developer',
+    title: 'Desarrollador Junior',
     company: 'Supercellcomp',
-    period: 'August 2021 - December 2021',
+    period: 'Agosto 2021 - Diciembre 2021',
     logo: '/experiencesImages/SupercellcompLogo.png',
-    location: 'On-site',
+    location: 'Presencial',
     employmentType: 'Internship',
-    industry: 'Digital Agency',
-    companySize: '5-10 employees',
-    teamSize: '2-3 developers',
-    description: 'Entry-level position focused on learning web development fundamentals while contributing to client projects and building foundational skills in modern web technologies.',
+    industry: 'Agencia Digital',
+    companySize: '5-10 empleados',
+    teamSize: '2-3 desarrolladores',
+    description: 'Posición de nivel inicial enfocada en aprender fundamentos de desarrollo web mientras contribuía a proyectos de clientes y construía habilidades fundamentales en tecnologías web modernas.',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Git', 'Bootstrap', 'jQuery'],
-    keySkills: ['Web Development Fundamentals', 'Version Control', 'Responsive Design', 'Problem Solving'],
+    keySkills: ['Fundamentos de Desarrollo Web', 'Control de Versiones', 'Diseño Responsivo', 'Resolución de Problemas'],
     achievements: [
-      'Successfully completed 8+ client website projects',
-      'Mastered Git workflow and collaborative development',
-      'Achieved proficiency in responsive design principles'
+      'Completé exitosamente más de 8 proyectos de sitios web para clientes',
+      'Dominé el flujo de trabajo de Git y desarrollo colaborativo',
+      'Logré competencia en principios de diseño responsivo'
     ],
     responsibilities: [
-      'Developed static websites and interactive web components',
-      'Learned modern web development practices and version control',
-      'Participated in agile development processes',
-      'Gained experience with responsive web design principles'
+      'Desarrollé sitios web estáticos y componentes web interactivos',
+      'Aprendí prácticas modernas de desarrollo web y control de versiones',
+      'Participé en procesos de desarrollo ágil',
+      'Adquirí experiencia con principios de diseño web responsivo'
     ]
   }
 ];

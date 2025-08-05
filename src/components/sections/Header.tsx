@@ -41,7 +41,7 @@ export default function Header({ className = "" }: HeaderProps) {
               smoothScrollTo('#hero');
             }}
             className="text-2xl font-bold text-gradient focus-ring rounded-lg px-3 py-2 hover:scale-105 transition-transform duration-200"
-            aria-label="Go to top of portfolio"
+            aria-label="Ir al inicio del portafolio"
           >
             EG
           </a>
@@ -50,13 +50,13 @@ export default function Header({ className = "" }: HeaderProps) {
         {/* Navigation Menu */}
         <nav
           className={`flex items-center space-x-8 ${animationClasses.headerSlideIn}`}
-          aria-label="Main navigation"
+          aria-label="Navegación principal"
         >
           {[
-            { href: "#about", label: "About" },
-            { href: "#experience", label: "Experience" },
-            { href: "#skills", label: "Skills" },
-            { href: "#contact", label: "Contact" }
+            { href: "#about", label: "Acerca" },
+            { href: "#experience", label: "Experiencia" },
+            { href: "#skills", label: "Habilidades" },
+            { href: "#contact", label: "Contacto" }
           ].map((item) => (
             <a
               key={item.href}
@@ -102,7 +102,7 @@ export default function Header({ className = "" }: HeaderProps) {
             <a
               href={contactLink.url}
               className="btn-primary inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:shadow-lg hover:shadow-primary-500/25 hover:scale-105"
-              aria-label="Send me an email"
+              aria-label="Envíame un correo"
             >
               <svg
                 className="h-4 w-4"
@@ -118,8 +118,8 @@ export default function Header({ className = "" }: HeaderProps) {
                   d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                 />
               </svg>
-              <span className="hidden lg:inline">Get In Touch</span>
-              <span className="lg:hidden">Contact</span>
+              <span className="hidden lg:inline">Contacto</span>
+              <span className="lg:hidden">Contacto</span>
             </a>
           )}
         </div>

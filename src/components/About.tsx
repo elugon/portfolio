@@ -14,7 +14,7 @@ export default function About(_props: Props) {
         <h2 
           className={`section-title ${animationClasses.slideInFromTop}`}
         >
-          About
+          Acerca
         </h2>
       </div>
       
@@ -40,7 +40,7 @@ export default function About(_props: Props) {
             className={`spacing-lg text-center lg:text-left ${animationClasses.slideInFromRight}`}
           >
             <h3 className="text-subtitle text-gradient mb-6">
-              Here is a little background
+              Un poco de mi trasfondo
             </h3>
             <div className="spacing-md">
               <p className="text-body leading-relaxed">
@@ -50,25 +50,25 @@ export default function About(_props: Props) {
                 {personalInfo.description}
               </p>
               <p className="text-muted text-sm leading-relaxed">
-                This allows me to have a good ability to analyze and solve problems of many types, 
-                always focusing on <span className="text-secondary-400 font-medium">clean code</span>, 
-                <span className="text-primary-400 font-medium"> performance optimization</span>, and 
-                <span className="text-amber-400 font-medium">user experience</span>.
+                Esto me permite tener una buena habilidad para analizar y resolver problemas de muchos tipos, 
+                siempre enfocándome en <span className="text-secondary-400 font-medium">código limpio</span>, 
+                <span className="text-primary-400 font-medium">optimización de rendimiento</span>, y 
+                <span className="text-amber-400 font-medium">experiencia de usuario</span>.
               </p>
               
               {/* Key highlights */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
                 <div className="glass-card padding-sm text-center">
                   <div className="text-2xl font-bold text-gradient">5+</div>
-                  <div className="text-xs text-muted">Years Experience</div>
+                  <div className="text-xs text-muted">Años de Experiencia</div>
                 </div>
                 <div className="glass-card padding-sm text-center">
                   <div className="text-2xl font-bold text-gradient">15+</div>
-                  <div className="text-xs text-muted">Technologies</div>
+                  <div className="text-xs text-muted">Tecnologías</div>
                 </div>
                 <div className="glass-card padding-sm text-center">
                   <div className="text-2xl font-bold text-gradient">100%</div>
-                  <div className="text-xs text-muted">Client Satisfaction</div>
+                  <div className="text-xs text-muted">Satisfacción del Cliente</div>
                 </div>
               </div>
             </div>

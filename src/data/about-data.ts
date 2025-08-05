@@ -5,17 +5,17 @@ export const aboutStats: Stat[] = [
   {
     id: 'experience',
     value: '5+',
-    label: 'Years of Experience'
+    label: 'Años de Experiencia'
   },
   {
     id: 'projects',
     value: '20+',
-    label: 'Projects Delivered'
+    label: 'Proyectos Entregados'
   },
   {
     id: 'satisfaction',
     value: '100%',
-    label: 'Client Satisfaction'
+    label: 'Satisfacción del Cliente'
   }
 ];
 
@@ -24,37 +24,37 @@ export const coreValues: ValueCard[] = [
   {
     id: 'innovation',
     icon: '💡',
-    title: 'Innovation',
-    description: 'Constantly exploring new technologies and creative solutions'
+    title: 'Innovación',
+    description: 'Explorando constantemente nuevas tecnologías y soluciones creativas'
   },
   {
     id: 'quality',
     icon: '🎯',
-    title: 'Quality',
-    description: 'Delivering pixel-perfect, performant applications'
+    title: 'Calidad',
+    description: 'Entregando aplicaciones perfectas y de alto rendimiento'
   },
   {
     id: 'collaboration',
     icon: '🤝',
-    title: 'Collaboration',
-    description: 'Working seamlessly with teams to achieve common goals'
+    title: 'Colaboración',
+    description: 'Trabajando de manera fluida con equipos para lograr objetivos comunes'
   },
   {
     id: 'focus-areas',
     icon: '🔧',
-    title: 'Focus Areas',
-    description: 'Full-stack development, React ecosystem, modern web technologies, and cloud architecture'
+    title: 'Áreas de Enfoque',
+    description: 'Desarrollo full-stack, ecosistema React, tecnologías web modernas y arquitectura en la nube'
   },
   {
     id: 'approach',
     icon: '🚀',
-    title: 'Approach',
-    description: 'Clean architecture, test-driven development, user-centered design, and agile methodologies'
+    title: 'Enfoque',
+    description: 'Arquitectura limpia, desarrollo dirigido por pruebas, diseño centrado en el usuario y metodologías ágiles'
   },
   {
     id: 'interests',
     icon: '💚',
-    title: 'Interests',
-    description: 'Soccer, cinema, emerging technologies, and contributing to open-source projects'
+    title: 'Intereses',
+    description: 'Fútbol, cine, tecnologías emergentes y contribución a proyectos de código abierto'
   }
 ];

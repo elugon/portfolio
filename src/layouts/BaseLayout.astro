@@ -11,7 +11,7 @@ interface Props {
 const { 
   title, 
   description, 
-  keywords = "software developer, web development, react, typescript, portfolio",
+  keywords = "desarrollador de software, desarrollo web, react, typescript, portafolio",
   ogImage = "/profileImages/profilePicture3.png",
   sectionId,
   sectionClass = ""
@@ -21,7 +21,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
@@ -43,7 +43,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
     <meta name="keywords" content={keywords} />
     <meta name="author" content="Elu Gonzalez" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="language" content="English" />
+    <meta name="language" content="Spanish" />
     <meta name="revisit-after" content="7 days" />
     
     <!-- Open Graph / Facebook -->
@@ -54,8 +54,8 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="Elu Gonzalez Portfolio" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Elu Gonzalez Portafolio" />
+    <meta property="og:locale" content="es_ES" />
     
     <!-- Twitter / X -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -175,8 +175,8 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Elu Gonzalez",
-        "jobTitle": "Software Developer",
-        "description": "Systems Engineer with extensive experience in web development",
+        "jobTitle": "Desarrollador de Software",
+        "description": "Ingeniero de Sistemas con amplia experiencia en desarrollo web",
         "url": "https://www.elugonzalez.com",
         "sameAs": [
           "https://www.linkedin.com/in/elugonzalez/",

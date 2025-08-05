@@ -15,7 +15,7 @@ export default function ContactMe(_props: Props) {
       setCopiedField(field);
       setTimeout(() => setCopiedField(null), 2000);
     } catch (err) {
-      console.error('Failed to copy text: ', err);
+      console.error('Error al copiar texto: ', err);
     }
   };
   
@@ -30,15 +30,15 @@ export default function ContactMe(_props: Props) {
       
       <header className="section-header-inline relative z-10">
         <h2 className="text-2xl sm:text-3xl font-bold uppercase tracking-[0.2em] text-neutral-400">
-          Get In Touch
+          Ponte en Contacto
         </h2>
         <div className="mt-8 sm:mt-12 lg:mt-16">
           <h3 className="text-lg sm:text-xl font-medium text-neutral-300 max-w-3xl mx-auto text-center">
-            Interested in working together? I&apos;m{" "}
+            ¿Interesado en trabajar juntos? Estoy{" "}
             <span className="text-gradient font-semibold">
-              open to new opportunities
+              abierto a nuevas oportunidades
             </span>
-            {" "}and always excited to discuss innovative projects.
+            {" "}y siempre emocionado de discutir proyectos innovadores.
           </h3>
         </div>
       </header>
@@ -57,7 +57,7 @@ export default function ContactMe(_props: Props) {
                   <PhoneIcon className="h-6 w-6" aria-hidden="true" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-neutral-100 mb-2">Phone</h4>
+                  <h4 className="text-lg font-semibold text-neutral-100 mb-2">Teléfono</h4>
                   <a href="tel:+34634918659" 
                      className="text-neutral-300 hover:text-primary-400 transition-colors text-sm sm:text-base"
                      onClick={(e) => e.stopPropagation()}>
@@ -70,17 +70,17 @@ export default function ContactMe(_props: Props) {
                     e.stopPropagation();
                     copyToClipboard("+34634918659", "phone");
                   }}
-                  aria-label="Copy phone number"
+                  aria-label="Copiar número de teléfono"
                 >
                   {copiedField === "phone" ? (
                     <div className="flex items-center gap-2 text-green-500">
                       <CheckIcon className="h-4 w-4" />
-                      <span className="text-sm">Copied!</span>
+                      <span className="text-sm">¡Copiado!</span>
                     </div>
                   ) : (
                     <div className="flex items-center gap-2 text-neutral-400 hover:text-primary-400">
                       <ClipboardDocumentIcon className="h-4 w-4" />
-                      <span className="text-sm">Copy</span>
+                      <span className="text-sm">Copiar</span>
                     </div>
                   )}
                 </button>
@@ -95,7 +95,7 @@ export default function ContactMe(_props: Props) {
                   <EnvelopeIcon className="h-6 w-6" aria-hidden="true" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-neutral-100 mb-2">Email</h4>
+                  <h4 className="text-lg font-semibold text-neutral-100 mb-2">Correo</h4>
                   <a href="mailto:elugon10@gmail.com" 
                      className="text-neutral-300 hover:text-primary-400 transition-colors text-sm sm:text-base"
                      onClick={(e) => e.stopPropagation()}>
@@ -108,17 +108,17 @@ export default function ContactMe(_props: Props) {
                     e.stopPropagation();
                     copyToClipboard("elugon10@gmail.com", "email");
                   }}
-                  aria-label="Copy email address"
+                  aria-label="Copiar dirección de correo"
                 >
                   {copiedField === "email" ? (
                     <div className="flex items-center gap-2 text-green-500">
                       <CheckIcon className="h-4 w-4" />
-                      <span className="text-sm">Copied!</span>
+                      <span className="text-sm">¡Copiado!</span>
                     </div>
                   ) : (
                     <div className="flex items-center gap-2 text-neutral-400 hover:text-primary-400">
                       <ClipboardDocumentIcon className="h-4 w-4" />
-                      <span className="text-sm">Copy</span>
+                      <span className="text-sm">Copiar</span>
                     </div>
                   )}
                 </button>
@@ -132,14 +132,14 @@ export default function ContactMe(_props: Props) {
                   <MapPinIcon className="h-6 w-6" aria-hidden="true" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-neutral-100 mb-2">Location</h4>
+                  <h4 className="text-lg font-semibold text-neutral-100 mb-2">Ubicación</h4>
                   <span className="text-neutral-300 text-sm sm:text-base">
-                    Barcelona, Spain
+                    Barcelona, España
                   </span>
                 </div>
                 <div className="mt-4 flex items-center gap-2 text-sm text-neutral-400">
                   <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                  Available for remote work
+                  Disponible para trabajo remoto
                 </div>
               </div>
             </div>
@@ -148,10 +148,10 @@ export default function ContactMe(_props: Props) {
           {/* Social Links Section */}
           <div className="text-center">
             <h4 className="text-xl font-semibold text-neutral-100 mb-6">
-              Follow Me
+              Sígueme
             </h4>
             <p className="text-sm sm:text-base text-neutral-300 mb-8 max-w-lg mx-auto">
-              Stay connected and follow my journey in tech, projects, and daily life.
+              Manténte conectado y sigue mi viaje en tecnología, proyectos y vida diaria.
             </p>
             
             <div className="flex justify-center gap-6">
@@ -161,7 +161,7 @@ export default function ContactMe(_props: Props) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card-hover p-6 rounded-2xl group hover:scale-110 transition-all duration-300"
-                  aria-label="Connect on LinkedIn"
+                  aria-label="Conectar en LinkedIn"
                 >
                   <div className="flex flex-col items-center gap-3">
                     <div className="p-3 rounded-full bg-blue-500/10 text-blue-400 group-hover:bg-blue-500/20 transition-colors">
@@ -182,7 +182,7 @@ export default function ContactMe(_props: Props) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card-hover p-6 rounded-2xl group hover:scale-110 transition-all duration-300"
-                  aria-label="Follow on Instagram"
+                  aria-label="Seguir en Instagram"
                 >
                   <div className="flex flex-col items-center gap-3">
                     <div className="p-3 rounded-full bg-pink-500/10 text-pink-400 group-hover:bg-pink-500/20 transition-colors">
@@ -203,7 +203,7 @@ export default function ContactMe(_props: Props) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card-hover p-6 rounded-2xl group hover:scale-110 transition-all duration-300"
-                  aria-label="Follow on X (Twitter)"
+                  aria-label="Seguir en X (Twitter)"
                 >
                   <div className="flex flex-col items-center gap-3">
                     <div className="p-3 rounded-full bg-neutral-500/10 text-neutral-400 group-hover:bg-neutral-500/20 transition-colors">
@@ -221,7 +221,7 @@ export default function ContactMe(_props: Props) {
             
             <div className="mt-12 text-center">
               <p className="text-sm text-neutral-400">
-                💬 I typically respond within 24 hours
+                💬 Normalmente respondo en 24 horas
               </p>
             </div>
           </div>

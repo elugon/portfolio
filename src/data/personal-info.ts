@@ -2,9 +2,9 @@ import type { PersonalInfo, SocialLink } from '../types';
 
 export const personalInfo: PersonalInfo = {
   name: "Elu Gonzalez",
-  title: "Software Developer",
-  description: "Systems Engineer with extensive experience in design, programming, implementation and maintenance of IT applications. I have a global perspective of the main branches of computer science which gives me a multidisciplinary vision in many fields of engineering.",
-  location: "Location"
+  title: "Desarrollador de Software",
+  description: "Ingeniero de Sistemas con amplia experiencia en diseño, programación, implementación y mantenimiento de aplicaciones informáticas. Tengo una perspectiva global de las principales ramas de la informática que me brinda una visión multidisciplinaria en muchos campos de la ingeniería.",
+  location: "Ubicación"
 };
 
 export const socialLinks: SocialLink[] = [
@@ -27,8 +27,8 @@ export const socialLinks: SocialLink[] = [
 ];
 
 export const typewriterStrings = [
-  `Hi, I'm Elu Gonzalez`,
-  `Props: Let's play soccer`,
-  "this.cinema = Interstellar",
-  "const loveCoding = True",
+  `Hola, soy Elu González`,
+  `Props: Juguemos fútbol`,
+  "this.cinema = Interestelar",
+  "const amoLaProgramacion = true",
 ];
