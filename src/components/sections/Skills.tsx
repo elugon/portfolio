@@ -91,7 +91,7 @@ export default function Skills({
         <div className="filter-container">
           <button
             onClick={() => setSelectedCategory(null)}
-            className={`filter-button ${
+            className={`filter-button touch-target ${
               !selectedCategory 
                 ? 'filter-button-active' 
                 : 'filter-button-inactive'
@@ -105,7 +105,7 @@ export default function Skills({
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`filter-button flex items-center gap-2 ${
+                className={`filter-button touch-target flex items-center gap-2 ${
                   selectedCategory === category 
                     ? `filter-button-active bg-gradient-to-r ${info.color}` 
                     : 'filter-button-inactive'

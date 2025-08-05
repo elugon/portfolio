@@ -59,3 +59,26 @@ export interface SectionProps extends BaseComponentProps {
   title?: string;
   subtitle?: string;
 }
+
+// Value Card Interface (Single Responsibility)
+export interface ValueCard {
+  id: string;
+  icon: string;
+  title: string;
+  description: string;
+}
+
+// Stat Interface
+export interface Stat {
+  id: string;
+  value: string;
+  label: string;
+}
+
+// Card component props
+export interface CardProps extends BaseComponentProps {
+  icon: string;
+  title: string;
+  description: string;
+  index?: number;
+}

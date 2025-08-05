@@ -10,7 +10,7 @@ interface HeroProps {
 
 export default function Hero({ className = "" }: HeroProps) {
   return (
-    <main className={`section-container-xl relative ${className}`}>
+    <main className={`section-container-xl relative py-12 sm:py-16 lg:py-20 ${className}`}>
       {/* Animated gradient background */}
       <div className="absolute inset-0 animated-gradient opacity-30" />
       
@@ -19,9 +19,9 @@ export default function Hero({ className = "" }: HeroProps) {
       
       <BackgroundCircles />
       
-      {/* Profile Image with enhanced effects */}
-      <div className={`relative z-10 ${animationClasses.scaleIn}`}>
-        <div className="relative mx-auto img-responsive overflow-hidden rounded-full">
+      {/* Profile Image - Absolutely centered within circles */}
+      <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+        <div className={`relative img-responsive overflow-hidden rounded-full ${animationClasses.scaleIn} pointer-events-auto`}>
           {/* Rotating gradient border */}
           <div className="absolute inset-[-4px] rounded-full bg-gradient-to-r from-primary-400 via-primary-600 to-secondary-400 animate-spin" style={{ animationDuration: '8s' }} />
           <div className="relative rounded-full overflow-hidden bg-neutral-900 p-1">
@@ -41,71 +41,73 @@ export default function Hero({ className = "" }: HeroProps) {
         </div>
       </div>
       
-      {/* Text Content with modern styling */}
-      <div className="z-20 container-md text-center spacing-md">
-        <header className="spacing-sm">
+      {/* Main Content - Normal document flow with top spacing */}
+      <div className="relative z-20 pt-32 sm:pt-40 md:pt-48 lg:pt-56">
+        <div className="container-md text-center space-y-6 sm:space-y-8">
+          <header className="space-y-4">
+            <p 
+              className={`text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] text-primary-400 ${animationClasses.slideInFromTop}`}
+              style={{ animationDelay: '0.3s' }}
+            >
+              {personalInfo.title}
+            </p>
+            <h1 
+              className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-neutral-100 ${animationClasses.slideInFromBottom}`}
+              style={{ animationDelay: '0.4s' }}
+            >
+              <span className="inline-block">
+                <Typewriter
+                  options={{
+                    strings: typewriterStrings,
+                    autoStart: true,
+                    loop: true,
+                    delay: 80,
+                    deleteSpeed: 50,
+                    wrapperClassName: "text-gradient text-glow",
+                  }}
+                />
+              </span>
+            </h1>
+          </header>
+          
+          {/* Enhanced description */}
           <p 
-            className={`text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] text-primary-400 ${animationClasses.slideInFromTop}`}
-            style={{ animationDelay: '0.3s' }}
+            className={`text-lg sm:text-xl text-neutral-300 leading-relaxed max-w-2xl mx-auto ${animationClasses.fadeInUp}`}
+            style={{ animationDelay: '0.5s' }}
           >
-            {personalInfo.title}
+            Crafting <span className="text-primary-400 font-semibold">exceptional digital experiences</span> with 
+            modern technologies and a passion for <span className="text-secondary-400 font-semibold">clean, efficient code</span>
           </p>
-          <h1 
-            className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-neutral-100 ${animationClasses.slideInFromBottom}`}
-            style={{ animationDelay: '0.4s' }}
-          >
-            <span className="inline-block">
-              <Typewriter
-                options={{
-                  strings: typewriterStrings,
-                  autoStart: true,
-                  loop: true,
-                  delay: 80,
-                  deleteSpeed: 50,
-                  wrapperClassName: "text-gradient text-glow",
-                }}
-              />
-            </span>
-          </h1>
-        </header>
-        
-        {/* Enhanced description */}
-        <p 
-          className={`text-lg sm:text-xl text-neutral-300 leading-relaxed container-sm ${animationClasses.fadeInUp}`}
-          style={{ animationDelay: '0.5s' }}
-        >
-          Crafting <span className="text-primary-400 font-semibold">exceptional digital experiences</span> with 
-          modern technologies and a passion for <span className="text-secondary-400 font-semibold">clean, efficient code</span>
-        </p>
 
-        {/* CTA Buttons */}
-        <div 
-          className={`flex flex-col sm:flex-row gap-sm justify-center items-center ${animationClasses.slideInFromBottom}`}
-          style={{ animationDelay: '0.6s' }}
-        >
-          <a
-            href="#projects"
-            className={`btn-modern w-full sm:w-auto ${hoverClasses.button}`}
+          {/* CTA Buttons */}
+          <div 
+            className={`flex flex-col sm:flex-row gap-4 justify-center items-center ${animationClasses.slideInFromBottom}`}
+            style={{ animationDelay: '0.6s' }}
           >
-            View My Work
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
-          <a
-            href="#contact"
-            className={`btn-modern-outline w-full sm:w-auto ${hoverClasses.button}`}
-          >
-            Get In Touch
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-          </a>
+            <a
+              href="#experience"
+              className={`btn-modern w-full sm:w-auto ${hoverClasses.button}`}
+            >
+              View My Experience
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a
+              href="#contact"
+              className={`btn-modern-outline w-full sm:w-auto ${hoverClasses.button}`}
+            >
+              Get In Touch
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </a>
+          </div>
         </div>
 
-        {/* Quick stats */}
+        {/* Stats Section */}
         <div 
-          className={`flex flex-wrap justify-center gap-lg ${animationClasses.fadeInUp}`}
+          className={`flex flex-wrap justify-center gap-8 sm:gap-12 mt-12 ${animationClasses.fadeInUp}`}
           style={{ animationDelay: '0.7s' }}
         >
           <div className="text-center">
@@ -115,7 +117,7 @@ export default function Hero({ className = "" }: HeroProps) {
             >
               5+
             </p>
-            <p className="text-sm text-neutral-400 margin-xs">Years Experience</p>
+            <p className="text-sm text-neutral-400 mt-1">Years Experience</p>
           </div>
           <div className="text-center">
             <p 
@@ -124,7 +126,7 @@ export default function Hero({ className = "" }: HeroProps) {
             >
               20+
             </p>
-            <p className="text-sm text-neutral-400 margin-xs">Projects Completed</p>
+            <p className="text-sm text-neutral-400 mt-1">Technologies Mastered</p>
           </div>
           <div className="text-center">
             <p 
@@ -133,7 +135,7 @@ export default function Hero({ className = "" }: HeroProps) {
             >
               15+
             </p>
-            <p className="text-sm text-neutral-400 margin-xs">Technologies</p>
+            <p className="text-sm text-neutral-400 mt-1">Technologies</p>
           </div>
         </div>
       </div>

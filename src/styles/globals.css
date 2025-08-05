@@ -99,6 +99,55 @@
   --color-info-600: #2563eb;
   --color-info-700: #1d4ed8;
   
+  /* Missing semantic colors - complete the system */
+  --color-semantic-success-50: #f0fdf4;
+  --color-semantic-success-100: #dcfce7;
+  --color-semantic-success-200: #bbf7d0;
+  --color-semantic-success-300: #86efac;
+  --color-semantic-success-400: #4ade80;
+  --color-semantic-success-500: #22c55e;
+  --color-semantic-success-600: #16a34a;
+  --color-semantic-success-700: #15803d;
+  --color-semantic-success-800: #166534;
+  --color-semantic-success-900: #14532d;
+  --color-semantic-success-950: #052e16;
+  
+  --color-semantic-warning-50: #fefce8;
+  --color-semantic-warning-100: #fef3c7;
+  --color-semantic-warning-200: #fde68a;
+  --color-semantic-warning-300: #fcd34d;
+  --color-semantic-warning-400: #fbbf24;
+  --color-semantic-warning-500: #f59e0b;
+  --color-semantic-warning-600: #d97706;
+  --color-semantic-warning-700: #b45309;
+  --color-semantic-warning-800: #92400e;
+  --color-semantic-warning-900: #78350f;
+  --color-semantic-warning-950: #451a03;
+  
+  --color-semantic-error-50: #fef2f2;
+  --color-semantic-error-100: #fee2e2;
+  --color-semantic-error-200: #fecaca;
+  --color-semantic-error-300: #fca5a5;
+  --color-semantic-error-400: #f87171;
+  --color-semantic-error-500: #ef4444;
+  --color-semantic-error-600: #dc2626;
+  --color-semantic-error-700: #b91c1c;
+  --color-semantic-error-800: #991b1b;
+  --color-semantic-error-900: #7f1d1d;
+  --color-semantic-error-950: #450a0a;
+  
+  --color-semantic-info-50: #eff6ff;
+  --color-semantic-info-100: #dbeafe;
+  --color-semantic-info-200: #bfdbfe;
+  --color-semantic-info-300: #93c5fd;
+  --color-semantic-info-400: #60a5fa;
+  --color-semantic-info-500: #3b82f6;
+  --color-semantic-info-600: #2563eb;
+  --color-semantic-info-700: #1d4ed8;
+  --color-semantic-info-800: #1e40af;
+  --color-semantic-info-900: #1e3a8a;
+  --color-semantic-info-950: #172554;
+  
   /* Legacy surface colors */
   --color-dark: #1e293b;
   --color-surface: #0f172a;
@@ -404,6 +453,40 @@
     .animate-on-scroll {
       @apply opacity-100 translate-y-0;
       animation: none;
+    }
+  }
+  
+  /* Animation delay classes */
+  .animation-delay-0 {
+    animation-delay: 0ms;
+  }
+  
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+  
+  /* Motion reduce animation class */
+  .motion-reduce-animation {
+    @media (prefers-reduced-motion: reduce) {
+      animation: none !important;
+      transition: none !important;
+      transform: none !important;
     }
   }
   
@@ -1137,9 +1220,11 @@
 
   /* Horizontal scroll containers */
   .scroll-container {
-    @apply flex gap-6 sm:gap-8 lg:gap-10 overflow-x-auto pb-4 snap-x snap-mandatory;
+    @apply flex gap-4 sm:gap-6 lg:gap-8 xl:gap-10 overflow-x-auto pb-4 snap-x snap-mandatory;
     scrollbar-width: thin;
     scrollbar-color: #f59e0b #1e293b;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
   }
   
   .scroll-container::-webkit-scrollbar {
@@ -1161,6 +1246,7 @@
   }
   
   .scroll-item {
-    @apply flex-shrink-0 snap-start;
+    @apply flex-shrink-0 snap-start snap-always;
+    scroll-margin-left: 1rem;
   }
 }

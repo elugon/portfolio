@@ -63,12 +63,12 @@ export default function About(_props: Props) {
                   <div className="text-xs text-muted">Years Experience</div>
                 </div>
                 <div className="glass-card padding-sm text-center">
-                  <div className="text-2xl font-bold text-gradient">20+</div>
-                  <div className="text-xs text-muted">Projects</div>
-                </div>
-                <div className="glass-card padding-sm text-center">
                   <div className="text-2xl font-bold text-gradient">15+</div>
                   <div className="text-xs text-muted">Technologies</div>
+                </div>
+                <div className="glass-card padding-sm text-center">
+                  <div className="text-2xl font-bold text-gradient">100%</div>
+                  <div className="text-xs text-muted">Client Satisfaction</div>
                 </div>
               </div>
             </div>

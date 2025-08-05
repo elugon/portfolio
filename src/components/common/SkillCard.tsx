@@ -66,12 +66,12 @@ export default function SkillCard({
         <div className="absolute inset-0 bg-neutral-900/30 backdrop-blur-sm" />
         
         {/* Content */}
-        <div className="relative p-6 flex flex-col items-center">
+        <div className="relative p-4 xs:p-6 flex flex-col items-center">
           {/* Logo container */}
           <div 
             className={`relative mb-4 ${isHovered ? 'animate-float' : ''} motion-reduce-animation`}
           >
-            <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center relative">
+            <div className="w-14 h-14 xs:w-16 xs:h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 flex items-center justify-center relative">
               <img 
                 src={logo} 
                 alt={`${name} logo`}
@@ -93,7 +93,7 @@ export default function SkillCard({
           </div>
           
           {/* Skill name */}
-          <h3 className="text-sm md:text-base font-semibold text-neutral-100 mb-2 text-center group-hover:text-primary-400 transition-colors duration-300">
+          <h3 className="text-xs xs:text-sm md:text-base font-semibold text-neutral-100 mb-2 text-center group-hover:text-primary-400 transition-colors duration-300">
             {name}
           </h3>
           

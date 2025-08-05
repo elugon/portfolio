@@ -1,5 +1,7 @@
 import React from "react";
 import { personalInfo } from "../../data/personal-info";
+import { aboutStats } from "../../data/about-data";
+import ValueSection from "./ValueSection";
 import type { SectionProps } from "../../types";
 import { animationClasses } from "../../utils/tailwind-animations";
 
@@ -12,37 +14,14 @@ export default function About({
   profileImage = "/profileImages/profilePicture4.jpg",
   className = ""
 }: AboutProps) {
-  const stats = [
-    { value: "5+", label: "Years of Experience" },
-    { value: "20+", label: "Projects Delivered" },
-    { value: "100%", label: "Client Satisfaction" },
-  ];
-
-  const values = [
-    { 
-      icon: "💡", 
-      title: "Innovation", 
-      description: "Constantly exploring new technologies and creative solutions"
-    },
-    { 
-      icon: "🎯", 
-      title: "Quality", 
-      description: "Delivering pixel-perfect, performant applications"
-    },
-    { 
-      icon: "🤝", 
-      title: "Collaboration", 
-      description: "Working seamlessly with teams to achieve common goals"
-    },
-  ];
 
   return (
     <div
       className={`section-container-xl ${animationClasses.fadeInUp} ${className}`}
     >
       {/* Background elements */}
-      <div className="absolute inset-0 section-gradient-subtle" />
-      <div className="absolute inset-0 grid-pattern opacity-5" />
+      <div className="absolute inset-0 section-gradient-subtle pointer-events-none" />
+      <div className="absolute inset-0 grid-pattern opacity-5 pointer-events-none" />
       
       {/* Section header */}
       <div className="section-header-inline">
@@ -111,14 +90,14 @@ export default function About({
               </div>
 
               {/* Stats grid */}
-              <div className="grid grid-cols-3 gap-sm padding-md">
-                {stats.map((stat, index) => (
+              <div className="grid grid-cols-3 gap-md padding-md">
+                {aboutStats.map((stat, index) => (
                   <div
-                    key={stat.label}
+                    key={stat.id}
                     className={`text-center ${animationClasses.fadeInUp}`}
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
-                    <p className="text-3xl font-bold text-gradient">{stat.value}</p>
+                    <p className="text-2xl sm:text-3xl font-bold text-gradient">{stat.value}</p>
                     <p className="text-xs text-neutral-400 mt-1">{stat.label}</p>
                   </div>
                 ))}
@@ -144,85 +123,18 @@ export default function About({
             </div>
           </div>
 
-          {/* Values section */}
-          <div
-            className={`mt-20 ${animationClasses.fadeInUp}`}
-          >
-            <h4 className="text-2xl font-bold text-center mb-12 text-neutral-100">
-              My Core Values
-            </h4>
-            <div className="layout-three-col">
-              {values.map((value, index) => (
-                <div
-                  key={value.title}
-                  className={`glass-card-hover p-8 rounded-2xl text-center group ${animationClasses.scaleIn}`}
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div
-                    className="text-5xl mb-4 hover:rotate-12 transition-transform duration-500"
-                  >
-                    {value.icon}
-                  </div>
-                  <h5 className="text-xl font-semibold text-neutral-100 mb-3 group-hover:text-primary-400 transition-colors">
-                    {value.title}
-                  </h5>
-                  <p className="text-sm text-neutral-400 leading-relaxed">
-                    {value.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+          {/* Values section - Now using SOLID principles */}
+          <ValueSection />
 
-          {/* Additional info cards with modern styling */}
-          <div
-            className={`grid-1-2-3 ${animationClasses.fadeInUp} animation-delay-200`}
-          >
-            <div className="card-elevated p-6 hover:scale-[1.02] transition-transform duration-300">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary-400 to-primary-600 flex-center">
-                  <span className="text-lg">🎯</span>
-                </div>
-                <h5 className="text-lg font-semibold text-neutral-100">Focus Areas</h5>
-              </div>
-              <p className="text-neutral-400 text-sm leading-relaxed">
-                Full-stack development, React ecosystem, modern web technologies, and cloud architecture
-              </p>
-            </div>
-            
-            <div className="card-elevated p-6 hover:scale-[1.02] transition-transform duration-300">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-secondary-400 to-secondary-600 flex-center">
-                  <span className="text-lg">🚀</span>
-                </div>
-                <h5 className="text-lg font-semibold text-neutral-100">Approach</h5>
-              </div>
-              <p className="text-neutral-400 text-sm leading-relaxed">
-                Clean architecture, test-driven development, user-centered design, and agile methodologies
-              </p>
-            </div>
-            
-            <div className="card-elevated p-6 hover:scale-[1.02] transition-transform duration-300">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-semantic-success-400 to-semantic-success-600 flex-center">
-                  <span className="text-lg">💚</span>
-                </div>
-                <h5 className="text-lg font-semibold text-neutral-100">Interests</h5>
-              </div>
-              <p className="text-neutral-400 text-sm leading-relaxed">
-                Soccer, cinema, emerging technologies, and contributing to open-source projects
-              </p>
-            </div>
-          </div>
         </div>
       </div>
 
       {/* Decorative elements */}
       <div
-        className="absolute top-40 right-0 w-64 h-64 bg-primary-400/5 rounded-full blur-3xl animate-float"
+        className="absolute top-40 right-0 w-64 h-64 bg-primary-400/5 rounded-full blur-3xl animate-float pointer-events-none"
       />
       <div
-        className="absolute bottom-0 left-0 w-96 h-96 bg-secondary-400/5 rounded-full blur-3xl animate-float animation-delay-500"
+        className="absolute bottom-0 left-0 w-96 h-96 bg-secondary-400/5 rounded-full blur-3xl animate-float animation-delay-500 pointer-events-none"
       />
     </div>
   );

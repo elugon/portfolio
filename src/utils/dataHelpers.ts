@@ -1,4 +1,4 @@
-import type { Experience, Project, Skill } from '../types';
+import type { Experience, Skill } from '../types';
 
 // Experience utilities following DRY principle
 export class ExperienceService {
@@ -33,33 +33,6 @@ export class ExperienceService {
   }
 }
 
-// Project utilities following DRY principle
-export class ProjectService {
-  static getFeaturedProjects(projects: Project[]): Project[] {
-    return projects.filter(project => project.featured);
-  }
-
-  static getProjectsByStatus(projects: Project[], status: Project['status']): Project[] {
-    return projects.filter(project => project.status === status);
-  }
-
-  static getProjectById(projects: Project[], id: string): Project | undefined {
-    return projects.find(project => project.id === id);
-  }
-
-  static getProjectsByTechnology(projects: Project[], technology: string): Project[] {
-    return projects.filter(project => 
-      project.technologies.some(tech => 
-        tech.toLowerCase().includes(technology.toLowerCase())
-      )
-    );
-  }
-
-  static sortProjectsByStatus(projects: Project[]): Project[] {
-    const statusOrder = { 'completed': 0, 'in-progress': 1, 'archived': 2 };
-    return [...projects].sort((a, b) => statusOrder[a.status] - statusOrder[b.status]);
-  }
-}
 
 // Skill utilities following DRY principle
 export class SkillService {

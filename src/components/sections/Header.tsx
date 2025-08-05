@@ -59,7 +59,6 @@ export default function Header({ className = "" }: HeaderProps) {
             { href: "#about", label: "About" },
             { href: "#experience", label: "Experience" },
             { href: "#skills", label: "Skills" },
-            { href: "#projects", label: "Projects" },
             { href: "#contact", label: "Contact" }
           ].map((item) => (
             <a
@@ -167,7 +166,6 @@ export default function Header({ className = "" }: HeaderProps) {
               { href: "#about", label: "About" },
               { href: "#experience", label: "Experience" },
               { href: "#skills", label: "Skills" },
-              { href: "#projects", label: "Projects" },
               { href: "#contact", label: "Contact" }
             ].map((item) => (
               <a

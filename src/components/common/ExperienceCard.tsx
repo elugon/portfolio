@@ -21,7 +21,7 @@ export default function ExperienceCard({
   return (
     <article 
       onClick={onClick}
-      className={`card-lg scroll-item min-h-[500px] max-h-[600px] container-sm cursor-pointer ${hoverClasses.card} ${className}`}
+      className={`card-lg scroll-item min-h-[400px] sm:min-h-[500px] max-h-[90vh] sm:max-h-[600px] container-sm cursor-pointer ${hoverClasses.card} ${className}`}
     >
       <div className="h-full flex flex-col spacing-md">
         {/* Header with logo and company info */}
@@ -29,7 +29,7 @@ export default function ExperienceCard({
           <div
             className={`relative flex-shrink-0 ${animationClasses.scaleIn}`}
           >
-            <div className="w-20 h-20 rounded-2xl overflow-hidden glass-card padding-sm neon-border">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl overflow-hidden glass-card padding-sm neon-border">
               <img 
                 src={logo} 
                 alt={`${company} logo`}
@@ -82,7 +82,7 @@ export default function ExperienceCard({
         {/* Responsibilities with enhanced styling */}
         <div className="flex-1 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-neutral-900/80 pointer-events-none z-10" />
-          <ul className="spacing-sm overflow-y-auto max-h-48 pr-2 responsibilities-list">
+          <ul className="spacing-sm overflow-y-auto max-h-32 sm:max-h-48 pr-2 responsibilities-list">
             {responsibilities.map((responsibility, index) => (
               <li 
                 key={index}
