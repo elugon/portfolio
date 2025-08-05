@@ -2,7 +2,7 @@ import Typewriter from "typewriter-effect";
 import React from "react";
 import BackgroundCircles from "../BackgroundCircles";
 import { personalInfo, typewriterStrings } from "../../data/personal-info";
-import { animationClasses, hoverClasses } from "../../utils/tailwind-animations";
+import { animationClasses } from "../../utils/tailwind-animations";
 
 interface HeroProps {
   className?: string;
@@ -75,7 +75,7 @@ export default function Hero({ className = "" }: HeroProps) {
             {/* Left side - Description (takes 3 columns) */}
             <div className="lg:col-span-3">
               <p 
-                className={`text-xl sm:text-2xl text-neutral-300 leading-relaxed mx-auto lg:mx-0 text-center lg:text-left max-w-2xl lg:max-w-none ${animationClasses.fadeInUp}`}
+                className={`text-lg sm:text-xl md:text-2xl text-neutral-300 leading-relaxed mx-auto lg:mx-0 text-center lg:text-left max-w-2xl lg:max-w-none ${animationClasses.fadeInUp}`}
                 style={{ animationDelay: '0.5s' }}
               >
                 Crafting <span className="text-primary-400 font-semibold">exceptional digital experiences</span> with 

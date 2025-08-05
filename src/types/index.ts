@@ -32,6 +32,13 @@ export interface Experience {
   responsibilities: string[];
   technologies?: string[];
   location?: string;
+  employmentType?: 'Full-time' | 'Part-time' | 'Contract' | 'Freelance' | 'Internship';
+  description?: string;
+  achievements?: string[];
+  keySkills?: string[];
+  teamSize?: string;
+  companySize?: string;
+  industry?: string;
 }
 
 export interface Project {
