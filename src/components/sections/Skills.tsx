@@ -112,12 +112,12 @@ export default function Skills({
         {/* Modern filter container with rounded edges */}
         <div className="glass-card-hover padding-xs mx-auto max-w-3xl hover:border-neutral-600/40 rounded-full">
           
-          {/* Filter buttons grid with smaller gaps */}
-          <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-5 gap-2 sm:gap-3 place-items-center">
+          {/* Filter buttons grid with improved mobile layout */}
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
             <button
               onClick={() => setSelectedCategory(null)}
               className={`touch-target transform-gpu will-change-transform transition-all duration-200 ease-out 
-                         hover:scale-105 active:scale-95 focus-ring whitespace-nowrap w-full max-w-[120px] ${
+                         hover:scale-105 active:scale-95 focus-ring whitespace-nowrap ${
                 !selectedCategory 
                   ? 'filter-button-active' 
                   : 'filter-button-inactive'
@@ -136,7 +136,7 @@ export default function Skills({
                   key={category}
                   onClick={() => setSelectedCategory(category)}
                   className={`touch-target transform-gpu will-change-transform transition-all duration-200 ease-out 
-                             hover:scale-105 active:scale-95 focus-ring w-full max-w-[120px]
+                             hover:scale-105 active:scale-95 focus-ring
                              flex items-center justify-center gap-1 sm:gap-1.5 whitespace-nowrap
                              ${isActive 
                                ? `filter-button-active bg-gradient-to-r ${info.color} hover-glow` 

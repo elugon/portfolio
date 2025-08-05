@@ -46,8 +46,8 @@ export default function ContactMe(_props: Props) {
       <div className="section-content-inline relative z-10">
         <div className="container-md">
           
-          {/* Contact Information Grid */}
-          <div className="grid-1-2-3 gap-lg mb-16">
+          {/* Contact Information Grid - Improved responsive layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-16">
             
             {/* Phone Card */}
             <div className="card-sm glass-card-hover group cursor-pointer neon-border"

@@ -21,7 +21,6 @@ interface HeaderProps {
 }
 
 export default function Header({ className = "" }: HeaderProps) {
-  
   const navigationLinks = socialLinks.filter(link => 
     ['linkedin', 'instagram', 'x'].includes(link.platform)
   );

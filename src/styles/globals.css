@@ -781,6 +781,13 @@
   .social-icon {
     @apply min-h-[44px] min-w-[44px] flex items-center justify-center !h-10 !w-10 sm:!h-8 sm:!w-8 hover:!scale-110 transition-transform duration-200;
   }
+
+  /* Mobile-specific improvements */
+  @media (max-width: 768px) {
+    .social-icon {
+      @apply !h-12 !w-12;
+    }
+  }
   
   /* Navigation link styles */
   .nav-link {
@@ -1248,5 +1255,46 @@
   .scroll-item {
     @apply flex-shrink-0 snap-start snap-always;
     scroll-margin-left: 1rem;
+  }
+
+  /* Mobile viewport fixes */
+  @supports (height: 100dvh) {
+    .mobile-viewport-fix {
+      min-height: 100dvh;
+      height: 100dvh;
+    }
+  }
+
+  /* Mobile performance optimizations */
+  @media (max-width: 768px) {
+    .mobile-optimize {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-perspective: 1000;
+      perspective: 1000;
+    }
+    
+    /* Reduce motion on mobile if preferred */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  }
+
+  /* Improved touch targets for mobile */
+  .mobile-touch-target {
+    @apply min-h-[48px] min-w-[48px] p-3;
+  }
+
+  /* Mobile-specific text sizing */
+  .mobile-text-responsive {
+    font-size: clamp(0.875rem, 4vw, 1rem);
+  }
+
+  .mobile-heading-responsive {
+    font-size: clamp(1.5rem, 8vw, 3rem);
   }
 }

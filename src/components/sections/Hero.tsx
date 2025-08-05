@@ -70,12 +70,12 @@ export default function Hero({ className = "" }: HeroProps) {
             </h1>
           </header>
           
-          {/* Enhanced description and Stats - Improved two column layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16 items-start max-w-6xl mx-auto">
-            {/* Left side - Description (takes 3 columns) */}
-            <div className="lg:col-span-3">
+          {/* Enhanced description and Stats - Improved responsive layout */}
+          <div className="space-y-8 lg:space-y-12 max-w-6xl mx-auto">
+            {/* Description */}
+            <div className="text-center">
               <p 
-                className={`text-lg sm:text-xl md:text-2xl text-neutral-300 leading-relaxed mx-auto lg:mx-0 text-center lg:text-left max-w-2xl lg:max-w-none ${animationClasses.fadeInUp}`}
+                className={`text-lg sm:text-xl md:text-2xl text-neutral-300 leading-relaxed max-w-4xl mx-auto ${animationClasses.fadeInUp}`}
                 style={{ animationDelay: '0.5s' }}
               >
                 Crafting <span className="text-primary-400 font-semibold">exceptional digital experiences</span> with 
@@ -83,37 +83,37 @@ export default function Hero({ className = "" }: HeroProps) {
               </p>
             </div>
 
-            {/* Right side - Stats (takes 2 columns) */}
+            {/* Stats Grid - Better mobile layout */}
             <div 
-              className={`lg:col-span-2 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-6 lg:gap-4 ${animationClasses.fadeInUp}`}
+              className={`grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-md sm:max-w-lg lg:max-w-xl mx-auto ${animationClasses.fadeInUp}`}
               style={{ animationDelay: '0.6s' }}
             >
               <div className="text-center">
                 <p 
-                  className={`text-3xl sm:text-4xl font-bold text-gradient ${animationClasses.scaleIn}`}
+                  className={`text-2xl sm:text-3xl lg:text-4xl font-bold text-gradient ${animationClasses.scaleIn}`}
                   style={{ animationDelay: '0.7s' }}
                 >
                   5+
                 </p>
-                <p className="text-sm text-neutral-400 mt-1">Years Experience</p>
+                <p className="text-xs sm:text-sm text-neutral-400 mt-1">Years Experience</p>
               </div>
               <div className="text-center">
                 <p 
-                  className={`text-3xl sm:text-4xl font-bold text-gradient ${animationClasses.scaleIn}`}
+                  className={`text-2xl sm:text-3xl lg:text-4xl font-bold text-gradient ${animationClasses.scaleIn}`}
                   style={{ animationDelay: '0.8s' }}
                 >
                   20+
                 </p>
-                <p className="text-sm text-neutral-400 mt-1">Technologies Mastered</p>
+                <p className="text-xs sm:text-sm text-neutral-400 mt-1">Projects</p>
               </div>
               <div className="text-center">
                 <p 
-                  className={`text-3xl sm:text-4xl font-bold text-gradient ${animationClasses.scaleIn}`}
+                  className={`text-2xl sm:text-3xl lg:text-4xl font-bold text-gradient ${animationClasses.scaleIn}`}
                   style={{ animationDelay: '0.9s' }}
                 >
                   15+
                 </p>
-                <p className="text-sm text-neutral-400 mt-1">Technologies</p>
+                <p className="text-xs sm:text-sm text-neutral-400 mt-1">Technologies</p>
               </div>
             </div>
           </div>

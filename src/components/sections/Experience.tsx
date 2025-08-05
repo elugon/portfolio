@@ -137,39 +137,50 @@ export default function Experience({
           })}
         </div>
 
-        {/* Mobile: Horizontal scroll */}
+        {/* Mobile: Enhanced horizontal scroll with better indicators */}
         <div className="lg:hidden">
+          {/* Mobile instructions */}
+          <div className="text-center mb-6">
+            <p className="text-sm text-neutral-400 flex items-center justify-center gap-2">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+              </svg>
+              Swipe to explore my journey
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </p>
+          </div>
+
           <div className="scroll-container">
             {displayedExperiences.map((experience, index) => (
               <ExperienceCard 
                 key={experience.id}
                 {...experience}
-                className={activeIndex === index ? 'scale-105' : 'scale-95 opacity-75'}
+                className={`${activeIndex === index ? 'scale-105 ring-2 ring-primary-400/30' : 'scale-95 opacity-75'} transition-all duration-300`}
                 onClick={() => setActiveIndex(index)}
+              />
+            ))}
+          </div>
+
+          {/* Enhanced progress indicators */}
+          <div className="flex justify-center mt-6 space-x-2">
+            {displayedExperiences.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveIndex(index)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  activeIndex === index 
+                    ? 'bg-primary-400 w-8' 
+                    : 'bg-neutral-600 hover:bg-neutral-500'
+                }`}
+                aria-label={`View experience ${index + 1}`}
               />
             ))}
           </div>
         </div>
       </div>
 
-      {/* Modern scroll indicator for mobile */}
-      <div className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 text-center z-10 lg:hidden">
-        <div className="flex flex-col items-center space-y-3">
-          <p className="text-muted text-caption max-w-md font-medium">
-            Swipe to explore my journey
-          </p>
-          <div className="scroll-indicator-modern">
-            {displayedExperiences.map((_, index) => (
-              <div
-                key={index}
-                className={`scroll-indicator-dot ${
-                  activeIndex === index ? 'active' : ''
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* Floating decoration elements */}
       <div 
