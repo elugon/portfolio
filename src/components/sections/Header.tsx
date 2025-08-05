@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { socialLinks } from "../../data/personal-info";
 import { animationClasses } from "../../utils/tailwind-animations";
@@ -22,7 +22,6 @@ interface HeaderProps {
 }
 
 export default function Header({ className = "" }: HeaderProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   const navigationLinks = socialLinks.filter(link => 
     ['linkedin', 'instagram'].includes(link.platform)
@@ -31,8 +30,8 @@ export default function Header({ className = "" }: HeaderProps) {
   const contactLink = socialLinks.find(link => link.platform === 'email');
 
   return (
-    <header className={`glass sticky top-0 z-50 ${className}`}>
-      <div className="container-xl flex-between py-3">
+    <header className={`glass sticky top-2 z-50 border border-neutral-800/30 rounded-2xl mx-4 backdrop-blur-md bg-gradient-to-b from-neutral-900/90 to-neutral-900/70 shadow-lg shadow-neutral-900/25 ${className}`}>
+      <div className="container-xl flex-between py-4 px-6">
         {/* Logo/Brand */}
         <div
           className={`flex items-center ${animationClasses.headerSlideIn}`}
@@ -43,7 +42,7 @@ export default function Header({ className = "" }: HeaderProps) {
               e.preventDefault();
               smoothScrollTo('#hero');
             }}
-            className="text-xl font-bold text-gradient focus-ring rounded-lg px-2 py-1"
+            className="text-2xl font-bold text-gradient focus-ring rounded-lg px-3 py-2 hover:scale-105 transition-transform duration-200"
             aria-label="Go to top of portfolio"
           >
             EG
@@ -52,7 +51,7 @@ export default function Header({ className = "" }: HeaderProps) {
 
         {/* Navigation Menu */}
         <nav
-          className={`hidden md:flex items-center space-x-1 ${animationClasses.headerSlideIn}`}
+          className={`flex items-center space-x-8 ${animationClasses.headerSlideIn}`}
           aria-label="Main navigation"
         >
           {[
@@ -68,7 +67,7 @@ export default function Header({ className = "" }: HeaderProps) {
                 e.preventDefault();
                 smoothScrollTo(item.href);
               }}
-              className="nav-link"
+              className="nav-link relative font-medium hover:text-primary-400 transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary-400 after:transition-all after:duration-300 hover:after:w-full"
               aria-label={`Navigate to ${item.label} section`}
             >
               {item.label}
@@ -78,14 +77,14 @@ export default function Header({ className = "" }: HeaderProps) {
 
         {/* Social Links & Contact */}
         <div
-          className={`flex items-center space-x-2 ${animationClasses.headerSlideInRight}`}
+          className={`flex items-center space-x-4 ${animationClasses.headerSlideInRight}`}
         >
           {/* Social Icons */}
-          <div className="hidden sm:flex items-center space-x-1 md:space-x-2">
+          <div className="flex items-center space-x-3">
             {navigationLinks.map((link) => (
               <div
                 key={link.platform}
-                className="rounded-lg focus-within:ring-2 focus-within:ring-primary-400 focus-within:ring-offset-2 focus-within:ring-offset-neutral-900"
+                className="rounded-lg focus-within:ring-2 focus-within:ring-primary-400 focus-within:ring-offset-2 focus-within:ring-offset-neutral-900 hover:scale-110 transition-transform duration-200"
               >
                 <SocialIcon
                   url={link.url}
@@ -94,7 +93,7 @@ export default function Header({ className = "" }: HeaderProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Visit my ${link.platform} profile (opens in new tab)`}
-                  className="social-icon"
+                  className="social-icon hover:opacity-80 transition-opacity duration-200"
                 />
               </div>
             ))}
@@ -107,7 +106,7 @@ export default function Header({ className = "" }: HeaderProps) {
           {contactLink && (
             <a
               href={contactLink.url}
-              className="btn-primary hidden sm:inline-flex"
+              className="btn-primary inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:shadow-lg hover:shadow-primary-500/25 hover:scale-105"
               aria-label="Send me an email"
             >
               <svg
@@ -128,88 +127,8 @@ export default function Header({ className = "" }: HeaderProps) {
               <span className="lg:hidden">Contact</span>
             </a>
           )}
-
-          {/* Mobile Menu Button */}
-          <button
-            type="button"
-            className="btn-ghost md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-expanded={isMenuOpen}
-            aria-controls="mobile-menu"
-            aria-label="Toggle mobile menu"
-          >
-            <svg
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              {isMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div
-          id="mobile-menu"
-          className={`block md:hidden border-t border-neutral-700 bg-neutral-900/95 backdrop-blur-sm ${animationClasses.fadeInDown}`}
-        >
-          <div className="px-4 py-3 space-y-2">
-            {[
-              { href: "#about", label: "About" },
-              { href: "#experience", label: "Experience" },
-              { href: "#skills", label: "Skills" },
-              { href: "#contact", label: "Contact" }
-            ].map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="nav-link-mobile"
-                onClick={(e) => {
-                  e.preventDefault();
-                  smoothScrollTo(item.href);
-                  setIsMenuOpen(false);
-                }}
-                aria-label={`Navigate to ${item.label} section`}
-              >
-                {item.label}
-              </a>
-            ))}
-            
-            {/* Mobile Social Links */}
-            <div className="flex items-center justify-center space-x-4 pt-4 border-t border-neutral-700">
-              {navigationLinks.map((link) => (
-                <SocialIcon
-                  key={link.platform}
-                  url={link.url}
-                  fgColor="#94a3b8"
-                  bgColor="transparent"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Visit my ${link.platform} profile (opens in new tab)`}
-                  className="social-icon"
-                />
-              ))}
-              {contactLink && (
-                <a
-                  href={contactLink.url}
-                  className="btn-primary"
-                  aria-label="Send me an email"
-                >
-                  Contact
-                </a>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
     </header>
   );
 }

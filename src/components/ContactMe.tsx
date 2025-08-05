@@ -31,7 +31,7 @@ export default function ContactMe(_props: Props) {
         <h2 className="text-2xl sm:text-3xl font-bold uppercase tracking-[0.2em] text-neutral-400">
           Get In Touch
         </h2>
-        <div className="spacing-sm">
+        <div className="mt-8 sm:mt-12 lg:mt-16">
           <h3 className="text-lg sm:text-xl font-medium text-neutral-300 max-w-3xl mx-auto text-center">
             Interested in working together? I&apos;m{" "}
             <span className="text-gradient font-semibold">

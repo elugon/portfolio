@@ -10,7 +10,7 @@ interface HeroProps {
 
 export default function Hero({ className = "" }: HeroProps) {
   return (
-    <main className={`section-container-xl relative py-12 sm:py-16 lg:py-20 ${className}`}>
+    <main className={`section-container-xl relative pt-4 pb-12 sm:pt-6 sm:pb-16 lg:pt-8 lg:pb-20 ${className}`}>
       {/* Animated gradient background */}
       <div className="absolute inset-0 animated-gradient opacity-30" />
       
