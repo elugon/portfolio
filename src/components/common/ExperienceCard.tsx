@@ -30,10 +30,10 @@ export default function ExperienceCard({
   return (
     <article 
       onClick={onClick}
-      className={`card-lg scroll-item min-h-[500px] sm:min-h-[600px] max-h-[90vh] sm:max-h-[700px] container-sm cursor-pointer ${hoverClasses.card} ${className}`}
+      className={`card-lg scroll-item container-sm cursor-pointer ${hoverClasses.card} ${className}`}
     >
-      {/* Grid Container with consistent spacing and responsive layout */}
-      <div className="h-full grid grid-rows-[auto_1fr] gap-6">
+      {/* Grid Container with consistent spacing and responsive layout - Dynamic height */}
+      <div className="grid gap-6">
         {/* Header Section - Company Logo and Basic Info */}
         <header className={`${hideCompanyLogo ? 'block' : 'grid grid-cols-[auto_1fr] gap-4 sm:gap-6'} border-b border-neutral-700/50 pb-4`}>
           {/* Logo Column - Enhanced prominence (only if not hidden) */}
@@ -90,8 +90,8 @@ export default function ExperienceCard({
           </div>
         </header>
 
-        {/* Content Grid - Main content area with consistent spacing */}
-        <div className="grid gap-4 overflow-hidden">
+        {/* Content Grid - Main content area with consistent spacing - Dynamic height */}
+        <div className="grid gap-4">
           {/* Company Context */}
           {(industry || companySize || teamSize) && (
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-muted bg-neutral-800/30 rounded-lg p-3">
@@ -167,28 +167,25 @@ export default function ExperienceCard({
             </div>
           )}
 
-          {/* Responsibilities - Takes remaining space */}
-          <div className="space-y-2 min-h-0">
+          {/* Responsibilities - Full visibility, no height restrictions */}
+          <div className="space-y-2">
             <h5 className="text-sm font-semibold text-neutral-200">Key Responsibilities</h5>
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-neutral-900/60 pointer-events-none z-10" />
-              <ul className="space-y-2 overflow-y-auto max-h-32 pr-2 scrollbar-thin scrollbar-thumb-neutral-600 scrollbar-track-transparent">
-                {responsibilities.map((responsibility, index) => (
-                  <li 
-                    key={index}
-                    style={{ animationDelay: `${index * 50}ms` }}
-                    className="grid grid-cols-[auto_1fr] gap-2 text-sm text-neutral-300 animate-slide-right motion-reduce-animation"
-                  >
-                    <span className="flex-shrink-0 mt-1.5">
-                      <svg className="w-3 h-3 text-primary-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                    </span>
-                    <span className="leading-relaxed">{responsibility}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul className="space-y-2">
+              {responsibilities.map((responsibility, index) => (
+                <li 
+                  key={index}
+                  style={{ animationDelay: `${index * 50}ms` }}
+                  className="grid grid-cols-[auto_1fr] gap-2 text-sm text-neutral-300 animate-slide-right motion-reduce-animation"
+                >
+                  <span className="flex-shrink-0 mt-1.5">
+                    <svg className="w-3 h-3 text-primary-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                  <span className="leading-relaxed">{responsibility}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 

@@ -55,7 +55,7 @@ export default function Experience({
                 {/* Timeline dot */}
                 <div className="timeline-dot" />
                 
-                {/* Layout: Logo on one side, Card on the other */}
+                {/* Layout: Logo on one side, Card on the other - Perfect centering */}
                 <div className="grid grid-cols-2 gap-8 items-center">
                   {/* Left side content */}
                   {isLeft ? (
@@ -68,10 +68,10 @@ export default function Experience({
                           hideCompanyLogo={true}
                         />
                       </div>
-                      {/* Large Logo on right */}
-                      <div className="timeline-content-right flex justify-center">
+                      {/* Large Logo on right - Maximum size with perfect decorative positioning */}
+                      <div className="timeline-content-right flex justify-center items-center h-full">
                         <div className={`relative ${animationClasses.scaleIn}`} style={{ animationDelay: `${index * 100 + 200}ms` }}>
-                          <div className="w-40 h-40 xl:w-48 xl:h-48 rounded-3xl overflow-hidden glass-card padding-lg neon-border shadow-2xl">
+                          <div className="w-72 h-72 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 rounded-3xl overflow-hidden glass-card padding-lg neon-border shadow-2xl">
                             <img 
                               src={experience.logo} 
                               alt={`${experience.company} logo`}
@@ -79,20 +79,22 @@ export default function Experience({
                               loading="lazy"
                             />
                           </div>
-                          {/* Premium floating elements */}
-                          <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary-400 rounded-full animate-pulse shadow-2xl shadow-primary-400/60" />
-                          <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-secondary-400 rounded-full animate-pulse shadow-xl shadow-secondary-400/60" style={{ animationDelay: '0.5s' }} />
-                          {/* Glow effect */}
+                          {/* Premium floating elements - Positioned relative to logo container for perfect corner placement */}
+                          <div className="absolute -top-5 -right-5 w-10 h-10 bg-primary-400 rounded-full animate-pulse shadow-2xl shadow-primary-400/60 z-10" />
+                          <div className="absolute -bottom-5 -left-5 w-8 h-8 bg-secondary-400 rounded-full animate-pulse shadow-xl shadow-secondary-400/60 z-10" style={{ animationDelay: '0.5s' }} />
+                          {/* Enhanced glow effect */}
                           <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-400/20 to-secondary-400/20 opacity-0 hover:opacity-100 transition-opacity duration-500" />
+                          {/* Additional outer glow for prominence */}
+                          <div className="absolute inset-[-8px] rounded-3xl bg-gradient-to-br from-primary-400/10 to-secondary-400/10 blur-lg opacity-0 hover:opacity-50 transition-opacity duration-500" />
                         </div>
                       </div>
                     </>
                   ) : (
                     <>
-                      {/* Large Logo on left */}
-                      <div className="timeline-content-left flex justify-center">
+                      {/* Large Logo on left - Maximum size with perfect decorative positioning */}
+                      <div className="timeline-content-left flex justify-center items-center h-full">
                         <div className={`relative ${animationClasses.scaleIn}`} style={{ animationDelay: `${index * 100 + 200}ms` }}>
-                          <div className="w-40 h-40 xl:w-48 xl:h-48 rounded-3xl overflow-hidden glass-card padding-lg neon-border shadow-2xl">
+                          <div className="w-72 h-72 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 rounded-3xl overflow-hidden glass-card padding-lg neon-border shadow-2xl">
                             <img 
                               src={experience.logo} 
                               alt={`${experience.company} logo`}
@@ -100,11 +102,13 @@ export default function Experience({
                               loading="lazy"
                             />
                           </div>
-                          {/* Premium floating elements */}
-                          <div className="absolute -top-4 -left-4 w-8 h-8 bg-primary-400 rounded-full animate-pulse shadow-2xl shadow-primary-400/60" />
-                          <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-secondary-400 rounded-full animate-pulse shadow-xl shadow-secondary-400/60" style={{ animationDelay: '0.5s' }} />
-                          {/* Glow effect */}
+                          {/* Premium floating elements - Positioned relative to logo container for perfect corner placement */}
+                          <div className="absolute -top-5 -left-5 w-10 h-10 bg-primary-400 rounded-full animate-pulse shadow-2xl shadow-primary-400/60 z-10" />
+                          <div className="absolute -bottom-5 -right-5 w-8 h-8 bg-secondary-400 rounded-full animate-pulse shadow-xl shadow-secondary-400/60 z-10" style={{ animationDelay: '0.5s' }} />
+                          {/* Enhanced glow effect */}
                           <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-400/20 to-secondary-400/20 opacity-0 hover:opacity-100 transition-opacity duration-500" />
+                          {/* Additional outer glow for prominence */}
+                          <div className="absolute inset-[-8px] rounded-3xl bg-gradient-to-br from-primary-400/10 to-secondary-400/10 blur-lg opacity-0 hover:opacity-50 transition-opacity duration-500" />
                         </div>
                       </div>
                       {/* Card on right */}
