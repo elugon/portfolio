@@ -75,7 +75,7 @@ export default function Experience({
                             <img 
                               src={experience.logo} 
                               alt={`${experience.company} logo`}
-                              className="w-full h-full object-contain hover:scale-110 transition-all duration-500 drop-shadow-2xl"
+                              className="w-full h-full object-contain hover:scale-110 transition-all duration-500 drop-shadow-2xl rounded-2xl"
                               loading="lazy"
                             />
                           </div>
@@ -98,7 +98,7 @@ export default function Experience({
                             <img 
                               src={experience.logo} 
                               alt={`${experience.company} logo`}
-                              className="w-full h-full object-contain hover:scale-110 transition-all duration-500 drop-shadow-2xl"
+                              className="w-full h-full object-contain hover:scale-110 transition-all duration-500 drop-shadow-2xl rounded-2xl"
                               loading="lazy"
                             />
                           </div>

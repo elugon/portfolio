@@ -43,7 +43,7 @@ export default function ExperienceCard({
                 <img 
                   src={logo} 
                   alt={`${company} logo`}
-                  className="w-full h-full object-contain hover:scale-110 transition-all duration-500 drop-shadow-lg"
+                  className="w-full h-full object-contain hover:scale-110 transition-all duration-500 drop-shadow-lg rounded-2xl"
                   loading="lazy"
                 />
               </div>

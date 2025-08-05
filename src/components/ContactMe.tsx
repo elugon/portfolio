@@ -31,14 +31,6 @@ export default function ContactMe(_props: Props) {
 
   return (
     <div className="my-screen relative mx-auto flex max-w-7xl flex-col items-center justify-evenly px-6 text-center sm:px-10">
-      {/* Skip to main content for screen readers */}
-      <a 
-        href="#contact-form" 
-        className="skip-to-main"
-        aria-label="Skip to contact form"
-      >
-        Skip to contact form
-      </a>
       
       <header>
         <h2 className="section-title absolute top-8 sm:top-16">
