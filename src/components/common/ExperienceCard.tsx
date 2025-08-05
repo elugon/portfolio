@@ -39,13 +39,18 @@ export default function ExperienceCard({
           {/* Logo Column - Enhanced prominence (only if not hidden) */}
           {!hideCompanyLogo && (
             <div className={`relative ${animationClasses.scaleIn}`}>
-              <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36 rounded-3xl overflow-hidden glass-card padding-md neon-border shadow-2xl">
-                <img 
-                  src={logo} 
-                  alt={`${company} logo`}
-                  className="w-full h-full object-contain hover:scale-110 transition-all duration-500 drop-shadow-lg rounded-2xl"
-                  loading="lazy"
-                />
+              <div className="glass-card neon-border shadow-2xl p-3">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36 flex items-center justify-center">
+                  <div className="rounded-3xl overflow-hidden bg-white/5 w-fit h-fit">
+                    <img 
+                      src={logo} 
+                      alt={`${company} logo`}
+                      className="max-w-full max-h-full object-contain hover:scale-110 transition-all duration-500 drop-shadow-lg"
+                      style={{ maxWidth: '6rem', maxHeight: '6rem' }}
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
               </div>
               {/* Enhanced floating accent with glow */}
               <div className="absolute -top-3 -right-3 w-6 h-6 bg-primary-400 rounded-full animate-pulse shadow-xl shadow-primary-400/60" />

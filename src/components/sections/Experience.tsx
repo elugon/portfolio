@@ -71,13 +71,18 @@ export default function Experience({
                       {/* Large Logo on right - Maximum size with perfect decorative positioning */}
                       <div className="timeline-content-right flex justify-center items-center h-full">
                         <div className={`relative ${animationClasses.scaleIn}`} style={{ animationDelay: `${index * 100 + 200}ms` }}>
-                          <div className="w-72 h-72 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 rounded-3xl overflow-hidden glass-card padding-lg neon-border shadow-2xl">
-                            <img 
-                              src={experience.logo} 
-                              alt={`${experience.company} logo`}
-                              className="w-full h-full object-contain hover:scale-110 transition-all duration-500 drop-shadow-2xl rounded-2xl"
-                              loading="lazy"
-                            />
+                          <div className="glass-card neon-border shadow-2xl p-6">
+                            <div className="w-72 h-72 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 flex items-center justify-center">
+                              <div className="rounded-3xl overflow-hidden bg-white/5 w-fit h-fit">
+                                <img 
+                                  src={experience.logo} 
+                                  alt={`${experience.company} logo`}
+                                  className="max-w-full max-h-full object-contain hover:scale-110 transition-all duration-500 drop-shadow-2xl"
+                                  style={{ maxWidth: '20rem', maxHeight: '20rem' }}
+                                  loading="lazy"
+                                />
+                              </div>
+                            </div>
                           </div>
                           {/* Premium floating elements - Positioned relative to logo container for perfect corner placement */}
                           <div className="absolute -top-5 -right-5 w-10 h-10 bg-primary-400 rounded-full animate-pulse shadow-2xl shadow-primary-400/60 z-10" />
@@ -94,13 +99,18 @@ export default function Experience({
                       {/* Large Logo on left - Maximum size with perfect decorative positioning */}
                       <div className="timeline-content-left flex justify-center items-center h-full">
                         <div className={`relative ${animationClasses.scaleIn}`} style={{ animationDelay: `${index * 100 + 200}ms` }}>
-                          <div className="w-72 h-72 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 rounded-3xl overflow-hidden glass-card padding-lg neon-border shadow-2xl">
-                            <img 
-                              src={experience.logo} 
-                              alt={`${experience.company} logo`}
-                              className="w-full h-full object-contain hover:scale-110 transition-all duration-500 drop-shadow-2xl rounded-2xl"
-                              loading="lazy"
-                            />
+                          <div className="glass-card neon-border shadow-2xl p-6">
+                            <div className="w-72 h-72 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 flex items-center justify-center">
+                              <div className="rounded-3xl overflow-hidden bg-white/5 w-fit h-fit">
+                                <img 
+                                  src={experience.logo} 
+                                  alt={`${experience.company} logo`}
+                                  className="max-w-full max-h-full object-contain hover:scale-110 transition-all duration-500 drop-shadow-2xl"
+                                  style={{ maxWidth: '20rem', maxHeight: '20rem' }}
+                                  loading="lazy"
+                                />
+                              </div>
+                            </div>
                           </div>
                           {/* Premium floating elements - Positioned relative to logo container for perfect corner placement */}
                           <div className="absolute -top-5 -left-5 w-10 h-10 bg-primary-400 rounded-full animate-pulse shadow-2xl shadow-primary-400/60 z-10" />
