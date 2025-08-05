@@ -156,32 +156,24 @@ export default function Skills({
             })}
           </div>
           
-          {/* Active filter indicator with consistent spacing */}
-          {selectedCategory && (
-            <div className="mt-6 pt-6 border-t border-subtle">
-              <p className="text-center text-caption sm:text-sm text-muted" role="status" aria-live="polite">
-                Showing <span className="text-gradient font-semibold">
-                  {skillsByCategory[selectedCategory].length}
-                </span> {categoryInfo[selectedCategory as keyof typeof categoryInfo].name.toLowerCase()} skills
-              </p>
-            </div>
-          )}
         </div>
       </nav>
 
       {/* Skills grid with optimized layout */}
       <main className="pt-40 sm:pt-44 lg:pt-48 pb-8 sm:pb-12 lg:pb-16 w-full">
         <div className="container-xl">
-          {/* Optimized skills grid */}
-          <div className="grid gap-4 sm:gap-5 lg:gap-6 grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 
-                         place-items-center max-w-5xl mx-auto transform-gpu">
+          {/* Optimized skills grid with flexbox for better filtering */}
+          <div 
+            key={selectedCategory || 'all'} 
+            className="flex flex-wrap justify-center gap-4 sm:gap-5 lg:gap-6 max-w-5xl mx-auto transform-gpu"
+          >
             {filteredSkills.map((skill, index) => (
               <div
-                key={skill.id}
+                key={`${selectedCategory || 'all'}-${skill.id}`}
                 className={`group ${animationClasses.scaleIn} 
                            transform-gpu will-change-transform transition-all duration-300 ease-out 
                            hover:-translate-y-2 hover:shadow-card-hover
-                           flex flex-col w-full max-w-[120px] sm:max-w-[140px] lg:max-w-[160px]`}
+                           flex flex-col w-[120px] sm:w-[140px] lg:w-[160px] flex-shrink-0`}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 <SkillCard 
@@ -192,93 +184,6 @@ export default function Skills({
             ))}
           </div>
 
-          {/* Skills statistics with optimized spacing */}
-          <aside
-            className={`mt-16 sm:mt-20 lg:mt-24 ${animationClasses.slideInFromBottom}`}
-            style={{ animationDelay: '0.5s' }}
-            aria-labelledby="skills-stats-title"
-          >
-            {/* Invisible title for screen readers */}
-            <h3 id="skills-stats-title" className="sr-only">Skills Statistics</h3>
-            
-            {/* Enhanced stats grid with proper responsive centering */}
-            <div className="stats-grid place-items-center lg:place-items-stretch 
-                           justify-items-center max-w-6xl mx-auto">
-              {categories.map((category, index) => {
-                const info = categoryInfo[category as keyof typeof categoryInfo];
-                const categorySkills = skillsByCategory[category];
-                const avgProficiency = Math.round(
-                  categorySkills.reduce((sum, skill) => sum + skill.proficiency, 0) / categorySkills.length
-                );
-
-                return (
-                  <div 
-                    key={category} 
-                    className="stat-card group/stat w-full max-w-xs sm:max-w-sm lg:max-w-none
-                              transform-gpu will-change-transform transition-all duration-300 ease-out 
-                              hover:scale-105 hover:-translate-y-1 hover:shadow-card-hover
-                              flex flex-col justify-between min-h-[180px] sm:min-h-[200px]
-                              mx-auto"
-                    style={{ animationDelay: `${0.6 + index * 0.1}s` }}
-                  >
-                    {/* Icon with consistent spacing */}
-                    <div className="flex items-center justify-center mb-6">
-                      <div className={`text-3xl sm:text-4xl lg:text-5xl mb-2 
-                                     transform-gpu will-change-transform 
-                                     group-hover/stat:animate-bounce-gentle group-hover/stat:scale-110 
-                                     transition-transform duration-200 ease-out`}
-                           role="img" 
-                           aria-label={`${info.name} category`}>
-                        {info.icon}
-                      </div>
-                    </div>
-                    
-                    {/* Category info with consistent spacing */}
-                    <div className="flex-1 text-center spacing-sm">
-                      <h4 className="font-semibold text-neutral-100 text-sm sm:text-base lg:text-lg 
-                                   group-hover/stat:text-primary-400 transition-colors duration-200 ease-out">
-                        {info.name}
-                      </h4>
-                      
-                      {/* Count with consistent spacing */}
-                      <div className="spacing-xs">
-                        <p className={`text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r ${info.color} 
-                                      bg-clip-text text-transparent transform-gpu will-change-transform
-                                      group-hover/stat:scale-110 transition-transform duration-200 ease-out`}>
-                          {categorySkills.length}
-                        </p>
-                        <p className="text-xs sm:text-sm text-muted font-medium">Technologies</p>
-                      </div>
-                      
-                      {/* Proficiency indicator with consistent spacing */}
-                      <div className="spacing-xs">
-                        <div className="relative h-2.5 bg-neutral-700/50 rounded-full overflow-hidden
-                                       group-hover/stat:h-3 transition-all duration-200 ease-out">
-                          <div
-                            className={`absolute inset-y-0 left-0 bg-gradient-to-r ${info.color} 
-                                       rounded-full transition-all duration-800 ease-out transform-gpu
-                                       hover-glow`}
-                            style={{ 
-                              width: `${avgProficiency}%`,
-                              animationDelay: `${1 + index * 0.2}s`,
-                            }}
-                          />
-                          {/* Shimmer effect */}
-                          <div className="absolute inset-0 bg-gradient-to-r from-transparent 
-                                         via-white/30 to-transparent animate-shimmer opacity-0 transform-gpu
-                                         group-hover/stat:opacity-100 transition-opacity duration-300 ease-out" />
-                        </div>
-                        <p className="text-xs sm:text-sm text-gradient font-semibold 
-                                     group-hover/stat:text-primary-300 transition-colors duration-200 ease-out">
-                          {avgProficiency}% Avg Proficiency
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </aside>
         </div>
       </main>
 
