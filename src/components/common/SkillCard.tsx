@@ -92,7 +92,9 @@ export default function SkillCard({
           
           {/* Skill name */}
           <h3 className="text-xs sm:text-sm font-semibold text-neutral-100 mb-1 text-center 
-                        group-hover:text-primary-400 transition-colors duration-200 ease-out leading-tight">
+                        group-hover:text-primary-400 transition-colors duration-200 ease-out 
+                        leading-relaxed min-h-[2.5rem] sm:min-h-[3rem] flex items-center justify-center
+                        hyphens-auto break-words">
             {name}
           </h3>
           

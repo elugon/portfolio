@@ -104,7 +104,7 @@ export default function Skills({
 
       {/* Category filters with proper separation */}
       <nav 
-        className={`absolute top-40 sm:top-44 lg:top-48 left-1/2 -translate-x-1/2 z-30 
+        className={`absolute top-32 sm:top-36 lg:top-40 left-1/2 -translate-x-1/2 z-30 
                    w-full max-w-5xl px-4 sm:px-6 ${animationClasses.slideInFromBottom}`}
         style={{ animationDelay: '0.3s' }}
         aria-label="Skills category filters"
@@ -160,7 +160,7 @@ export default function Skills({
       </nav>
 
       {/* Skills grid with optimized layout */}
-      <main className="pt-40 sm:pt-44 lg:pt-48 pb-8 sm:pb-12 lg:pb-16 w-full">
+      <main className="pt-32 sm:pt-36 lg:pt-40 pb-8 sm:pb-12 lg:pb-16 w-full">
         <div className="container-xl">
           {/* Optimized skills grid with flexbox for better filtering */}
           <div 

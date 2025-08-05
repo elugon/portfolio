@@ -2,7 +2,6 @@ import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { socialLinks } from "../../data/personal-info";
 import { animationClasses } from "../../utils/tailwind-animations";
-import ThemeToggle from "../ui/ThemeToggle";
 
 const smoothScrollTo = (elementId: string) => {
   const element = document.getElementById(elementId.replace('#', ''));
@@ -98,9 +97,6 @@ export default function Header({ className = "" }: HeaderProps) {
               </div>
             ))}
           </div>
-
-          {/* Theme Toggle */}
-          <ThemeToggle />
 
           {/* Contact Button */}
           {contactLink && (
