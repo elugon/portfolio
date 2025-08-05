@@ -41,10 +41,10 @@ export default function Hero({ className = "" }: HeroProps) {
         </div>
       </div>
       
-      {/* Main Content - Normal document flow with top spacing */}
-      <div className="relative z-20 pt-32 sm:pt-40 md:pt-48 lg:pt-56">
-        <div className="container-md text-center space-y-6 sm:space-y-8">
-          <header className="space-y-4">
+      {/* Main Content - Normal document flow with reduced top spacing */}
+      <div className="relative z-20 pt-16 sm:pt-20 md:pt-24 lg:pt-28">
+        <div className="container-md text-center space-y-12 sm:space-y-16 lg:space-y-20">
+          <header className="space-y-8 sm:space-y-12">
             <p 
               className={`text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] text-primary-400 ${animationClasses.slideInFromTop}`}
               style={{ animationDelay: '0.3s' }}
@@ -70,74 +70,55 @@ export default function Hero({ className = "" }: HeroProps) {
             </h1>
           </header>
           
-          {/* Enhanced description */}
-          <p 
-            className={`text-lg sm:text-xl text-neutral-300 leading-relaxed max-w-2xl mx-auto ${animationClasses.fadeInUp}`}
-            style={{ animationDelay: '0.5s' }}
-          >
-            Crafting <span className="text-primary-400 font-semibold">exceptional digital experiences</span> with 
-            modern technologies and a passion for <span className="text-secondary-400 font-semibold">clean, efficient code</span>
-          </p>
+          {/* Enhanced description and Stats - Improved two column layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16 items-start max-w-6xl mx-auto">
+            {/* Left side - Description (takes 3 columns) */}
+            <div className="lg:col-span-3">
+              <p 
+                className={`text-xl sm:text-2xl text-neutral-300 leading-relaxed mx-auto lg:mx-0 text-center lg:text-left max-w-2xl lg:max-w-none ${animationClasses.fadeInUp}`}
+                style={{ animationDelay: '0.5s' }}
+              >
+                Crafting <span className="text-primary-400 font-semibold">exceptional digital experiences</span> with 
+                modern technologies and a passion for <span className="text-secondary-400 font-semibold">clean, efficient code</span>
+              </p>
+            </div>
 
-          {/* CTA Buttons */}
-          <div 
-            className={`flex flex-col sm:flex-row gap-4 justify-center items-center ${animationClasses.slideInFromBottom}`}
-            style={{ animationDelay: '0.6s' }}
-          >
-            <a
-              href="#experience"
-              className={`btn-modern w-full sm:w-auto ${hoverClasses.button}`}
+            {/* Right side - Stats (takes 2 columns) */}
+            <div 
+              className={`lg:col-span-2 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-6 lg:gap-4 ${animationClasses.fadeInUp}`}
+              style={{ animationDelay: '0.6s' }}
             >
-              View My Experience
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-            <a
-              href="#contact"
-              className={`btn-modern-outline w-full sm:w-auto ${hoverClasses.button}`}
-            >
-              Get In Touch
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </a>
+              <div className="text-center">
+                <p 
+                  className={`text-3xl sm:text-4xl font-bold text-gradient ${animationClasses.scaleIn}`}
+                  style={{ animationDelay: '0.7s' }}
+                >
+                  5+
+                </p>
+                <p className="text-sm text-neutral-400 mt-1">Years Experience</p>
+              </div>
+              <div className="text-center">
+                <p 
+                  className={`text-3xl sm:text-4xl font-bold text-gradient ${animationClasses.scaleIn}`}
+                  style={{ animationDelay: '0.8s' }}
+                >
+                  20+
+                </p>
+                <p className="text-sm text-neutral-400 mt-1">Technologies Mastered</p>
+              </div>
+              <div className="text-center">
+                <p 
+                  className={`text-3xl sm:text-4xl font-bold text-gradient ${animationClasses.scaleIn}`}
+                  style={{ animationDelay: '0.9s' }}
+                >
+                  15+
+                </p>
+                <p className="text-sm text-neutral-400 mt-1">Technologies</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Stats Section */}
-        <div 
-          className={`flex flex-wrap justify-center gap-8 sm:gap-12 mt-12 ${animationClasses.fadeInUp}`}
-          style={{ animationDelay: '0.7s' }}
-        >
-          <div className="text-center">
-            <p 
-              className={`text-3xl sm:text-4xl font-bold text-gradient ${animationClasses.scaleIn}`}
-              style={{ animationDelay: '0.8s' }}
-            >
-              5+
-            </p>
-            <p className="text-sm text-neutral-400 mt-1">Years Experience</p>
-          </div>
-          <div className="text-center">
-            <p 
-              className={`text-3xl sm:text-4xl font-bold text-gradient ${animationClasses.scaleIn}`}
-              style={{ animationDelay: '0.9s' }}
-            >
-              20+
-            </p>
-            <p className="text-sm text-neutral-400 mt-1">Technologies Mastered</p>
-          </div>
-          <div className="text-center">
-            <p 
-              className={`text-3xl sm:text-4xl font-bold text-gradient ${animationClasses.scaleIn}`}
-              style={{ animationDelay: '1s' }}
-            >
-              15+
-            </p>
-            <p className="text-sm text-neutral-400 mt-1">Technologies</p>
-          </div>
-        </div>
       </div>
       
       {/* Enhanced scroll indicator */}
