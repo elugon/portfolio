@@ -59,16 +59,16 @@ export default function About(_props: Props) {
               {/* Key highlights */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
                 <div className="glass-card padding-sm text-center">
-                  <div className="text-2xl font-bold text-gradient">5+</div>
+                  <div className="text-2xl font-bold text-gradient">12+</div>
                   <div className="text-xs text-muted">Años de Experiencia</div>
                 </div>
                 <div className="glass-card padding-sm text-center">
-                  <div className="text-2xl font-bold text-gradient">15+</div>
-                  <div className="text-xs text-muted">Tecnologías</div>
+                  <div className="text-2xl font-bold text-gradient">25+</div>
+                  <div className="text-xs text-muted">Tecnologías Dominadas</div>
                 </div>
                 <div className="glass-card padding-sm text-center">
-                  <div className="text-2xl font-bold text-gradient">100%</div>
-                  <div className="text-xs text-muted">Satisfacción del Cliente</div>
+                  <div className="text-2xl font-bold text-gradient">7</div>
+                  <div className="text-xs text-muted">Desarrolladores Liderados</div>
                 </div>
               </div>
             </div>

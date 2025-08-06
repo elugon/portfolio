@@ -4,57 +4,57 @@ import type { ValueCard, Stat } from '../types';
 export const aboutStats: Stat[] = [
   {
     id: 'experience',
-    value: '5+',
+    value: '12+',
     label: 'Años de Experiencia'
   },
   {
-    id: 'projects',
-    value: '20+',
-    label: 'Proyectos Entregados'
+    id: 'technologies',
+    value: '25+',
+    label: 'Tecnologías Dominadas'
   },
   {
-    id: 'satisfaction',
-    value: '100%',
-    label: 'Satisfacción del Cliente'
+    id: 'team-leadership',
+    value: '7',
+    label: 'Desarrolladores Liderados'
   }
 ];
 
 // Core values data (Single Source of Truth)
 export const coreValues: ValueCard[] = [
   {
-    id: 'innovation',
-    icon: '💡',
-    title: 'Innovación',
-    description: 'Explorando constantemente nuevas tecnologías y soluciones creativas'
+    id: 'leadership',
+    icon: '👥',
+    title: 'Liderazgo Técnico',
+    description: 'Dirigiendo equipos de desarrollo y gestionando infraestructura crítica en Azure y AWS'
   },
   {
-    id: 'quality',
-    icon: '🎯',
-    title: 'Calidad',
-    description: 'Entregando aplicaciones perfectas y de alto rendimiento'
+    id: 'ai-engineering',
+    icon: '🤖',
+    title: 'Prompt Engineering',
+    description: 'Implementando técnicas avanzadas de IA para optimizar modelos y automatizar procesos'
   },
   {
-    id: 'collaboration',
-    icon: '🤝',
-    title: 'Colaboración',
-    description: 'Trabajando de manera fluida con equipos para lograr objetivos comunes'
+    id: 'cloud-architecture',
+    icon: '☁️',
+    title: 'Arquitectura Cloud',
+    description: 'Diseñando soluciones escalables y seguras en plataformas Azure y AWS'
   },
   {
-    id: 'focus-areas',
-    icon: '🔧',
-    title: 'Áreas de Enfoque',
-    description: 'Desarrollo full-stack, ecosistema React, tecnologías web modernas y arquitectura en la nube'
+    id: 'cybersecurity',
+    icon: '🔐',
+    title: 'Ciberseguridad',
+    description: 'Aplicando estándares ISO 27001 para proteger datos sensibles y sistemas críticos'
   },
   {
-    id: 'approach',
-    icon: '🚀',
-    title: 'Enfoque',
-    description: 'Arquitectura limpia, desarrollo dirigido por pruebas, diseño centrado en el usuario y metodologías ágiles'
+    id: 'full-stack',
+    icon: '💻',
+    title: 'Desarrollo Full-Stack',
+    description: 'Creando soluciones completas con Python, C#, TypeScript, GoLang y Vue.js'
   },
   {
-    id: 'interests',
-    icon: '💚',
-    title: 'Intereses',
-    description: 'Fútbol, cine, tecnologías emergentes y contribución a proyectos de código abierto'
+    id: 'international',
+    icon: '🌍',
+    title: 'Proyectos Globales',
+    description: 'Coordinando stakeholders internacionales con comunicación fluida en inglés'
   }
 ];

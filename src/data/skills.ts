@@ -139,7 +139,7 @@ export const skills: Skill[] = [
   {
     id: 'power-automate',
     name: 'Power Automate',
-    logo: 'https://cdn.simpleicons.org/microsoftpowerautomate',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg',
     url: 'https://powerautomate.microsoft.com/',
     category: 'tools',
     proficiency: 80
