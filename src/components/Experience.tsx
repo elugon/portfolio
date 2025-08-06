@@ -14,15 +14,14 @@ export default function Experience(_props: Props) {
         Experiencia
       </h3>
 
-      <div className="flex h-max w-max space-x-5 overflow-x-scroll scroll-smooth p-10 pt-6 sm:pt-16 md:pt-36 lg:pt-44 xl:justify-evenly">
+      <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 p-6 pt-6 sm:pt-16 md:pt-24 lg:pt-32">
         {experiences.map((experience, index) => (
-          <div
+          <ExperienceCard 
             key={experience.id}
-            style={{ animationDelay: `${index * 200}ms` }}
+            {...experience} 
             className="animate-slide-up motion-reduce-animation"
-          >
-            <ExperienceCard {...experience} />
-          </div>
+            style={{ animationDelay: `${index * 150}ms` }}
+          />
         ))}
       </div>
     </div>

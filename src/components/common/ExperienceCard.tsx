@@ -31,61 +31,60 @@ export default function ExperienceCard({
   return (
     <article 
       onClick={onClick}
-      className={`card-lg scroll-item container-sm cursor-pointer ${hoverClasses.card} ${className}`}
+      className={`relative group overflow-hidden rounded-2xl bg-gradient-to-br from-neutral-900/95 to-neutral-800/95 backdrop-blur-sm border border-neutral-700/50 hover:border-primary-400/50 transition-all duration-500 cursor-pointer shadow-xl hover:shadow-2xl hover:shadow-primary-400/10 ${className}`}
     >
-      {/* Grid Container with consistent spacing and responsive layout - Dynamic height */}
-      <div className="grid gap-6">
-        {/* Header Section - Company Logo and Basic Info */}
-        <header className={`${hideCompanyLogo ? 'block' : 'grid grid-cols-[auto_1fr] gap-4 sm:gap-6'} border-b border-neutral-700/50 pb-4`}>
-          {/* Logo Column - Enhanced prominence (only if not hidden) */}
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-400/5 via-transparent to-secondary-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.1),transparent)] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+      
+      {/* Main Content */}
+      <div className="relative p-6 space-y-6">
+        {/* Header Section - Redesigned for better hierarchy */}
+        <header className="flex items-start gap-4">
+          {/* Logo Column - Simplified and more prominent */}
           {!hideCompanyLogo && (
-            <div className={`relative ${animationClasses.scaleIn}`}>
-              <div className="glass-card neon-border shadow-2xl p-3">
-                <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36 flex items-center justify-center">
-                  <div className="rounded-3xl overflow-hidden bg-white/5 w-fit h-fit">
-                    <img 
-                      src={logo} 
-                      alt={`${company} logo`}
-                      className="max-w-full max-h-full object-contain hover:scale-110 transition-all duration-500 drop-shadow-lg"
-                      style={{ maxWidth: '6rem', maxHeight: '6rem' }}
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
+            <div className="relative flex-shrink-0">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden bg-white/10 p-2 ring-2 ring-neutral-700/50 group-hover:ring-primary-400/30 transition-all duration-300">
+                <img 
+                  src={logo} 
+                  alt={`${company} logo`}
+                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
               </div>
-              {/* Enhanced floating accent with glow */}
-              <div className="absolute -top-3 -right-3 w-6 h-6 bg-primary-400 rounded-full animate-pulse shadow-xl shadow-primary-400/60" />
-              {/* Additional subtle glow effect */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-400/15 to-secondary-400/15 opacity-0 hover:opacity-100 transition-opacity duration-500" />
-              {/* Premium border highlight */}
-              <div className="absolute inset-0 rounded-3xl border-2 border-gradient-to-r from-primary-400/20 via-transparent to-secondary-400/20" />
+              {/* Status indicator */}
+              <div className="absolute -top-1 -right-1 w-4 h-4 bg-primary-400 rounded-full border-2 border-neutral-800 shadow-lg animate-pulse" />
             </div>
           )}
           
-          {/* Info Column */}
-          <div className="grid grid-rows-[auto_auto_auto] gap-2 min-w-0">
-            <h4 className="text-xl sm:text-2xl font-bold text-neutral-100 leading-tight">{title}</h4>
-            
-            <div className="flex flex-wrap items-center gap-2">
-              <p className="text-primary-400 font-semibold text-base sm:text-lg">{company}</p>
-              {employmentType && (
-                <span className="px-2 py-1 text-xs font-medium rounded bg-secondary-400/20 text-secondary-300 border border-secondary-400/30">
-                  {employmentType ? getLocalizedEmploymentType(employmentType) : ''}
-                </span>
-              )}
+          {/* Title & Company Info */}
+          <div className="flex-1 min-w-0">
+            <div className="space-y-2">
+              <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight group-hover:text-primary-400 transition-colors duration-300">
+                {title}
+              </h3>
+              
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="text-lg font-semibold text-primary-400">{company}</span>
+                {employmentType && (
+                  <span className="px-3 py-1 text-xs font-medium rounded-full bg-secondary-400/20 text-secondary-300 border border-secondary-400/30">
+                    {getLocalizedEmploymentType(employmentType)}
+                  </span>
+                )}
+              </div>
             </div>
             
-            {/* Meta information grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-muted">
-              <div className="flex items-center gap-1">
-                <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {/* Meta information - Simplified */}
+            <div className="mt-3 flex flex-wrap items-center gap-4 text-sm text-neutral-400">
+              <div className="flex items-center gap-1.5">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                <span>{period}</span>
+                <span className="font-medium">{period}</span>
               </div>
               {location && (
-                <div className="flex items-center gap-1">
-                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex items-center gap-1.5">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
@@ -96,75 +95,89 @@ export default function ExperienceCard({
           </div>
         </header>
 
-        {/* Content Grid - Main content area with consistent spacing - Dynamic height */}
-        <div className="grid gap-4">
-          {/* Company Context */}
-          {(industry || companySize || teamSize) && (
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-muted bg-neutral-800/30 rounded-lg p-3">
-              {industry && <span className="flex items-center gap-1"><span>🏢</span><span>{industry}</span></span>}
-              {companySize && <span className="flex items-center gap-1"><span>👥</span><span>{companySize}</span></span>}
-              {teamSize && <span className="flex items-center gap-1"><span>⚡</span><span>Equipo: {teamSize}</span></span>}
-            </div>
-          )}
+        {/* Company Context - Compact info pills */}
+        {(industry || companySize || teamSize) && (
+          <div className="flex flex-wrap gap-2">
+            {industry && (
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full bg-neutral-800/50 text-neutral-300 border border-neutral-700/50">
+                <span className="text-blue-400">🏢</span>
+                {industry}
+              </span>
+            )}
+            {companySize && (
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full bg-neutral-800/50 text-neutral-300 border border-neutral-700/50">
+                <span className="text-green-400">👥</span>
+                {companySize}
+              </span>
+            )}
+            {teamSize && (
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full bg-neutral-800/50 text-neutral-300 border border-neutral-700/50">
+                <span className="text-purple-400">⚡</span>
+                Equipo: {teamSize}
+              </span>
+            )}
+          </div>
+        )}
 
-          {/* Description */}
-          {description && (
-            <div className="bg-neutral-800/20 rounded-lg p-3">
-              <p className="text-sm text-neutral-300 leading-relaxed italic">{description}</p>
-            </div>
-          )}
+        {/* Description - More prominent */}
+        {description && (
+          <div className="rounded-lg bg-gradient-to-r from-neutral-800/30 to-neutral-800/10 p-4 border-l-4 border-primary-400/60">
+            <p className="text-sm text-neutral-300 leading-relaxed font-medium">{description}</p>
+          </div>
+        )}
 
-          {/* Two Column Grid for Skills and Achievements */}
-          {((achievements && achievements.length > 0) || (keySkills && keySkills.length > 0)) && (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              {/* Key Achievements */}
-              {achievements && achievements.length > 0 && (
-                <div className="space-y-2">
-                  <h5 className="text-sm font-semibold text-neutral-200 flex items-center gap-2">
-                    <svg className="w-4 h-4 text-yellow-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        {/* Key Achievements - Highlighted section */}
+        {achievements && achievements.length > 0 && (
+          <div className="space-y-3">
+            <h4 className="text-base font-bold text-white flex items-center gap-2">
+              <svg className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              Logros Principales
+            </h4>
+            <div className="grid gap-2">
+              {achievements.slice(0, 3).map((achievement, index) => (
+                <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-gradient-to-r from-yellow-400/5 to-transparent border border-yellow-400/20">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-yellow-400/20 flex items-center justify-center mt-0.5">
+                    <svg className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span>Logros Principales</span>
-                  </h5>
-                  <ul className="space-y-1">
-                    {achievements.map((achievement, index) => (
-                      <li key={index} className="grid grid-cols-[auto_1fr] gap-2 text-sm text-neutral-300">
-                        <span className="flex-shrink-0 w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2" />
-                        <span className="leading-relaxed">{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {/* Key Skills */}
-              {keySkills && keySkills.length > 0 && (
-                <div className="space-y-2">
-                  <h5 className="text-sm font-semibold text-neutral-200">Habilidades Clave</h5>
-                  <div className="grid grid-cols-2 gap-1">
-                    {keySkills.map((skill) => (
-                      <span 
-                        key={skill}
-                        className="px-2 py-1 text-xs font-medium rounded bg-gradient-to-r from-primary-400/15 to-primary-600/15 text-primary-300 border border-primary-400/25 text-center"
-                      >
-                        {skill}
-                      </span>
-                    ))}
                   </div>
+                  <p className="text-sm text-neutral-300 leading-relaxed font-medium">{achievement}</p>
                 </div>
-              )}
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Skills and Technologies - Simplified layout */}
+        <div className="space-y-4">
+          {/* Key Skills */}
+          {keySkills && keySkills.length > 0 && (
+            <div className="space-y-3">
+              <h4 className="text-sm font-semibold text-neutral-200 uppercase tracking-wide">Habilidades Clave</h4>
+              <div className="flex flex-wrap gap-2">
+                {keySkills.map((skill) => (
+                  <span 
+                    key={skill}
+                    className="px-3 py-1.5 text-xs font-semibold rounded-full bg-gradient-to-r from-primary-400/20 to-primary-600/20 text-primary-300 border border-primary-400/30 hover:border-primary-400/50 transition-colors duration-300"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           )}
 
           {/* Technologies */}
           {technologies && technologies.length > 0 && (
-            <div className="space-y-2">
-              <h5 className="text-sm font-semibold text-neutral-200">Technologies</h5>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-1">
+            <div className="space-y-3">
+              <h4 className="text-sm font-semibold text-neutral-200 uppercase tracking-wide">Tecnologías</h4>
+              <div className="flex flex-wrap gap-2">
                 {technologies.map((tech) => (
                   <span 
                     key={tech}
-                    className="px-2 py-1 text-xs font-medium rounded bg-secondary-400/10 text-secondary-300 border border-secondary-400/20 hover:border-secondary-400/40 transition-colors duration-300 text-center"
+                    className="px-3 py-1.5 text-xs font-medium rounded-full bg-secondary-400/15 text-secondary-300 border border-secondary-400/25 hover:border-secondary-400/40 transition-colors duration-300"
                   >
                     {tech}
                   </span>
@@ -172,32 +185,13 @@ export default function ExperienceCard({
               </div>
             </div>
           )}
-
-          {/* Responsibilities - Full visibility, no height restrictions */}
-          <div className="space-y-2">
-            <h5 className="text-sm font-semibold text-neutral-200">Key Responsibilities</h5>
-            <ul className="space-y-2">
-              {responsibilities.map((responsibility, index) => (
-                <li 
-                  key={index}
-                  style={{ animationDelay: `${index * 50}ms` }}
-                  className="grid grid-cols-[auto_1fr] gap-2 text-sm text-neutral-300 animate-slide-right motion-reduce-animation"
-                >
-                  <span className="flex-shrink-0 mt-1.5">
-                    <svg className="w-3 h-3 text-primary-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </span>
-                  <span className="leading-relaxed">{responsibility}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
-        {/* Enhanced hover effect overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-400/0 via-primary-400/0 to-primary-400/0 hover:from-primary-400/3 hover:via-transparent hover:to-secondary-400/3 transition-all duration-500 rounded-2xl pointer-events-none" />
+
       </div>
+      
+      {/* Hover accent border */}
+      <div className="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r from-primary-400/0 to-secondary-400/0 group-hover:from-primary-400/20 group-hover:to-secondary-400/20 transition-all duration-500 pointer-events-none" style={{mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', maskComposite: 'xor'}} />
     </article>
   );
 }

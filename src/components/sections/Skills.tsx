@@ -44,7 +44,7 @@ export default function Skills({
       name: 'Lenguajes', 
       icon: '💻',
       color: 'from-semantic-warning-400 to-semantic-warning-600' 
-    },
+    }
   };
 
   return (
